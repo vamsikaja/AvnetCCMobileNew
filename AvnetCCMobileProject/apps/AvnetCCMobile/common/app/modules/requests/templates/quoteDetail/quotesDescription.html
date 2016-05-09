@@ -1,0 +1,31 @@
+<ul>
+	<li class="row" ng-repeat="lineItem in quoteDetail.lineItems">
+		<div>
+			<div class="labelName">Line No: </div>
+			<div class="value">{{lineItem.LineNumber}}</div>
+		</div>
+		<div>
+			<div class="labelName">Quantity: </div>
+			<div class="value">{{lineItem.Quantity}}</div>
+		</div>
+		<div>
+			<div class="labelName">Part No: </div>
+			<div class="value">{{lineItem.PartNumber}}</div>
+		</div>
+		<div class="value">{{lineItem.ProductDescription}}</div>
+		<div>
+			<div class="labelName">Unit Resale: </div>
+			<div class="value">${{lineItem.UnitPrice}}</div>
+		</div>
+		<div>
+			<div class="labelName">Ext. Resale: </div>
+			<div class="value">${{lineItem.ExtPrice}}</div>
+		</div>
+		<div class="checkBoxWrapper {{lineItem.IsReservationOrder?'selected':''}}">
+			<div class="checkBox">
+				<i class="icon-checkmark"></i>
+			</div>
+			<div class="checkBoxContent">Resv. Order?</div>
+		</div>
+	</li>
+</ul>

@@ -1,0 +1,825 @@
+/** variables */
+$primaryRed:#cd1d1f;
+$primaryBlack:#2a2e34;
+$secondaryBlue:#0593bc;
+$secondaryGreen:#8cb31a;
+$secondaryDarkBlue:#02406e;
+$secondaryDarkGreen:#1b5c67;
+$tertiaryOrange:#eb6730;
+$tertiaryLightOrange:#ffa039;
+$neutralDarkGray:#575757;
+$neutralLightGray:#b2b2b2;
+$lightGray:#fafafa;
+$white:#FFF;
+
+/** mixins */
+
+/** backgroundLinearGradient Mixin */
+@mixin backgroundLinearGradient($linearGradient...){
+	background:linear-gradient($linearGradient);
+	background: -webkit-linear-gradient($linearGradient);
+	background: -ms-linear-gradient($linearGradient);
+}
+
+/** get Request Status Styles Mixin */
+@mixin requestStatus(){
+	color: $white;
+	padding: 0 0.3125rem;
+	width: 4.375rem;
+	text-align: center;
+	font-family: "ClanBook";
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	background: $secondaryBlue;
+	font-size: 0.625rem;
+}
+
+@mixin statusBadge(){
+	color: $white;
+	padding: 0 0.3125rem;
+	width: 4.375rem;
+	text-align: center;
+	font-family: "ClanBook";
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	background: $secondaryBlue;
+	font-size: 0.625rem;
+}
+
+/** get Menu Icon Styles Mixin */
+@mixin getMenuIconStyles(){
+	background-color: #FFF;
+	height: 2px;
+	width: 25px;
+	display: block;
+}
+
+/** get Global Background Mixin */
+@mixin getGlobalBackground(){
+	background : -moz-linear-gradient(-11.76% 8% -45deg,rgba(230, 230, 230, 1) 0%,rgba(255, 255, 255, 1) 57.85%,rgba(230, 230, 230, 1) 100%);
+	background : -webkit-linear-gradient(-45deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 57.85%, rgba(230, 230, 230, 1) 100%);
+	background : -webkit-gradient(linear,-11.76% 8% ,111.76% 92% ,color-stop(0,rgba(230, 230, 230, 1) ),color-stop(0.5785,rgba(255, 255, 255, 1) ),color-stop(1,rgba(230, 230, 230, 1) ));
+	background : -o-linear-gradient(-45deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 57.85%, rgba(230, 230, 230, 1) 100%);   
+	background : -ms-linear-gradient(-45deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 57.85%, rgba(230, 230, 230, 1) 100%);   
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";   
+	background : linear-gradient(135deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 57.85%, rgba(230, 230, 230, 1) 100%);   
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1); 
+}
+
+/** overflow ellipsis Mixin */
+@mixin addOverflowEllipsis(){
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
+/** add border-top Mixin */
+@mixin addBorderTop(){
+	border-top: 1px solid $neutralLightGray;
+}
+
+/** get TextArea Styles Mixin */
+@mixin getTextAreaStyles(){
+	height: 75px;
+	font-size: 0.75rem;
+	margin: 0;
+	resize:none;
+	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+/** get Input Styles Mixin */
+@minin getInputStyles(){
+	background-color: $white;
+	border: none;
+	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+	line-height: normal;
+}
+
+/** get Input Focus Styles Mixin */
+@mixin getInputFocusStyles(){
+	outline: none;
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+}
+
+/** get Input Error STyles Mixin */
+@mixin getInputErrorStyles(){
+	border: 1px solid $primaryRed;
+	box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+}
+
+
+/* fonts */
+
+/* ClanBook Font */
+@font-face{
+	font-family: "ClanBook";  
+	src: url("fonts/ClanOT-Book.eot") format("eot"),
+		 url("fonts/ClanOT-Book.otf") format("otf"), 
+		 url("fonts/ClanOT-Book.svg") format("svg"),  
+		 url("fonts/ClanOT-Book.woff") format("woff"),   
+		 url("fonts/ClanOT-Book.ttf") format("truetype");  
+	font-weight: normal;  
+	font-style: normal;
+}
+
+/* ClanMedium Font */
+@font-face{
+	font-family: "ClanMedium";  
+	src: url("fonts/ClanOT-Medium.eot") format("eot"),   
+		 url("fonts/ClanOT-Medium.otf") format("otf"), 
+		 url("fonts/ClanOT-Medium.svg") format("svg"),  
+		 url("fonts/ClanOT-Medium.woff") format("woff"),   
+		 url("fonts/ClanOT-Medium.ttf") format("truetype"); 
+	font-weight: normal;  
+	font-style: normal;
+}
+
+/* ClanNews Font */
+@font-face{
+	font-family: "ClanNews";  
+	src: url("fonts/ClanOT-News.eot") format("eot"),   
+		 url("fonts/ClanOT-News.otf") format("otf"), 
+		 url("fonts/ClanOT-News.svg") format("svg"),  
+		 url("fonts/ClanOT-News.woff") format("woff"),   
+		 url("fonts/ClanOT-News.ttf") format("truetype");  
+	font-weight: normal;  
+	font-style: normal;
+}
+
+/* Base styles */
+
+*{
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;     
+	-moz-tap-highlight-color: transparent; 
+}
+
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	font-family: "ClanNews";
+	font-size: 16px;
+	overflow:hidden;
+
+}
+
+ui-view{
+	@include getGlobalBackground();
+}
+
+button:focus{
+	outline:none;
+}
+
+button:disabled{
+	background: $neutralLightGray;
+}
+
+/*.button:hover, button:hover, .button:focus, button:focus{
+	background: $neutralLightGray;
+}*/
+
+ul{
+	margin: 0;
+	li{
+		border-bottom: 1px solid $neutralLightGray;
+		font-size: 0.875rem;
+		.leftListIcon,.rightListIcon{
+			position: absolute;
+			top: 0.625rem;
+		}
+		.leftListIcon{
+			left: 0.625rem;
+			font-size: 1.5rem;
+		}
+		.rightListIcon{
+			right: 0.625rem;
+			top: 12px;
+			font-size: 1rem;
+		}
+		&.hasLeftIcon{
+			padding-left: 2.5rem !important;
+		}
+		&.hasRightIcon{
+			padding-right: 2.5rem !important;
+		}
+		&.singleLineListItem{
+			@include addOverflowEllipsis();
+			.listIconMainText{
+				@include addOverflowEllipsis();
+			}
+			.listIcon{
+				font-size: 1.5rem;
+				vertical-align: middle;
+			}
+			.listText{
+				vertical-align: middle;
+			}
+			.listSubText{
+				/*padding-left: 27px;*/
+				@include addOverflowEllipsis();
+			}
+			.selectedIcon{
+				visibility: hidden;
+				color: $secondaryGreen;
+			}
+		}
+		&.selected{
+			color: $secondaryGreen; 
+			.selectedIcon{
+				visibility: visible;
+			}
+		}
+		.count{
+			display: inline-block;
+			height: 20px;
+			min-width: 20px;
+			border-radius: 10px;
+			font-size: 12px;
+			color: $white;
+			background: $tertiaryLightOrange;
+			text-align: center;
+			&.filledNotificationsList{
+				background: $secondaryGreen;
+			}
+			&.correctlyFilled{
+				background: $secondaryGreen;
+			}
+		}
+	}
+	&.requiredList{
+		.requiredItem{
+			position: relative;
+			padding: 0.625rem;
+			.icon-warning{
+				color: $primaryRed;
+			}
+			.icon-checkmark{
+				color: $secondaryGreen;
+			}
+			.requiredItemName{
+				font-family: "ClanNews";
+				font-size: 0.825rem;
+				color: $primaryBlack;
+				&.error{
+					color: $primaryRed;
+				}
+			}
+			.requiredItemStatus{
+				font-family: "ClanBook";
+				font-size: 0.8125rem;
+				color: $neutralDarkGray;
+				@include addOverflowEllipsis();
+				&.error{
+					color: $primaryRed;
+				}
+			}
+			&:first-child{
+				@include addBorderTop();
+			}
+			.count{
+				display: inline-block;
+				height: 20px;
+				min-width: 20px;
+				border-radius: 10px;
+				font-size: 12px;
+				color: $white;
+				background: $tertiaryLightOrange;
+				text-align: center;
+				&.filledNotificationsList{
+					background: $secondaryGreen;
+				}
+				&.correctlyFilled{
+					background: $secondaryGreen;
+				}
+			}
+		}
+	}
+}
+
+label {
+	font-size: inherit;
+	margin-bottom: 0;
+	color: inherit;
+}
+
+input, textarea{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+.error{
+	input{
+		color: $primaryRed;
+		border: 1px solid $primaryRed;
+		box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+		-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+		-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+		&::-webkit-input-placeholder{
+			color:$primaryRed;
+		}
+		&:-ms-input-placeholder{
+			color: $primaryRed;
+		}
+	}
+}
+input{
+	margin: 0 !important;
+	line-height: normal !important;
+	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+	-webkit-appearance: none;
+	&:focus{
+		outline: none;
+		box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+		-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+		-ms-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+	}
+}
+
+/*textarea{
+	-webkit-user-select: text;
+	-ms-user-select: text;
+	user-select:text;
+	overflow-scroll:true;
+}*/
+
+.hideElement{
+	opacity: 0;
+}
+
+.showElement{
+	opacity: 1 !important;
+}
+
+/* header overlay styles */
+.headerOverlay{
+
+	&.ng-hide{
+		opacity: 0;
+	}	
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 3.125rem;
+	background:rgba(0,0,0,0.7);
+	z-index: 9;
+	@include transition(all 0.3s);
+	
+    &.changeRight{
+    	right: 35px;
+    }
+    .pointingHeaderButton{
+		&.pointerWrapper{
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(flex-end);
+			height: 3.125rem;
+			.line{
+				&.horizontal{
+					height: 0.25rem;
+					width: 4.6875rem;
+					background:$white;
+				}
+			}
+			.circle{
+				height: 1rem;
+				width: 1rem;
+				border-radius: 0.5rem;
+				background: $primaryRed;
+				border:2px solid $white;
+			}
+			.helpText{
+				color: $white;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.headerRequestDetailButton{
+	position: fixed;
+	right: 0;
+	top:0;
+	padding-right: 10px;
+	z-index: 99;
+	color: white;
+	font-size: 1.5rem;
+	padding-top: 13px;
+	width: 30px;
+	height: 50px;
+	text-align: center;
+}
+
+.listOptionButton{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100px;/* change */
+	text-align: center;
+	color: $white;
+	font-size: 0.75rem;
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include transition(all 0.23s ease-in-out);
+	/*&.listOptionButton1{
+		right: 100px;
+	}*/
+}
+
+
+.clearFix{
+	clear: both;
+}
+
+.noBorderBottom{
+	border-bottom: none;
+}
+
+.noNetworkStatus{
+	background: $tertiaryLightOrange;
+	color: $primaryBlack;
+	font-family: "ClanBook";
+	text-align: center;
+	padding: 0.3125rem 0;
+	/*position: fixed;
+	width: 100%;*/
+	z-index: 999;
+	.noNetworkInfo{
+		font-size: 0.75rem;
+	}
+}
+
+.noNetwork{
+	text-align: center;
+	.noNetworkIcon {
+		@include display(flex);
+		@include justify-content(center);
+		@include align-items(center);
+		height: 70px;
+		background: $tertiaryLightOrange;
+		width: 70px;
+		font-size: 4rem;
+		margin: 0 auto;
+		margin-top: 60px;
+		margin-bottom: 20px;
+		border-radius: 5px;
+		color: $white;
+	}
+}
+
+.noNetworkMargin{
+	/*margin-top: 1.6875rem;*/
+}
+
+/* selection button styles */
+.selectionButtons{
+	&.rightBottom{
+		position: absolute;
+		right: 0.625rem;
+		bottom: 0.625rem;
+	} 
+	&.center{
+		text-align: center;
+		.selectionButton{
+			margin-left: 0;
+			float: none;
+		}
+	}
+	.selectionButton{
+		float: right;
+		padding: 10px;
+		color: $white;
+		font-family: "ClanMedium";
+		margin: 0;
+		border-radius: 3px;
+		&.cancelButton{
+			background: $neutralDarkGray;
+		}
+		&.applyButton{
+			background: $secondaryBlue;
+			margin-left: 15px;
+			&:focus, &:hover{
+				background:#057893;
+			}
+			&:disabled{
+				background:$neutralLightGray;/* change */
+			}
+			&.disable{
+				background:$neutralLightGray;
+				&:focus, &:hover{
+					background:#898989;
+				}
+			}
+
+		}
+	}
+}
+
+.row{
+	font-size: 0.875rem;
+	color: $primaryBlack;
+	padding: 0.625rem;
+	position: relative;
+	.labelName{
+		font-family: "ClanMedium";			
+	}
+	.value{
+		padding-top: 3px;
+		font-family: "ClanNews";
+		/*white-space: pre-line;*/
+	}
+}
+
+.checkBoxWrapper{
+	@include display(flex);
+	@include align-items(center);
+	padding-top: 0.625rem;
+	.checkBox{
+		width: 1.875rem;
+		height: 1.875rem;
+		box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+		/*border:1px solid $primaryBlack;*/
+		color: $white;
+		background: $white;
+		text-align: center;
+		.icon-checkmark {
+			font-size: 2rem;
+		}
+	}
+	.checkBoxContent{
+		margin: 0 10px;
+		@include flex(1);
+	}
+	&.selected{
+		.checkBox{
+			background: $secondaryGreen !important;
+			box-shadow: none !important;
+			border: none !important;
+		}	
+		.checkBoxContent{
+			color: $secondaryGreen !important; 
+		}
+	}
+}
+
+.error{
+	.checkBox{
+		box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+		border:1px solid $primaryRed;
+	}
+	.checkBoxContent{
+		color: $primaryRed !important; 
+	}
+}
+
+/* styled checkbox styles */
+.styledCheckBox{
+	.checkBoxBackground{
+		height: 40px;
+		width: 80px;
+		background: #AAA;
+		border-radius: 5px;
+		margin: 0 auto;
+		padding: 3px;
+		.enableButton{
+			height: 100%;
+			width: 35px;
+			background: #FFF;
+			border-radius: 5px;
+			@include transition(all 0.5s ease-in-out);
+		}
+		&.selected{
+			background: $secondaryGreen;
+			.enableButton{
+				margin-left: 39px;
+			}
+		}
+	}
+}
+
+/* search box wrapper styles */
+.searchBoxWrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	.searchBox{
+		@include getGlobalBackground();
+		padding: 0.625rem;
+		.searchIcon{
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			font-size: 1.25rem;
+		}
+		input{
+			height: 100%;
+			margin: 0;
+			line-height: normal;
+			padding-left: 40px;
+			box-sizing:border-box;
+		}
+	}
+}
+
+.searchBoxWrapper.bottom{
+	bottom:0;
+	top:auto;
+}
+
+.subHeading{
+	@include display(flex);
+	@include justify-content(space-between);
+	background: $neutralLightGray;
+	color: $white;
+	font-family: "ClanMedium";
+	font-size: 0.875rem;
+	padding: 0.625rem;
+}
+
+/* Status background color based on classnames */
+div[class$="New"]{
+	background-color: $primaryBlack !important;
+}
+
+div[class$="Hold"]{
+	background-color: $tertiaryLightOrange !important;
+}
+
+div[class$="Cancelled"]{
+	background-color: $primaryRed !important;
+}
+
+div[class$="Cancel"]{
+	background-color: $primaryRed !important;
+}
+
+div[class$="Complete"]{
+	//background-color: $primaryBlack !important;
+	background-color: $secondaryGreen !important;
+}
+
+div[class$="InProcess"]{
+	background-color: $secondaryBlue !important;
+}
+
+div[class$="Open"]{
+	background-color: $secondaryBlue !important;
+}
+
+.requestStatusValue{
+	padding: 7px 0;
+	@include addOverflowEllipsis();
+}
+
+/* views enter, leave styles */
+ui-view.ng-enter,ui-view.ng-leave{   
+	position: absolute;   
+	top: 0;   
+	right: 0;   
+	bottom: 0;   
+	width: 100%; 
+}
+
+.slideForward ui-view.ng-enter {   
+	@include transition(all cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s); 
+	left: 100%;  
+}  
+
+.slideForward ui-view.ng-enter.ng-enter-active {   
+	left: 0;  
+}  
+
+.slideForward ui-view.ng-leave {   
+	@include transition(all cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s); 
+	left: 0%;  
+}  
+
+.slideForward ui-view.ng-leave.ng-leave-active {   
+	left: -100%;  
+}    
+
+.slideReverse ui-view.ng-enter {   
+	@include transition(all cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s);   
+	left: -100%;  
+}  
+
+.slideReverse ui-view.ng-enter.ng-enter-active {   
+	left: 0;  
+}  
+
+.slideReverse ui-view.ng-leave {   
+	@include transition(all cubic-bezier(0.25, 0.46, 0.45, 0.94) .2s);  
+	left: 0%;  
+}  
+
+.slideReverse ui-view.ng-leave.ng-leave-active {   
+	left: 100%;  
+}
+
+.noDataMessage{
+	padding:10px;
+	color: $neutralDarkGray;
+	font-family: "ClanBook";
+	line-height: 1.6;
+	/*font-size: 0.75rem;*/
+}
+
+.master.ng-hide-remove{
+	display:block !important;
+  	position:absolute;
+  	top:0;
+  	width:100%;
+  	height:1000px;
+  	-webkit-animation:master-slide-right 0.2s;
+  	animation:master-slide-right 0.2s;
+}
+
+.master.ng-hide-add{
+	display:block !important;
+	position:absolute;
+	top:0;
+	width:100%;
+  	height:1000px;
+  	-webkit-animation:master-slide-left 0.2s;
+  	animation:master-slide-left 0.2s;
+}
+
+@-webkit-keyframes master-slide-left
+{
+  0%   {left:0;}
+  100%  {left:-100%;}
+}
+@keyframes master-slide-left
+{
+  0%   {left:0;}
+  100%  {left:-100%;}
+}
+
+@-webkit-keyframes master-slide-right
+{
+  0%   {left:-100%;}
+  100%  {left:0;}
+}
+
+@keyframes master-slide-right
+{
+  0%   {left:-100%;}
+  100%  {left:0;}
+}
+
+.detail.ng-hide-add{
+	display:block !important;
+  	position:absolute;
+  	top:0;
+  	width:100%;
+  	height:1000px;
+  	-webkit-animation:detail-slide-right 0.2s;
+  	animation:detail-slide-right 0.2s;
+}
+
+.detail.ng-hide-remove{
+	display:block !important;
+	position:absolute;
+	top:0;
+	width:100%;
+  	height:1000px;
+  	-webkit-animation:detail-slide-left 0.2s;
+  	animation:detail-slide-left 0.2s;
+}
+
+@-webkit-keyframes detail-slide-left
+{
+  0%   {left:100%;}
+  100%  {left:0;}
+}
+@keyframes detail-slide-left
+{
+  0%   {left:100%;}
+  100%  {left:0;}
+}
+
+@-webkit-keyframes detail-slide-right
+{
+  0%   {left:0;}
+  100%  {left:100%;}
+}
+
+@keyframes detail-slide-right
+{
+  0%   {left:0;}
+  100%  {left:100%;}
+}
+
+
+

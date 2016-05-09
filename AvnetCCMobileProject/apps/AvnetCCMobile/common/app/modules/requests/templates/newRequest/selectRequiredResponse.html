@@ -1,0 +1,47 @@
+<r2o-view title ="'Required Response'" class='grid-block vertical requestNotificationsView'>
+	<r2o-content class="grid-block vertical has-header has-footer selectRequiredResponse">
+        <ul>
+    		<div class="subHeading">
+    			Indicate Required Response
+    		</div>
+    		<li ng-show="isResponseNeeded || response.id==5" class="singleLineListItem requiredResponseListItem {{response.id == request.ResponseTypeSk ? 'selected' : ''}}" ng-repeat="response in requiredResponse" ng-click="toggleResponse(response)">
+    			<span class="listIcon selectedIcon">
+    				<i class="icon-checkmark"></i>
+    			</span>
+    			<span class="listText">{{response.response}}</span>
+    		</li>
+            <div class="subHeading">
+                Currency
+            </div>
+                <li class="singleLineListItem requiredResponseListItem {{selectedCurrency =='USD' ? 'selected' : '' }}" ng-click="changeCurrency('USD')">
+                    <span class="listIcon selectedIcon">
+                        <i class="icon-checkmark"></i>
+                    </span>
+                    <span class="listText">USD</span>
+                </li>
+                <li class="singleLineListItem requiredResponseListItem {{selectedCurrency =='CAD' ? 'selected' : '' }}" ng-click="changeCurrency('CAD')">
+                    <span class="listIcon selectedIcon">
+                        <i class="icon-checkmark"></i>
+                    </span>
+                    <span class="listText">CAD</span>
+                </li>
+            <!-- <div class="subHeading">
+                Files
+            </div>
+                <li class="singleLineListItem file" ui-sref="^.uploadFiles">
+                    <span class="listIcon">
+                        <i class="icon-checkmark"></i>
+                    </span>
+                    <span class="listText">Upload Files</span>
+                    <div class="rightChevronIcon">
+                        <i class="icon-chevron-right"></i>
+                    </div>x
+                </li>-->
+        </ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

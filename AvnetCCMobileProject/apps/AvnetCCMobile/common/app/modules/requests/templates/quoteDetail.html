@@ -1,0 +1,228 @@
+<r2o-view title ="title" class='grid-block vertical quotesDetailsView'>
+    <r2o-modal modal="quoteFilesHelpModal" showViewHeader="true" useParentFooter="false" class="helpModal quoteFilesHelpModal" enableTouchClose="true" touch-call-back-method="hideFilesHelpScreen()">
+    	<div class="overlay topOverlay"></div>
+		<div class="overlay bottomOverlay">
+			<div class="swipeThumbWrapper">
+				<div class="swipeThumb">
+					
+				</div>
+				<div class="helpText">
+					Swipe Left/Right to hide/show sharing
+				</div>
+			</div>
+		</div>
+    </r2o-modal>
+	<r2o-modal modal="quoteDetailsHelpModal" showViewHeader="true" useParentFooter="false" class="helpModal quoteDetailsHelpModal" enableTouchClose="true" touch-call-back-method="hidedetailsHelpScreen()">
+		<div class="overlay headerOverlay">
+			<div class="pointerWrapper pointingHeaderButton">
+				<div class="helpText">Tap to open Request Menu</div>
+				<div class="line horizontal"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+		<div class="overlay requestActionsHelp"></div>
+		<div class="overlay topOverlay">
+			<div class="pointerWrapper pointingCollapsable">
+				<div class="helpText">
+					Tap to expand/collapse sections in the view
+				</div>
+				<div class="line vertical"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+		<div class="overlay editButtonHelp">
+			
+		</div>
+		<div class="overlay bottomOverlay">
+			<div class="pointerWrapper pointingEditIcon">
+				<div class="pointer">
+					<div class="circle"></div>
+					<div class="line vertical"></div>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="helpText">
+					Tap to edit
+				</div>
+			</div>
+			<div class="pointerWrapper pointingBackButton">
+				<div class="helpText">
+					Tap to go back
+				</div>
+				<div class="pointer">
+					<div class="line vertical"></div>
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay footerOverlay"></div>
+    </r2o-modal>
+    <r2o-modal modal="quoteNotesDescriptionHelpModal" showViewHeader="true" useParentFooter="false" class="helpModal quoteNotesDescriptionHelpModal" enableTouchClose="true" touch-call-back-method="hideQuoteNotesDescriptionHelpScreen()">
+		<div class="overlay">
+			<div class="swipeThumbWrapper">
+				<div class="swipeThumb">
+					
+				</div>
+				<div class="helpText">
+					Swipe Left/Right to move through notes
+				</div>
+			</div>
+		</div>
+    </r2o-modal>
+    <r2o-modal modal="editRequestName" class="editModal editRequestNameModal" useParentFooter="false">
+    	<div class="modalHeader">
+			<div class="modalHeaderText">Update Request Name</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Update Request Name for:</div>
+			<div class="value">{{quoteDetail.requestName}}</div>
+			<form ng-submit="blurElementWithId('editRequestNameInputField')" class="inputForEdit">
+				<input type="text" ng-model="editValues.editRequestNameValue" id="editRequestNameInputField" required/>
+			</form>
+		</div>
+		<div class="selectionButtons">
+        	<button ng-click = "updateRequestName()" class="selectionButton applyButton" ng-disabled="!(!!editValues.editRequestNameValue)">UPDATE NAME</button>
+        	<button ng-click = "cancelEditRequestName()" class="selectionButton cancelButton">CANCEL</button>
+        </div>
+    </r2o-modal>
+    <r2o-modal modal="editEndUser" class="editModal editEndUserModal" useParentFooter="false">
+    	<div class="modalHeader">
+			<div class="modalHeaderText">Update End User</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Update End User for Request:</div>
+			<div class="value">{{quoteDetail.requestName}}</div>
+		</div>
+		<ul class="requiredList inputForEdit">
+			<li ng-click="redirectToSelectEndUserScreen()" class="hasLeftIcon hasRightIcon requiredItem ">
+				<div class="leftListIcon">
+					<i class="icon-{{quoteDetailEndUserClicked? (request.addedEndUsers.length >0 ? 'checkmark' : 'warning' ): 'checkmark'}}"></i>
+				</div>
+				<div class="requiredItemName {{selectEndUserError?'error':''}}">
+					End User
+				</div>
+				<div class="requiredItemStatus {{selectEndUserError?'error':''}}">
+					{{quoteDetailEndUserClicked ? (request.addedEndUsers.length >0 ? request.addedEndUsers[0].PartnerName : 'Select End User' ): (quoteDetail.partnerDetails ? quoteDetail.partnerDetails.endUser : 'No End User specified')}}
+				</div>
+				<div class="rightListIcon">
+					<i class="icon-chevron-right"></i>
+				</div>
+			</li>
+		</ul>
+		<div class="selectionButtons">
+        	<button ng-click = "updateEditEndUser()" class="selectionButton applyButton">UPDATE END USER</button>
+        	<button ng-click = "cancelEditEndUser()" class="selectionButton cancelButton">CANCEL</button>
+        </div>
+    </r2o-modal>
+    <r2o-modal modal="addNoteModalView" class="editModal addNoteModal" useParentFooter="false">
+    	<div class="modalHeader">
+			<div class="modalHeaderText">Add Note</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Add Note to Request:</div>
+			<div class="value">{{quoteDetail.requestName}}</div>
+		</div>
+		<form class="instructions inputForEdit" ng-submit="blurElementWithId('requestDetailsAddNoteTextArea')">
+			<textarea ng-model="newNote.noteValue" placeholder="Add Note..." id="requestDetailsAddNoteTextArea"></textarea>
+		</form>
+		<ul class="requiredList">
+			<li ng-click="redirectToRequestNotification()" class="hasLeftIcon hasRightIcon requiredItem">
+				<div class="leftListIcon">
+					<span class="count {{notificationListCount>0 ? 'filledNotificationsList' : '' }}">
+						<span class="countNumber">{{notificationListCount}}</span>
+					</span>
+				</div>
+				<div class="requiredItemName" ng-class="notificationError ? 'error' :'' ">
+					Notifications
+				</div>
+				<div class="requiredItemStatus" ng-class="notificationError ? 'error' : '' ">
+					{{notificationListString}}
+				</div>
+				<div class="rightListIcon">
+					<i class="icon-chevron-right"></i>
+				</div>
+			</li>
+		</ul>
+		<div class="selectionButtons">
+        	<button ng-click = "addNewNote()" class="selectionButton applyButton" ng-disabled="!(!!newNote.noteValue)">ADD NOTE</button>
+        	<button ng-click = "cancelAddNote()" class="selectionButton cancelButton">CANCEL</button>
+        </div>
+    </r2o-modal>
+	<r2o-content class="grid-block vertical has-header has-footer" ng-click="closeRequestActionButtons()">
+		<div class="noNetwork" ng-show="$root.networkStatus=='offline'">
+			<div class="noNetworkIcon">
+				<div class="icon-no-connection"></div>
+			</div>
+			<div class="noNetworkInfo">
+				<div>No internet connectivity.</div>
+				<div>Please check back again when</div>
+				<div>you have a connection.</div>
+			</div>
+		</div>
+		<r2o-slide-box items='4' index="tabIndex" swipe="false" ng-hide="$root.networkStatus=='offline'" class="grid-block vertical">
+			<r2o-slide>
+				<div class="quotes" ng-include="'app/modules/requests/templates/quoteDetail/quotes.html'">
+				</div>
+			</r2o-slide>
+			<r2o-slide>
+				<div class="notes"  
+					ng-include="'app/modules/requests/templates/quoteDetail/notes.html'">
+				</div>
+			</r2o-slide>
+			<r2o-slide>
+				<div class="files"  
+					ng-include="'app/modules/requests/templates/quoteDetail/files.html'">
+				</div>
+			</r2o-slide>
+			<r2o-slide>
+				<div class="details"  
+					ng-include="'app/modules/requests/templates/quoteDetail/details.html'">
+				</div>
+			</r2o-slide>
+		</r2o-slide-box>
+		<div class="searchBoxWrapper bottom" ng-show="tabIndex.index == 2 && !notesDescriptionShown">
+			<div class="searchBox">
+				<input type="text" placeholder="Add Note..." ng-click="showAddNote()" readonly />
+			</div>
+		</div>
+		<div class="successMessage" ng-show="showSuccessMessage">
+			<div class="checkboxIcon"><i class="icon-checkbox"></i></div>
+			<div class="successText">{{successMessage}}</div>
+        </div>
+	</r2o-content>
+	<div class="requestActionButtons" ng-show="requestActionButtonsShown">
+		<a ng-click="goToRequestAction('copy')">Copy Request</a>
+		<a ng-click="goToRequestAction('revise')" ng-show="quoteDetail.IsRequestRevisable">Revise Request</a>
+	</div>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+		<button ng-click="changeTabContentTo(4)" class="footerButton {{(tabIndex.index == 4) ? 'activeButton' : ''}}">
+			<i class="icon-document-filled"></i>
+			<div class="footerButtonText">Details</div>
+		</button>
+		<button ng-click="changeTabContentTo(3)" class="footerButton {{(tabIndex.index == 3) ? 'activeButton' : ''}}" >
+			<i class="icon-files-attached"></i>
+			<div class="footerButtonText">Files</div>
+		</button>
+		<button ng-click="changeTabContentTo(2)" class="footerButton {{(tabIndex.index == 2) ? 'activeButton' : ''}}">
+			<i class="icon-speech-dots"></i>
+			<div class="footerButtonText">Notes</div>
+		</button>
+		<button ng-click="changeTabContentTo(1)" class="footerButton {{(tabIndex.index == 1) ? 'activeButton' : ''}}">
+			<i class="icon-quotes"></i>
+			<div class="footerButtonText">Quotes</div>
+		</button>
+	</r2o-footer>
+	<!--
+	<div class="updateRequestName" style="position: absolute; top:50px; left:0px; z-index: 9999; height: 75%; width:100%; border:1px dashed; background-color: #FFFF00">
+		<div class="labelName">Update Request Name for:</div>
+		<div class="value">{{quoteDetail.requestName}}</div>
+		<div class="editRequestName" ng-class="''">
+				<form ng-submit="blurElementWithId('editRequestNameInputField')">
+					<input type="text" value="{{editRequestNameValue}}" id="editRequestNameInputField" ng-blur="addRequestName()"/>
+				</form>
+			</div>
+	</div>
+	-->
+</r2o-view>

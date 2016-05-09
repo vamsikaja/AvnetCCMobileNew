@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wl:adapter name="OrdersAdapter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:wl="http://www.ibm.com/mfp/integration" xmlns:http="http://www.ibm.com/mfp/integration/http">
+
+	<displayName>OrdersAdapter</displayName>
+	<description>Adapter for retrieving order status information.</description>
+	<connectivity>
+		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
+			<protocol>http</protocol>
+			<domain>b2b-test.avnet.com</domain>
+			<port>5600</port>
+			<connectionTimeoutInMilliseconds>30000</connectionTimeoutInMilliseconds>
+			<socketTimeoutInMilliseconds>30000</socketTimeoutInMilliseconds>
+			<authentication>
+				<basic />
+				<serverIdentity>
+					<username>mccuser</username>
+					<password>Mchanne321</password>
+				</serverIdentity>
+			</authentication>
+			<maxConcurrentConnectionsPerNode>50</maxConcurrentConnectionsPerNode>
+		</connectionPolicy>
+	</connectivity>
+
+	<procedure name="getOrders" audit="true" />
+</wl:adapter>

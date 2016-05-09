@@ -1,0 +1,26 @@
+<li class="questionListItem questionInputRadioItem">
+	<label>
+		<div ng-show="question.title == 'Is this a current contract'">
+			<div class="toggleWrapper">
+				<div class="toggleText">
+					<!-- <span ng-show="question.isMandatory">
+						<i class="icon-{{(question.answer == null || question.answer == undefined ||question.answer.length == 0)? 'warning':'checkmark' }}"></i>
+					</span> -->
+					<span>{{question.title}}</span><span ng-class="question.isMandatory ? 'mandatory' : '' ">*</span>
+				</div>
+				<r2o-toggle is-checked="currentContract"></r2o-toggle>
+			</div>
+		</div>
+		<div ng-hide="question.title == 'Is this a current contract'">
+			<div class="labelText">
+				<!-- <span ng-show="question.isMandatory">
+					<i class="icon-{{(question.answer == null || question.answer == undefined ||question.answer.length == 0 || question.answer[0] == undefined)? 'warning':'checkmark' }}"></i>
+				</span> -->
+				<span>{{question.title}}</span><span ng-class="question.isMandatory ? 'mandatory' : '' ">*</span>
+			</div>
+			<div class="options">
+				<div ng-repeat="option in question.options" class="option {{isOptionAdded(option,question) ? 'selected' : ''}}" ng-click="addOption(option,question)">{{option.option}}</div>
+			</div>
+		</div>
+	</label>
+</li>

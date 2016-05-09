@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application xmlns="http://www.worklight.com/application-descriptor" id="AvnetCCMobile" platformVersion="7.1.0.00.20160401-2103">
+    <displayName>Avnet Channel Connection</displayName>
+    <description>Avnet Channel Connection</description>
+    <author>
+        <name>Avnet Mobile Development Team</name>
+        <email>mobility-support@siriuscom.com</email>
+        <homepage>http://avnet.com</homepage>
+        <copyright>Avnet 2016</copyright>
+    </author>
+    <mainFile>index.html</mainFile>
+    <features>
+        <JSONStore/>
+    </features>
+    <thumbnailImage>common/assets/images/icon.png</thumbnailImage>
+    <iphone securityTest="ISAMforWorklight-mobilesecurityTest" bundleId="com.avnet.channelconnection" version="2.2">
+        <worklightSettings include="false"/>
+        <security>
+            <encryptWebResources enabled="false"/>
+            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
+        </security>
+    </iphone>
+    <android securityTest="ISAMforWorklight-mobilesecurityTest" version="2.2">
+        <worklightSettings include="false"/>
+        <security>
+            <encryptWebResources enabled="false"/>
+            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
+            <publicSigningKey/>
+            <packageName>com.avnet.channelconnection</packageName>
+        </security>
+    </android>
+
+</application>

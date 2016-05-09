@@ -1,0 +1,39 @@
+<r2o-view title ="tabIndex.title" class='grid-block vertical'>
+	<r2o-content class='grid-block vertical has-header has-footer selectItemtoRevise'>	
+
+		<r2o-slide-box items='3' index="tabIndex" swipe="false" class="grid-block vertical">	
+			<r2o-slide>
+				<div class="quotes" ng-include="'app/modules/requests/templates/modifyQuote/selectItemToRevise/selectReviseType.html'">
+				</div>
+			</r2o-slide>		
+			<r2o-slide>
+				<div class="notes"  
+					ng-include="'app/modules/requests/templates/modifyQuote/selectItemToRevise/selectConfig.html'">
+				</div>
+			</r2o-slide>
+			<r2o-slide>
+				<div class="quotes" ng-include="'app/modules/requests/templates/modifyQuote/selectItemToRevise/selectQuote.html'">
+				</div>
+			</r2o-slide>			
+			
+		</r2o-slide-box>	
+
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>	
+		<!-- 
+		<button ng-if="isReviseConfigurable" ng-click="changeTabContentTo(2)" class="footerButton {{(tabIndex.index == 2) ? 'activeButton' : ''}}">
+			<i class="icon-note"></i>
+			<div class="footerButtonText">Config</div>
+		</button>
+		<button ng-click="changeTabContentTo(3)" class="footerButton {{(tabIndex.index == 3) ? 'activeButton' : ''}}">
+			<i class="icon-quotes"></i>
+			<div class="footerButtonText">Quotes</div>
+		</button>
+	-->
+		
+
+	</r2o-footer>
+</r2o-view>

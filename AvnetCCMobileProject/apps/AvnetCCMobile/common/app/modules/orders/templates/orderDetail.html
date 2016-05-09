@@ -1,0 +1,28 @@
+<r2o-view title="'Order Details'" class='grid-block vertical view-order-detail'>
+    <r2o-content class='grid-block vertical has-header has-footer'>
+
+        <div class="av-collapsible" ng-click="showContactUs=!showContactUs">
+            Contact Us
+            <span class="av-collapsible-icon"><i
+                    class="{{showContactUs?'icon-minus-box':'icon-plus-box'}}"></i></span>
+        </div>
+
+        <div class="av-collapsible-content" ng-show="showContactUs">
+            Contact Us Content
+        </div>
+
+        <div class="av-collapsible" ng-click="showShippingStatus=!showShippingStatus">
+            Shipping Status
+            <span class="av-collapsible-icon"><i
+                    class="{{showShippingStatus?'icon-minus-box':'icon-plus-box'}}"></i></span>
+        </div>
+        <div class="av-collapsible-content" ng-show="showShippingStatus">
+            Shipping Status Content
+        </div>
+    </r2o-content>
+    <r2o-footer>
+        <button class="footerButton backButton">
+            <div ng-click="handleBackButton()" class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+        </button>
+    </r2o-footer>
+</r2o-view>

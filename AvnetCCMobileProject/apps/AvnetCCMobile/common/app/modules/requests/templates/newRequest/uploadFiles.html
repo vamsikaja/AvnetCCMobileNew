@@ -1,0 +1,36 @@
+<r2o-view title ="'Upload Files'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer uploadFiles">
+		<ul>
+			<div class="uploadFile">
+				<div class="uploadIcon">
+					<i class="icon-share"></i><!-- change icon -->
+				</div>
+				<div class="uploadText">
+					Add files for Upload
+				</div>
+			</div>
+			<li class="singleLineListItem">
+    			<span class="listText">File Name 1</span>
+    			<div class="closeIcon">
+    				<i class="icon-refresh"></i>
+    			</div>
+    		</li>
+    		<li class="singleLineListItem">
+    			<span class="listText">File Name 2</span>
+    			<div class="closeIcon">
+    				<i class="icon-refresh"></i><!-- change icon -->
+    			</div>
+    		</li>
+		</ul>
+		<div class="selectionButtons rightBottom">
+        	<button class="applyButton selectionButton">ADD FILES</button>
+        	<button class="cancelButton selectionButton">CANCEL</button>
+        	<div style="clear:both"></div>
+        </div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

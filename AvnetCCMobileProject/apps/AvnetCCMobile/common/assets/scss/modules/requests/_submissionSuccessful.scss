@@ -1,0 +1,23 @@
+/* Submission Successful View Styles */
+.submissionSuccessful{
+	position: relative;
+	.successIcon{
+		font-size: 4rem;
+		text-align: center;
+		margin-top: 75px;
+		margin-bottom: 10px;
+		color: $secondaryGreen;
+	}	
+	.successText{
+		text-align: center;
+	}
+	.selectionButtons{
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		.selectionButton{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.uploadFiles{
+	.uploadFile{
+		margin: 0.625rem;
+		padding: 20px;
+		background: $white;
+		border: 1px dotted;
+		text-align: center;
+		.uploadIcon{
+			font-size: 4rem;
+		}
+	}
+	.singleLineListItem{
+		padding: 0.625rem;
+		position: relative;
+		.closeIcon{
+			position: absolute;
+			right: 0.625rem;
+			top: 0.625rem;
+			font-size: 1.25rem;
+			color: $primaryRed;
+		}
+		&:first-child{
+			@include addBorderTop();
+		}
+	}
+}

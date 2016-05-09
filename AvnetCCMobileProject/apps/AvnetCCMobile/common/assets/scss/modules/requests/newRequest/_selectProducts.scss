@@ -1,0 +1,131 @@
+.selectProducts{
+	r2o-slide{
+		position: relative;
+		.slide{
+			height: 100%;
+		}
+	}
+
+	.searchTab{
+		.contactsScrolling{
+			border-bottom: 59px solid transparent;
+		}
+	}
+
+	r2o-alphabet-scrolling{
+		top: 80px;
+		&.searchAlphaSCroll{
+			bottom:60px;
+		}
+	}
+
+	.contactsScrolling{
+		height : 100%;
+		border-top: 75px solid transparent;
+		padding-right: 25px;
+		overflow: hidden;
+		overflow-y:auto; 
+		.contactsList{
+			.contact{
+				padding: 0.625rem;
+				position: relative;
+				padding-left: 37px;
+				.listIcon{
+					position: absolute;
+					left: 0;
+					top: 0;
+					padding: 8px;
+				}
+				.icon-star-filled{ 
+					color: $secondaryBlue;
+				}
+				&.gray{
+					opacity: 0.3;
+				}
+			}
+		}
+	}
+	.selectedProducts{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 75px;
+		padding: 0.625rem;
+		overflow: hidden;
+		overflow-y: scroll;
+		border-bottom: 1px solid $neutralLightGray;
+		.product{
+			color: $secondaryBlue;
+			text-decoration: underline;
+			margin-right: 5px;
+		}
+	}
+}
+
+.removeAllProductsModal{
+	.r2oModalContent{
+		padding-top: 50px;
+	}
+	.subHeading{
+		position: relative;
+		padding: 15px;
+		.selectAll{
+			position: absolute;
+			right: 0.3125rem;
+			top: 0.3125rem;
+			bottom: 0.3125rem;
+			border-radius: 0.3125rem;
+			padding: 0.3125rem;
+			background: $secondaryBlue;
+			.selectCheckBox{
+				font-size: 1.5rem;
+				vertical-align: middle;
+			}
+			.allLabel{
+				vertical-align: middle;
+			}
+		}
+	}
+	.removeProductsList{
+		.product{
+			padding: 0.625rem;
+		}
+	}
+
+	.selectionButtons{
+		padding: 10px;
+	}
+}
+
+.selectProducts .contactsScrolling .contactsList .contact .listIcon{
+	padding:10px;
+}
+
+.productRemoveConfirmationModal{
+	.r2oModal{
+		background: rgba(0,0,0,0.4);
+		.r2oModalContent{
+			position: relative;
+			.confirmationContent{
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+				padding: 0 5px;
+				button{
+					display: block;
+					width: 100%;
+					background: #FFF;
+					border-radius: 5px;
+					margin: 5px 0;
+					&.removeProduct{
+						color: $primaryRed;
+					}
+					&.cancel{
+						color: $secondaryBlue;
+					}
+				}
+			}
+		}
+	}
+}

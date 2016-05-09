@@ -1,0 +1,20 @@
+<div  class="notesListWrapper borderBottom}}" ng-hide="notesDescriptionShown" >
+	<div class="noDataMessage master" ng-show="quoteDetail==undefined || quoteDetail.notes.length==0">
+		There are no notes associated with this request at this time.
+	</div>
+	<ul class="notesList">
+		<li ng-repeat="note in quoteDetail.notes" class="note" ng-click="showNotesDescription($index)">
+			<div class="notesIcon"><i class="{{ note.NoteType =='Email Note' ? 'icon-email': 'icon-speech-dots'}}"></i></div>
+			<div>
+				<div class="subject">{{getNotesHeading(note)}}</div>
+				<div class="endUser">{{note.CreateUserName}}</div>
+			</div>
+			<div class="dateWrapper">
+				<div class="date">{{note.CreateDate}}</div>
+				<div class="rightChevron"><i class="icon-chevron-right"></i></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="notesDescription detail" ng-show="notesDescriptionShown" ng-include="'app/modules/requests/templates/quoteDetail/notesDescription.html'">
+</div>

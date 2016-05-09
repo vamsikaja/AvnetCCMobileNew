@@ -1,0 +1,3147 @@
+/** variables */
+/** mixins */
+/** backgroundLinearGradient Mixin */
+/** get Request Status Styles Mixin */
+/** get Menu Icon Styles Mixin */
+/** get Global Background Mixin */
+/** overflow ellipsis Mixin */
+/** add border-top Mixin */
+/** get TextArea Styles Mixin */
+/** get Input Styles Mixin */
+@minin getInputStyles() {
+  background-color: #FFF;
+  border: none;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  line-height: normal; }
+
+/** get Input Focus Styles Mixin */
+/** get Input Error STyles Mixin */
+/* fonts */
+/* ClanBook Font */
+@font-face {
+  font-family: "ClanBook";
+  src: url("fonts/ClanOT-Book.eot") format("eot"), url("fonts/ClanOT-Book.otf") format("otf"), url("fonts/ClanOT-Book.svg") format("svg"), url("fonts/ClanOT-Book.woff") format("woff"), url("fonts/ClanOT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* ClanMedium Font */
+@font-face {
+  font-family: "ClanMedium";
+  src: url("fonts/ClanOT-Medium.eot") format("eot"), url("fonts/ClanOT-Medium.otf") format("otf"), url("fonts/ClanOT-Medium.svg") format("svg"), url("fonts/ClanOT-Medium.woff") format("woff"), url("fonts/ClanOT-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* ClanNews Font */
+@font-face {
+  font-family: "ClanNews";
+  src: url("fonts/ClanOT-News.eot") format("eot"), url("fonts/ClanOT-News.otf") format("otf"), url("fonts/ClanOT-News.svg") format("svg"), url("fonts/ClanOT-News.woff") format("woff"), url("fonts/ClanOT-News.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Base styles */
+* {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent; }
+
+html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "ClanNews";
+  font-size: 16px;
+  overflow: hidden; }
+
+ui-view {
+  background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+  background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+  background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1); }
+
+button:focus {
+  outline: none; }
+
+button:disabled {
+  background: #b2b2b2; }
+
+/*.button:hover, button:hover, .button:focus, button:focus{
+	background: $neutralLightGray;
+}*/
+ul {
+  margin: 0; }
+  ul li {
+    border-bottom: 1px solid #b2b2b2;
+    font-size: 0.875rem; }
+    ul li .leftListIcon, ul li .rightListIcon {
+      position: absolute;
+      top: 0.625rem; }
+    ul li .leftListIcon {
+      left: 0.625rem;
+      font-size: 1.5rem; }
+    ul li .rightListIcon {
+      right: 0.625rem;
+      top: 12px;
+      font-size: 1rem; }
+    ul li.hasLeftIcon {
+      padding-left: 2.5rem !important; }
+    ul li.hasRightIcon {
+      padding-right: 2.5rem !important; }
+    ul li.singleLineListItem {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      ul li.singleLineListItem .listIconMainText {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      ul li.singleLineListItem .listIcon {
+        font-size: 1.5rem;
+        vertical-align: middle; }
+      ul li.singleLineListItem .listText {
+        vertical-align: middle; }
+      ul li.singleLineListItem .listSubText {
+        /*padding-left: 27px;*/
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      ul li.singleLineListItem .selectedIcon {
+        visibility: hidden;
+        color: #8cb31a; }
+    ul li.selected {
+      color: #8cb31a; }
+      ul li.selected .selectedIcon {
+        visibility: visible; }
+    ul li .count {
+      display: inline-block;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #FFF;
+      background: #ffa039;
+      text-align: center; }
+      ul li .count.filledNotificationsList {
+        background: #8cb31a; }
+      ul li .count.correctlyFilled {
+        background: #8cb31a; }
+  ul.requiredList .requiredItem {
+    position: relative;
+    padding: 0.625rem; }
+    ul.requiredList .requiredItem .icon-warning {
+      color: #cd1d1f; }
+    ul.requiredList .requiredItem .icon-checkmark {
+      color: #8cb31a; }
+    ul.requiredList .requiredItem .requiredItemName {
+      font-family: "ClanNews";
+      font-size: 0.825rem;
+      color: #2a2e34; }
+      ul.requiredList .requiredItem .requiredItemName.error {
+        color: #cd1d1f; }
+    ul.requiredList .requiredItem .requiredItemStatus {
+      font-family: "ClanBook";
+      font-size: 0.8125rem;
+      color: #575757;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      ul.requiredList .requiredItem .requiredItemStatus.error {
+        color: #cd1d1f; }
+    ul.requiredList .requiredItem:first-child {
+      border-top: 1px solid #b2b2b2; }
+    ul.requiredList .requiredItem .count {
+      display: inline-block;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #FFF;
+      background: #ffa039;
+      text-align: center; }
+      ul.requiredList .requiredItem .count.filledNotificationsList {
+        background: #8cb31a; }
+      ul.requiredList .requiredItem .count.correctlyFilled {
+        background: #8cb31a; }
+
+label {
+  font-size: inherit;
+  margin-bottom: 0;
+  color: inherit; }
+
+input, textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0; }
+
+.error input {
+  color: #cd1d1f;
+  border: 1px solid #cd1d1f;
+  box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+  -ms-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75); }
+  .error input::-webkit-input-placeholder {
+    color: #cd1d1f; }
+  .error input:-ms-input-placeholder {
+    color: #cd1d1f; }
+
+input {
+  margin: 0 !important;
+  line-height: normal !important;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none; }
+  input:focus {
+    outline: none;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+    -ms-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35); }
+
+/*textarea{
+	-webkit-user-select: text;
+	-ms-user-select: text;
+	user-select:text;
+	overflow-scroll:true;
+}*/
+.hideElement {
+  opacity: 0; }
+
+.showElement {
+  opacity: 1 !important; }
+
+/* header overlay styles */
+.headerOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 3.125rem;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+  .headerOverlay.ng-hide {
+    opacity: 0; }
+  .headerOverlay.changeRight {
+    right: 35px; }
+  .headerOverlay .pointingHeaderButton.pointerWrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-pack: end;
+    height: 3.125rem; }
+    .headerOverlay .pointingHeaderButton.pointerWrapper .line.horizontal {
+      height: 0.25rem;
+      width: 4.6875rem;
+      background: #FFF; }
+    .headerOverlay .pointingHeaderButton.pointerWrapper .circle {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 0.5rem;
+      background: #cd1d1f;
+      border: 2px solid #FFF; }
+    .headerOverlay .pointingHeaderButton.pointerWrapper .helpText {
+      color: #FFF;
+      text-align: center; }
+
+.headerRequestDetailButton {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-right: 10px;
+  z-index: 99;
+  color: white;
+  font-size: 1.5rem;
+  padding-top: 13px;
+  width: 30px;
+  height: 50px;
+  text-align: center; }
+
+.listOptionButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  /* change */
+  text-align: center;
+  color: #FFF;
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-transition: all 0.23s ease-in-out;
+  -moz-transition: all 0.23s ease-in-out;
+  transition: all 0.23s ease-in-out;
+  /*&.listOptionButton1{
+		right: 100px;
+	}*/ }
+
+.clearFix {
+  clear: both; }
+
+.noBorderBottom {
+  border-bottom: none; }
+
+.noNetworkStatus {
+  background: #ffa039;
+  color: #2a2e34;
+  font-family: "ClanBook";
+  text-align: center;
+  padding: 0.3125rem 0;
+  /*position: fixed;
+	width: 100%;*/
+  z-index: 999; }
+  .noNetworkStatus .noNetworkInfo {
+    font-size: 0.75rem; }
+
+.noNetwork {
+  text-align: center; }
+  .noNetwork .noNetworkIcon {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    height: 70px;
+    background: #ffa039;
+    width: 70px;
+    font-size: 4rem;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #FFF; }
+
+.noNetworkMargin {
+  /*margin-top: 1.6875rem;*/ }
+
+/* selection button styles */
+.selectionButtons.rightBottom {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.625rem; }
+
+.selectionButtons.center {
+  text-align: center; }
+  .selectionButtons.center .selectionButton {
+    margin-left: 0;
+    float: none; }
+
+.selectionButtons .selectionButton {
+  float: right;
+  padding: 10px;
+  color: #FFF;
+  font-family: "ClanMedium";
+  margin: 0;
+  border-radius: 3px; }
+  .selectionButtons .selectionButton.cancelButton {
+    background: #575757; }
+  .selectionButtons .selectionButton.applyButton {
+    background: #0593bc;
+    margin-left: 15px; }
+    .selectionButtons .selectionButton.applyButton:focus, .selectionButtons .selectionButton.applyButton:hover {
+      background: #057893; }
+    .selectionButtons .selectionButton.applyButton:disabled {
+      background: #b2b2b2;
+      /* change */ }
+    .selectionButtons .selectionButton.applyButton.disable {
+      background: #b2b2b2; }
+      .selectionButtons .selectionButton.applyButton.disable:focus, .selectionButtons .selectionButton.applyButton.disable:hover {
+        background: #898989; }
+
+.row {
+  font-size: 0.875rem;
+  color: #2a2e34;
+  padding: 0.625rem;
+  position: relative; }
+  .row .labelName {
+    font-family: "ClanMedium"; }
+  .row .value {
+    padding-top: 3px;
+    font-family: "ClanNews";
+    /*white-space: pre-line;*/ }
+
+.checkBoxWrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  padding-top: 0.625rem; }
+  .checkBoxWrapper .checkBox {
+    width: 1.875rem;
+    height: 1.875rem;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    /*border:1px solid $primaryBlack;*/
+    color: #FFF;
+    background: #FFF;
+    text-align: center; }
+    .checkBoxWrapper .checkBox .icon-checkmark {
+      font-size: 2rem; }
+  .checkBoxWrapper .checkBoxContent {
+    margin: 0 10px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .checkBoxWrapper.selected .checkBox {
+    background: #8cb31a !important;
+    box-shadow: none !important;
+    border: none !important; }
+  .checkBoxWrapper.selected .checkBoxContent {
+    color: #8cb31a !important; }
+
+.error .checkBox {
+  box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+  border: 1px solid #cd1d1f; }
+
+.error .checkBoxContent {
+  color: #cd1d1f !important; }
+
+/* styled checkbox styles */
+.styledCheckBox .checkBoxBackground {
+  height: 40px;
+  width: 80px;
+  background: #AAA;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 3px; }
+  .styledCheckBox .checkBoxBackground .enableButton {
+    height: 100%;
+    width: 35px;
+    background: #FFF;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+  .styledCheckBox .checkBoxBackground.selected {
+    background: #8cb31a; }
+    .styledCheckBox .checkBoxBackground.selected .enableButton {
+      margin-left: 39px; }
+
+/* search box wrapper styles */
+.searchBoxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .searchBoxWrapper .searchBox {
+    background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+    background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+    background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+    background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+    background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+    background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1);
+    padding: 0.625rem; }
+    .searchBoxWrapper .searchBox .searchIcon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.25rem; }
+    .searchBoxWrapper .searchBox input {
+      height: 100%;
+      margin: 0;
+      line-height: normal;
+      padding-left: 40px;
+      box-sizing: border-box; }
+
+.searchBoxWrapper.bottom {
+  bottom: 0;
+  top: auto; }
+
+.subHeading {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  background: #b2b2b2;
+  color: #FFF;
+  font-family: "ClanMedium";
+  font-size: 0.875rem;
+  padding: 0.625rem; }
+
+/* Status background color based on classnames */
+div[class$="New"] {
+  background-color: #2a2e34 !important; }
+
+div[class$="Hold"] {
+  background-color: #ffa039 !important; }
+
+div[class$="Cancelled"] {
+  background-color: #cd1d1f !important; }
+
+div[class$="Cancel"] {
+  background-color: #cd1d1f !important; }
+
+div[class$="Complete"] {
+  background-color: #8cb31a !important; }
+
+div[class$="InProcess"] {
+  background-color: #0593bc !important; }
+
+div[class$="Open"] {
+  background-color: #0593bc !important; }
+
+.requestStatusValue {
+  padding: 7px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+/* views enter, leave styles */
+ui-view.ng-enter, ui-view.ng-leave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; }
+
+.slideForward ui-view.ng-enter {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  left: 100%; }
+
+.slideForward ui-view.ng-enter.ng-enter-active {
+  left: 0; }
+
+.slideForward ui-view.ng-leave {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  left: 0%; }
+
+.slideForward ui-view.ng-leave.ng-leave-active {
+  left: -100%; }
+
+.slideReverse ui-view.ng-enter {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  left: -100%; }
+
+.slideReverse ui-view.ng-enter.ng-enter-active {
+  left: 0; }
+
+.slideReverse ui-view.ng-leave {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+  left: 0%; }
+
+.slideReverse ui-view.ng-leave.ng-leave-active {
+  left: 100%; }
+
+.noDataMessage {
+  padding: 10px;
+  color: #575757;
+  font-family: "ClanBook";
+  line-height: 1.6;
+  /*font-size: 0.75rem;*/ }
+
+.master.ng-hide-remove {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  -webkit-animation: master-slide-right 0.2s;
+  animation: master-slide-right 0.2s; }
+
+.master.ng-hide-add {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  -webkit-animation: master-slide-left 0.2s;
+  animation: master-slide-left 0.2s; }
+
+@-webkit-keyframes master-slide-left {
+  0% {
+    left: 0; }
+  100% {
+    left: -100%; } }
+
+@keyframes master-slide-left {
+  0% {
+    left: 0; }
+  100% {
+    left: -100%; } }
+
+@-webkit-keyframes master-slide-right {
+  0% {
+    left: -100%; }
+  100% {
+    left: 0; } }
+
+@keyframes master-slide-right {
+  0% {
+    left: -100%; }
+  100% {
+    left: 0; } }
+
+.detail.ng-hide-add {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  -webkit-animation: detail-slide-right 0.2s;
+  animation: detail-slide-right 0.2s; }
+
+.detail.ng-hide-remove {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  -webkit-animation: detail-slide-left 0.2s;
+  animation: detail-slide-left 0.2s; }
+
+@-webkit-keyframes detail-slide-left {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0; } }
+
+@keyframes detail-slide-left {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0; } }
+
+@-webkit-keyframes detail-slide-right {
+  0% {
+    left: 0; }
+  100% {
+    left: 100%; } }
+
+@keyframes detail-slide-right {
+  0% {
+    left: 0; }
+  100% {
+    left: 100%; } }
+
+/* ClanBook Font */
+@font-face {
+  font-family: "ClanBook";
+  src: url("fonts/ClanOT-Book.eot") format("eot"), url("fonts/ClanOT-Book.otf") format("otf"), url("fonts/ClanOT-Book.svg") format("svg"), url("fonts/ClanOT-Book.woff") format("woff"), url("fonts/ClanOT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* ClanMedium Font */
+@font-face {
+  font-family: "ClanMedium";
+  src: url("fonts/ClanOT-Medium.eot") format("eot"), url("fonts/ClanOT-Medium.otf") format("otf"), url("fonts/ClanOT-Medium.svg") format("svg"), url("fonts/ClanOT-Medium.woff") format("woff"), url("fonts/ClanOT-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* ClanNews Font */
+@font-face {
+  font-family: "ClanNews";
+  src: url("fonts/ClanOT-News.eot") format("eot"), url("fonts/ClanOT-News.otf") format("otf"), url("fonts/ClanOT-News.svg") format("svg"), url("fonts/ClanOT-News.woff") format("woff"), url("fonts/ClanOT-News.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Headers */
+h1 {
+  font-family: "ClanMedium";
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1rem; }
+
+h2 {
+  font-family: "ClanMedium";
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1rem; }
+
+h3 {
+  font-family: "ClanMedium";
+  font-weight: bold;
+  font-size: 0.925rem;
+  line-height: 1rem; }
+
+h4 {
+  font-family: "ClanNews";
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1rem; }
+
+p {
+  font-family: "ClanNews";
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1rem; }
+
+ui-view.ng-scope {
+  width: 100%; }
+
+.no-border {
+  border: none !important; }
+
+.padding {
+  padding: 5px !important; }
+
+.top-padding {
+  padding-top: 15px !important; }
+
+.ios #wl_ios7bar {
+  background-color: white;
+  height: 15pt;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.ios body.wl_ios7 {
+  padding-top: 0 !important; }
+
+.ios r2o-nav-bar {
+  -webkit-align-items: flex-end;
+  align-items: flex-end; }
+
+.ios .pageTitle {
+  padding-bottom: 10px !important; }
+
+.ios .headerRequestDetailButton {
+  padding-top: 18px; }
+
+.ios .increaseZIndex {
+  z-index: 99; }
+
+.ios .modalHeader {
+  -webkit-align-items: flex-end !important;
+  align-items: flex-end !important; }
+
+.ios .modalHeaderText {
+  padding-bottom: 10px !important; }
+
+.ios .pointingHeaderButton {
+  padding-top: 10px; }
+
+.android .grid-block, .android .grid-frame {
+  height: 100%; }
+
+.android .grid-content .grid-block {
+  height: auto; }
+
+.android .count {
+  padding-top: 2px; }
+
+.av-list .av-list-item .av-list-item-link {
+  display: block;
+  height: 4.125rem;
+  position: relative;
+  padding: 0.625rem;
+  background: #fafafa;
+  z-index: 1; }
+
+.av-list .av-list-item.even .av-list-item-link {
+  background-color: white; }
+
+.av-list .av-list-item .av-list-item-heading {
+  font-size: 0.875rem;
+  color: #2a2e34;
+  font-family: "ClanMedium";
+  max-height: 1.75rem;
+  overflow: hidden;
+  line-height: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-right: 6.5rem; }
+
+.av-list .av-list-item .av-list-item-subheading {
+  font-family: "ClanBook";
+  font-size: 0.8125rem;
+  color: #575757;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 6.5rem; }
+
+.av-list .av-list-item .av-list-item-date {
+  position: absolute;
+  font-size: 0.75rem;
+  color: #575757;
+  right: 0.625rem;
+  top: 0.625rem;
+  width: 6.1875rem;
+  text-align: right; }
+
+.av-list .av-list-item .av-list-item-status {
+  color: #FFF;
+  padding: 0 0.3125rem;
+  width: 4.375rem;
+  text-align: center;
+  font-family: "ClanBook";
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: #0593bc;
+  font-size: 0.625rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 0.625rem; }
+  .av-list .av-list-item .av-list-item-status.Open {
+    background-color: #0593bc; }
+  .av-list .av-list-item .av-list-item-status.Complete {
+    background-color: #8cb31a; }
+  .av-list .av-list-item .av-list-item-status.Partial {
+    background-color: #eb6730; }
+  .av-list .av-list-item .av-list-item-status .av-list-item-status-value {
+    padding: 7px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; }
+
+.av-list .av-list-item .av-list-item-chevron {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.65rem; }
+
+.button.av-tool-button {
+  background-color: #cd1d1f;
+  font-family: "ClanBook";
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.3rem;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #DADADA;
+  box-shadow: 1px 4px 20px -10px black;
+  font-weight: 900;
+  margin: 8px 12px;
+  padding: 1.2rem 0.8rem; }
+  .button.av-tool-button:focus, .button.av-tool-button:hover {
+    background-color: #b71a1c; }
+
+div.av-custom-title-bar {
+  background-color: #cd1d1f;
+  color: #FFFFFF;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(111, 111, 111, 0.2);
+  margin: 2px;
+  min-height: 3rem;
+  max-height: 3rem;
+  line-height: 2.5rem;
+  vertical-align: text-bottom; }
+  div.av-custom-title-bar a.icon-search {
+    color: #FFFFFF;
+    font-size: 1.25rem; }
+  div.av-custom-title-bar a.icon-menu-dot {
+    color: #FFFFFF;
+    font-size: 1.25rem; }
+
+div.av-custom-title-bar > div > h1 {
+  color: #FFFFFF;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ClanNews;
+  line-height: 1.25rem; }
+
+.av-background {
+  background-image: url("../images/loginBackgroundImage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+
+/* styles of templates from directives directives */
+/* Styles of r2oNavBar directive template */
+r2o-view, r2o-content, r2o-nav-view, r2o-nav-bar {
+  display: block; }
+
+r2o-nav-bar, r2o-footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  color: #FFF;
+  font-family: "ClanMedium";
+  font-size: 1.25rem;
+  z-index: 9;
+  left: 0; }
+
+/* r2o nav-bar styles */
+r2o-nav-bar {
+  top: 0;
+  background-color: #cd1d1f;
+  height: 3.125rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center; }
+  r2o-nav-bar .pageTitle {
+    padding: 0 0.625rem;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  r2o-nav-bar.paddingRight {
+    padding-right: 20px;
+    padding-left: 20px; }
+
+/* r2o footer styles */
+r2o-footer {
+  bottom: 0;
+  background: #E5E5E5;
+  height: 2.75rem;
+  z-index: 999; }
+  r2o-footer .footerButton {
+    display: block;
+    margin: 0;
+    height: 2.75rem;
+    width: 2.75rem;
+    padding: 0;
+    float: right;
+    color: #2a2e34;
+    border-left-width: 1px;
+    border-left-style: solid;
+    font-size: 1.25rem;
+    border-color: #2a2e34;
+    -webkit-border-image: -moz-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    -webkit-border-image: -webkit-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    -webkit-border-image: -webkit-gradient(linear, 90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    -webkit-border-image: -o-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    -webkit-border-image: -ms-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    border-image: -moz-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    border-image: -webkit-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    border-image: -webkit-gradient(linear, 90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    border-image: -o-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    border-image: -ms-linear-gradient(90deg, #b2b2b2 0%, rgba(178, 178, 178, 0) 100%);
+    /*@include border-image(90deg, rgba(178, 178, 178, 1) 0%, rgba(178, 178, 178, 0) 100%);*/
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 19.72%, white 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0) 19.72%, white 100%);
+    background: -ms-linear-gradient(180deg, rgba(255, 255, 255, 0) 19.72%, white 100%); }
+    r2o-footer .footerButton .footerButtonText {
+      font-size: 0.625rem;
+      padding-top: 0.3125rem; }
+    r2o-footer .footerButton:last-child {
+      border-left: none; }
+    r2o-footer .footerButton.activeButton {
+      background-color: #FFF;
+      color: #cd1d1f; }
+      r2o-footer .footerButton.activeButton:hover {
+        background: #FFF; }
+      r2o-footer .footerButton.activeButton:focus {
+        background: #FFF; }
+    r2o-footer .footerButton.backButton {
+      background: #cd1d1f;
+      color: #FFF;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center; }
+      r2o-footer .footerButton.backButton .backButtonSpan {
+        margin: 0 auto;
+        font-size: 2rem;
+        width: 100%; }
+
+/* r2o Menu styles */
+r2o-menu {
+  float: right; }
+  r2o-menu .r2oMenuContent {
+    position: absolute;
+    bottom: 2.75rem;
+    right: 0;
+    width: 66%;
+    background: #cd1d1f;
+    opacity: 0.95;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 9999; }
+    r2o-menu .r2oMenuContent a {
+      display: inline-block;
+      background: transparent;
+      margin: 0;
+      width: 100%;
+      padding: 0px;
+      line-height: 2.5rem;
+      font-size: 1rem;
+      font-family: ClanMedium;
+      border-bottom: 1px solid #FFF;
+      text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.45);
+      color: white;
+      text-align: center;
+      /*&:last-child{
+				border-bottom:none;
+			}*/ }
+      r2o-menu .r2oMenuContent a.version {
+        font-size: 0.75rem; }
+    r2o-menu .r2oMenuContent.ng-hide {
+      right: -66%;
+      min-height: 0; }
+  r2o-menu .menuButton {
+    margin: 0;
+    height: 2.75rem;
+    width: 2.75rem;
+    padding: 0;
+    background: linear-gradient(left, #eb4b48 0%, #e53532 50%, #e22422 100%);
+    background: -webkit-linear-gradient(left, #eb4b48 0%, #e53532 50%, #e22422 100%);
+    background: -ms-linear-gradient(left, #eb4b48 0%, #e53532 50%, #e22422 100%);
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    /* Menu Button Style */ }
+    r2o-menu .menuButton .menuToggle {
+      cursor: pointer;
+      margin: 0 auto;
+      padding-left: 1.25em;
+      position: relative;
+      width: 22px;
+      height: 2rem; }
+    r2o-menu .menuButton .menu-global {
+      backface-visibility: hidden;
+      position: absolute;
+      left: 0;
+      border-top: 2px solid #fff;
+      width: 100%;
+      transition: 0.55s; }
+    r2o-menu .menuButton .menu-top {
+      top: 7px; }
+    r2o-menu .menuButton .menu-middle {
+      top: 14px; }
+    r2o-menu .menuButton .menu-bottom {
+      top: 21px; }
+    r2o-menu .menuButton .menu-top-click {
+      -webkit-backface-visibility: hidden;
+      top: 15px;
+      -webkit-transform: rotate(50deg);
+      transition: 0.55s 0.5s; }
+    r2o-menu .menuButton .menu-middle-click {
+      opacity: 0;
+      transition: 0.55s 0.5s; }
+    r2o-menu .menuButton .menu-bottom-click {
+      -webkit-backface-visibility: hidden;
+      top: 15px;
+      -webkit-transform: rotate(-410deg);
+      transition: 0.55s 0.5s; }
+
+.has-header {
+  padding-top: 3.125rem; }
+
+.has-footer {
+  padding-bottom: 2.75rem; }
+
+.remove-header {
+  padding: 0; }
+
+/* model Directive styles*/
+r2o-modal .r2oModal {
+  background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+  background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+  background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  /*width: 100%;
+		height: 100%;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background-clip: content-box; }
+  r2o-modal .r2oModal.ng-hide {
+    top: 100%; }
+  r2o-modal .r2oModal .r2oModalContent {
+    height: 100%; }
+    r2o-modal .r2oModal .r2oModalContent .modalHeader {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 3.125rem;
+      font-size: 1.25rem;
+      font-family: "ClanMedium";
+      color: #FFF;
+      background: #cd1d1f;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center; }
+
+r2o-modal.helpModal .r2oModal {
+  background: transparent; }
+  r2o-modal.helpModal .r2oModal.ng-hide {
+    top: 0 !important;
+    opacity: 0; }
+  r2o-modal.helpModal .r2oModal .overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7); }
+    r2o-modal.helpModal .r2oModal .overlay .helpText {
+      color: #FFF;
+      font-size: 0.875rem; }
+    r2o-modal.helpModal .r2oModal .overlay .swipeThumbWrapper {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      box-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -o-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: justify;
+      padding-right: 1.25rem; }
+      r2o-modal.helpModal .r2oModal .overlay .swipeThumbWrapper .swipeThumb {
+        height: 4.6875rem;
+        width: 9.375rem;
+        background-image: url("../images/thumbIcons/Thumb-H.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat; }
+      r2o-modal.helpModal .r2oModal .overlay .swipeThumbWrapper .helpText {
+        width: 200px; }
+    r2o-modal.helpModal .r2oModal .overlay .pointerWrapper .line.vertical {
+      width: 0.25rem;
+      height: 4.6875rem;
+      background: #FFF; }
+    r2o-modal.helpModal .r2oModal .overlay .pointerWrapper .line.horizontal {
+      height: 0.25rem;
+      width: 4.6875rem;
+      background: #FFF; }
+    r2o-modal.helpModal .r2oModal .overlay .pointerWrapper .circle {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 0.5rem;
+      background: #cd1d1f;
+      border: 2px solid #FFF; }
+
+/* Slide box styles */
+r2o-slide-box {
+  display: block;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important; }
+
+.slideBox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: hidden; }
+
+r2o-slide {
+  display: block;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  overflow-y: auto; }
+
+.slide {
+  overflow: hidden;
+  overflow-y: auto; }
+
+/* alphabetical scrolling */
+r2o-alphabet-scrolling {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 25px;
+  bottom: 0;
+  top: 0;
+  /*padding: 10px 0;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column; }
+  r2o-alphabet-scrolling .alphabet {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    color: #cd1d1f;
+    font-size: 0.75rem; }
+
+/* product specific questions templates styles */
+.mandatory {
+  color: #cd1d1f; }
+
+.questionListItem label {
+  padding: 0.625rem;
+  margin-bottom: 0; }
+
+.questionInputListItem .dateInputWrapper {
+  position: relative; }
+  .questionInputListItem .dateInputWrapper .calendarIcon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 1.5rem;
+    color: #0593bc; }
+  .questionInputListItem .dateInputWrapper input {
+    padding-right: 40px; }
+
+.questionInputListItem input {
+  display: block;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  min-height: 34px;
+  margin: 0;
+  margin-top: 0.5rem; }
+
+.questionInputListItem .icon-warning {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #cd1d1f; }
+
+.questionInputListItem .icon-checkmark {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #8cb31a; }
+
+.questionInputListItem .error {
+  color: #cd1d1f; }
+
+.questionSelectListItem select {
+  margin-bottom: 0; }
+
+.questionInputRadioItem .options {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .questionInputRadioItem .options .option {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #b2b2b2;
+    color: #FFF;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-right: 1px solid #575757; }
+    .questionInputRadioItem .options .option:last-child {
+      border-right: none; }
+    .questionInputRadioItem .options .option.selected {
+      background: #8cb31a; }
+
+.questionInputRadioItem .labelText {
+  margin-bottom: 10px; }
+
+.questionInputRadioItem .icon-warning {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #cd1d1f; }
+
+.questionInputRadioItem .icon-checkmark {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #8cb31a; }
+
+.questionInputRadioItem .toggleWrapper {
+  padding: 15px 0;
+  padding-right: 100px;
+  position: relative; }
+  .questionInputRadioItem .toggleWrapper .styledCheckBox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 10px;
+    padding-top: 9px; }
+
+.questionMultiSelectListItem {
+  padding: 0.625rem;
+  position: relative; }
+  .questionMultiSelectListItem .icon-warning {
+    color: #cd1d1f; }
+  .questionMultiSelectListItem .icon-checkmark {
+    color: #8cb31a; }
+  .questionMultiSelectListItem .error {
+    color: #cd1d1f; }
+
+/*.questionMultiSelectListItem{
+	padding: 0.625rem;
+	position: relative;
+	padding-right: 44px;
+	white-space: normal !important;
+	.listIcon{
+		position: absolute;
+		top: 0.625rem;
+		right: 0.625rem;
+	}
+	.listText{
+		display: inline-block;
+	}
+}*/
+.av-collapsible {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  color: #FFF;
+  font-family: "ClanMedium";
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  background: #cd1d1f;
+  position: relative; }
+  .av-collapsible .av-collapsible-icon {
+    position: absolute;
+    top: 0.4375rem;
+    right: 0.625rem;
+    font-size: 1.25rem; }
+
+/* Login View Styles */
+.loginView {
+  background-image: url("../images/loginBackgroundImage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  .loginView .noNetwork {
+    background: rgba(255, 255, 255, 0.7); }
+    .loginView .noNetwork .noNetworkIcon {
+      margin-top: 150px; }
+    .loginView .noNetwork .avnetLogo {
+      background: #FFF;
+      background-image: url("../images/avnetLogo.png");
+      width: 200px;
+      position: absolute;
+      height: 72px;
+      right: 0;
+      top: 0;
+      background-size: 100% 100%; }
+    .loginView .noNetwork .avnetTagline {
+      background-image: url("../images/avnetTagline.jpg");
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 200px;
+      height: 50px;
+      background-size: 100% 100%; }
+  .loginView .loginLabel {
+    font-size: 1.063rem;
+    color: #333;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    text-align: center; }
+    .loginView .loginLabel .error {
+      color: #cd1d1f; }
+  .loginView .loginForm .inputWrapper {
+    display: block;
+    position: relative;
+    color: #FFF;
+    font-size: 1rem;
+    background-color: rgba(51, 51, 51, 0.7);
+    height: 4.063rem;
+    padding: 30px 150px 10px 30px;
+    margin: 0; }
+    .loginView .loginForm .inputWrapper.removeMargin {
+      padding-right: 30px; }
+    .loginView .loginForm .inputWrapper.inputError {
+      background-color: rgba(196, 47, 43, 0.85); }
+    .loginView .loginForm .inputWrapper input {
+      background: transparent;
+      border: none;
+      height: 100%;
+      margin: 0;
+      /*padding: 38px 150px 11px 30px;*/
+      padding: 0;
+      color: #FFF;
+      box-shadow: none; }
+      .loginView .loginForm .inputWrapper input.username {
+        text-transform: lowercase; }
+      .loginView .loginForm .inputWrapper input:focus {
+        box-shadow: none; }
+    .loginView .loginForm .inputWrapper input::-webkit-input-placeholder {
+      color: #FFF; }
+    .loginView .loginForm .inputWrapper input::-ms-input-placeholder {
+      color: #FFF; }
+    .loginView .loginForm .inputWrapper input:focus::-webkit-input-placeholder {
+      color: transparent; }
+    .loginView .loginForm .inputWrapper input:focus::-ms-input-placeholder {
+      color: transparent; }
+    .loginView .loginForm .inputWrapper .inputIcon {
+      position: absolute;
+      left: 7px;
+      bottom: 10px;
+      font-size: 1.25rem; }
+    .loginView .loginForm .inputWrapper .heading {
+      position: absolute;
+      left: 30px;
+      bottom: 11px; }
+    .loginView .loginForm .inputWrapper .transitionClass {
+      -webkit-transform: translate(0px, -27px);
+      -moz-transform: translate(0px, -27px);
+      -ms-transform: translate(0px, -27px);
+      -o-transform: translate(0px, -27px);
+      transform: translate(0px, -27px);
+      -webkit-transition: 1s ease all;
+      -moz-transition: 1s ease all;
+      transition: 1s ease all; }
+    .loginView .loginForm .inputWrapper .hidePlaceholder::-webkit-input-placeholder {
+      color: transparent; }
+    .loginView .loginForm .inputWrapper .hidePlaceholder::-ms-input-placeholder {
+      color: transparent; }
+    .loginView .loginForm .inputWrapper .errorMessage {
+      position: absolute;
+      right: 7px;
+      top: 16px;
+      width: 150px;
+      text-align: right;
+      font-size: 0.875rem; }
+  .loginView .loginForm .divider {
+    height: 3px; }
+  .loginView .loginForm .loginButton {
+    display: block;
+    background-color: #cd1d1f;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 25px;
+    border: 1px solid #FFF;
+    font-family: "ClanMedium";
+    font-size: 1.063rem;
+    color: #FFF;
+    text-align: center; }
+    .loginView .loginForm .loginButton .loginButtonIcon {
+      padding-left: 5px; }
+    .loginView .loginForm .loginButton:focus, .loginView .loginForm .loginButton:hover {
+      background-color: #BC2222; }
+  .loginView .forgotCredentials {
+    text-align: center;
+    font-size: 0.875rem;
+    text-decoration: underline;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333; }
+
+.loginModal .footerButton.webviewForwardButton, .loginModal .footerButton.webviewBackwardButton, .loginModal .footerButton.webviewCloseButton {
+  background: transparent; }
+
+.loginModal .footerButton.webviewCloseButton {
+  float: left;
+  margin-left: 5px; }
+  .loginModal .footerButton.webviewCloseButton .closeBar {
+    position: relative; }
+    .loginModal .footerButton.webviewCloseButton .closeBar:before, .loginModal .footerButton.webviewCloseButton .closeBar:after {
+      content: "";
+      height: 2px;
+      width: 20px;
+      background: #2a2e34;
+      display: block;
+      position: absolute; }
+    .loginModal .footerButton.webviewCloseButton .closeBar:before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .loginModal .footerButton.webviewCloseButton .closeBar:after {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+
+/* Quotes View Styles */
+.quotesView {
+  background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+  background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+  background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1); }
+  .quotesView .block-list li > a {
+    padding: 0; }
+  .quotesView .filterModal {
+    background-color: #b2b2b2;
+    padding-bottom: 2.75rem;
+    background-clip: content-box; }
+  .quotesView .requestsList {
+    position: absolute;
+    width: 100%; }
+    .quotesView .requestsList .request {
+      position: relative; }
+      .quotesView .requestsList .request .requestInfoWrapper {
+        height: 4.125rem;
+        position: relative;
+        padding: 0.625rem;
+        /*padding-left: 1.8rem;*/
+        padding-right: 6.8125rem;
+        background: #fafafa;
+        z-index: 1;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .quotesView .requestsList .request .requestInfoWrapper.transformLeft {
+          -webkit-transform: translateX(-65px);
+          -moz-transform: translateX(-65px);
+          -ms-transform: translateX(-65px);
+          -o-transform: translateX(-65px);
+          transform: translateX(-65px); }
+        .quotesView .requestsList .request .requestInfoWrapper .refreshIcon {
+          position: absolute;
+          left: 0.3125rem;
+          top: 0.625rem;
+          font-size: 1.25rem; }
+        .quotesView .requestsList .request .requestInfoWrapper .requestInfo .requestRevisionName {
+          font-size: 0.875rem;
+          color: #2a2e34;
+          max-height: 1.75rem;
+          overflow: hidden;
+          line-height: 0.9rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical; }
+        .quotesView .requestsList .request .requestInfoWrapper .requestInfo .resellerName {
+          font-family: "ClanBook";
+          font-size: 0.8125rem;
+          color: #575757;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          /*padding-top: 0.3125rem;*/ }
+        .quotesView .requestsList .request .requestInfoWrapper .requestOtherInfo {
+          font-size: 0.75rem;
+          color: #575757;
+          position: absolute;
+          right: 0.625rem;
+          width: 6.1875rem;
+          top: 0;
+          padding-top: 0.625rem; }
+          .quotesView .requestsList .request .requestInfoWrapper .requestOtherInfo .applUpdateDate {
+            font-size: 0.75rem;
+            color: #575757;
+            text-align: right;
+            padding-right: 4px; }
+          .quotesView .requestsList .request .requestInfoWrapper .requestOtherInfo .statusChevronWrapper {
+            padding-top: 0.3rem;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+            -ms-flex-align: center;
+            -webkit-box-pack: end;
+            -moz-box-pack: end;
+            box-pack: end;
+            -webkit-justify-content: flex-end;
+            -moz-justify-content: flex-end;
+            -ms-justify-content: flex-end;
+            -o-justify-content: flex-end;
+            justify-content: flex-end;
+            -ms-flex-pack: end; }
+            .quotesView .requestsList .request .requestInfoWrapper .requestOtherInfo .statusChevronWrapper .requestStatus {
+              color: #FFF;
+              padding: 0 0.3125rem;
+              width: 4.375rem;
+              text-align: center;
+              font-family: "ClanBook";
+              text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+              border-radius: 5px;
+              background: #0593bc;
+              font-size: 0.625rem; }
+            .quotesView .requestsList .request .requestInfoWrapper .requestOtherInfo .statusChevronWrapper .chevronIcon {
+              margin-left: 0.25rem;
+              font-size: 1.125rem; }
+      .quotesView .requestsList .request .listOptionButton {
+        width: 65px; }
+        .quotesView .requestsList .request .listOptionButton .listOptionButtonIcon {
+          font-size: 1.5rem; }
+        .quotesView .requestsList .request .listOptionButton.reviseQuote {
+          background: #575757; }
+        .quotesView .requestsList .request .listOptionButton.copyQuote {
+          background: #0593bc; }
+
+.filterModal {
+  /*.r2oModal{
+		position: fixed;
+	}*/ }
+  .filterModal .modalHeader {
+    background: #2a2e34 !important; }
+  .filterModal .filterList {
+    padding-top: 80px;
+    width: 90%;
+    margin: 0 auto; }
+    .filterModal .filterList r2o-filter-item {
+      display: block;
+      padding: 3px 0;
+      background: #575757;
+      border: 3px solid white;
+      position: relative;
+      margin-bottom: 5px; }
+      .filterModal .filterList r2o-filter-item h1.filterTitle {
+        font-size: 0.875rem;
+        color: white;
+        padding-left: 2.8125rem;
+        font-family: "ClanBook"; }
+      .filterModal .filterList r2o-filter-item.selected {
+        background: #cd1d1f; }
+        .filterModal .filterList r2o-filter-item.selected .filterCheck {
+          display: none; }
+        .filterModal .filterList r2o-filter-item.selected h1.filterTitle {
+          font-size: 14px;
+          color: white;
+          text-align: center;
+          padding-left: 0; }
+      .filterModal .filterList r2o-filter-item .filterCheck {
+        display: block;
+        height: 36px;
+        width: 36px;
+        background: #2a2e34;
+        position: absolute;
+        top: 0;
+        left: 0; }
+    .filterModal .filterList .filterButtons {
+      padding-top: 20px; }
+      .filterModal .filterList .filterButtons .filterButton {
+        float: right;
+        padding: 10px;
+        color: #FFF;
+        font-family: "ClanMedium";
+        margin: 0;
+        border-radius: 3px; }
+        .filterModal .filterList .filterButtons .filterButton.cancelButton {
+          background: #575757; }
+        .filterModal .filterList .filterButtons .filterButton.applyButton {
+          background: #0593bc;
+          margin-left: 15px; }
+          .filterModal .filterList .filterButtons .filterButton.applyButton:disabled {
+            background: #AAA;
+            /* change */ }
+
+.quotesHelpModal .topOverlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.125rem; }
+  .quotesHelpModal .topOverlay.increaseHeight {
+    height: 4.8125rem; }
+
+.quotesHelpModal .bottomOverlay {
+  top: 7.25rem;
+  bottom: 2.75rem;
+  left: 0;
+  right: 0; }
+  .quotesHelpModal .bottomOverlay.increaseTop {
+    top: 8.9375rem; }
+  .quotesHelpModal .bottomOverlay .pointerWrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    .quotesHelpModal .bottomOverlay .pointerWrapper .helpText {
+      width: 7.5rem;
+      text-align: right;
+      padding-right: 0.625rem;
+      padding-bottom: 0.625rem; }
+    .quotesHelpModal .bottomOverlay .pointerWrapper .pointer {
+      width: 2.75rem;
+      float: right; }
+      .quotesHelpModal .bottomOverlay .pointerWrapper .pointer .line, .quotesHelpModal .bottomOverlay .pointerWrapper .pointer .circle {
+        margin: 0 auto; }
+
+.quotesHelpModal .footerOverlay {
+  bottom: 0;
+  height: 2.75rem;
+  left: 0;
+  right: 5.3125rem; }
+  .quotesHelpModal .footerOverlay .pointerWrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    height: 2.75rem; }
+    .quotesHelpModal .footerOverlay .pointerWrapper .helpText {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding-left: 0.625rem;
+      width: 9.375rem; }
+
+.selectItemtoRevise .reviseItems .reviseItem {
+  position: relative;
+  padding: 0.625rem;
+  padding-right: 90px; }
+  .selectItemtoRevise .reviseItems .reviseItem .labelName {
+    font-family: "ClanMedium";
+    display: inline-block; }
+  .selectItemtoRevise .reviseItems .reviseItem .value {
+    font-family: "ClanNews";
+    display: inline-block; }
+  .selectItemtoRevise .reviseItems .reviseItem .dateWrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    padding: 0.625rem;
+    height: 100%; }
+    .selectItemtoRevise .reviseItems .reviseItem .dateWrapper .revDateLabel {
+      font-family: "ClanMedium"; }
+    .selectItemtoRevise .reviseItems .reviseItem .dateWrapper .revDate {
+      font-family: "ClanBook";
+      font-size: 0.8125rem; }
+    .selectItemtoRevise .reviseItems .reviseItem .dateWrapper .revise {
+      position: absolute;
+      right: 0.625rem;
+      bottom: 0.625rem;
+      color: #FFF;
+      text-align: center;
+      background: #0593bc;
+      font-family: "ClanMedium";
+      font-size: 0.6875rem;
+      text-shadow: rgba(0, 0, 2, 0.2);
+      border-radius: 3px;
+      padding: 4px 6px; }
+      .selectItemtoRevise .reviseItems .reviseItem .dateWrapper .revise .rightIcon {
+        margin-left: 4px; }
+
+/* Quote Details View Styles */
+.quotesDetailsView .quotes, .quotesDetailsView .notes, .quotesDetailsView .files, .quotesDetailsView .details {
+  overflow-x: hidden; }
+
+.quotesDetailsView .refreshStatusWrapper {
+  padding: 0.625rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  border-bottom: 1px solid #AAA;
+  min-height: 44px; }
+  .quotesDetailsView .refreshStatusWrapper .refreshIcon {
+    font-size: 1.5rem;
+    margin-left: -4px; }
+  .quotesDetailsView .refreshStatusWrapper .lastRefreshed {
+    font-size: 0.75rem;
+    color: #b2b2b2; }
+  .quotesDetailsView .refreshStatusWrapper .status {
+    color: #FFF;
+    padding: 0 0.3125rem;
+    width: 4.375rem;
+    text-align: center;
+    font-family: "ClanBook";
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: #0593bc;
+    font-size: 0.625rem;
+    min-width: 4.375rem; }
+
+.quotesDetailsView .categoryContent .row {
+  font-size: 0.875rem;
+  color: #2a2e34;
+  padding: 0.625rem;
+  position: relative;
+  min-height: 51px; }
+  .quotesDetailsView .categoryContent .row .requestNameWrapper.hasEditIcon {
+    padding-right: 50px;
+    position: relative; }
+  .quotesDetailsView .categoryContent .row .requestNameWrapper .editIcon {
+    padding: 0; }
+  .quotesDetailsView .categoryContent .row .labelName {
+    font-family: "ClanMedium"; }
+  .quotesDetailsView .categoryContent .row .value {
+    padding-top: 3px;
+    font-family: "ClanNews";
+    /*white-space: pre-line;*/ }
+    .quotesDetailsView .categoryContent .row .value.addEllipses {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .quotesDetailsView .categoryContent .row:nth-child(2n) {
+    background: #e5e5e5; }
+  .quotesDetailsView .categoryContent .row.hasEditIcon {
+    padding-right: 50px; }
+  .quotesDetailsView .categoryContent .row .editIcon {
+    position: absolute;
+    font-size: 2rem;
+    right: 0;
+    top: 0;
+    width: 50px;
+    text-align: center;
+    padding: 10px; }
+
+.quotesDetailsView .notes .notesListWrapper {
+  border-bottom: 69px solid transparent; }
+  .quotesDetailsView .notes .notesListWrapper .notesList .note {
+    position: relative;
+    padding-left: 2.25rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-right: 4.8125rem;
+    height: 3.9375rem; }
+    .quotesDetailsView .notes .notesListWrapper .notesList .note .subject {
+      color: #2a2e34;
+      font-size: 0.875rem;
+      left: 0.625rem;
+      top: 0.625rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .quotesDetailsView .notes .notesListWrapper .notesList .note .endUser {
+      color: #2a2e34;
+      font-family: "ClanBook";
+      font-size: 0.8125rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .quotesDetailsView .notes .notesListWrapper .notesList .note .notesIcon {
+      position: absolute;
+      color: #2a2e34;
+      left: 0.625rem;
+      top: 0.625rem;
+      font-size: 1.25rem; }
+    .quotesDetailsView .notes .notesListWrapper .notesList .note .dateWrapper {
+      position: absolute;
+      right: 0.625rem;
+      top: 0.625rem; }
+      .quotesDetailsView .notes .notesListWrapper .notesList .note .dateWrapper .date {
+        font-family: "ClanBook";
+        font-size: 0.75rem;
+        color: #575757;
+        padding-right: 2px; }
+      .quotesDetailsView .notes .notesListWrapper .notesList .note .dateWrapper .rightChevron {
+        text-align: right; }
+
+.quotesDetailsView .notesDescription {
+  background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+  background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+  background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1); }
+  .quotesDetailsView .notesDescription .notesCounter {
+    position: absolute;
+    top: 0.325rem;
+    right: 0.625rem;
+    /*@include display(flex);
+			@include align-items(center);*/ }
+    .quotesDetailsView .notesDescription .notesCounter span {
+      color: #2a2e34; }
+    .quotesDetailsView .notesDescription .notesCounter .notesIcon {
+      display: inline-block;
+      font-size: 1.5rem; }
+    .quotesDetailsView .notesDescription .notesCounter .currentNote, .quotesDetailsView .notesDescription .notesCounter .totalNotes {
+      font-family: "ClanMedium";
+      font-size: 0.75rem; }
+    .quotesDetailsView .notesDescription .notesCounter .of {
+      font-family: "ClanNews";
+      font-size: 0.75rem; }
+    .quotesDetailsView .notesDescription .notesCounter .notesStatus {
+      display: inline-block;
+      position: relative;
+      bottom: 5px; }
+
+.quotesDetailsView .details .subHeading {
+  background: #cd1d1f;
+  position: relative; }
+  .quotesDetailsView .details .subHeading .accordionIcons {
+    position: absolute;
+    top: 0.4375rem;
+    right: 0.625rem;
+    font-size: 1.25rem; }
+
+.quotesDetailsView .files .filesList .file {
+  position: relative; }
+  .quotesDetailsView .files .filesList .file .fileInfoWrapper {
+    background: #fafafa;
+    position: relative;
+    padding: 0.625rem;
+    min-height: 5.25rem;
+    padding-right: 5.25rem;
+    z-index: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper.transformLeft {
+      -webkit-transform: translateX(-100px);
+      -moz-transform: translateX(-100px);
+      -ms-transform: translateX(-100px);
+      -o-transform: translateX(-100px);
+      transform: translateX(-100px); }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileInfo, .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileNameLabel, .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileId {
+      font-size: 0.875rem;
+      color: #2a2e34;
+      font-family: "ClanNews"; }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileDateTime, .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileName {
+      font-size: 0.8125rem;
+      font-family: "ClanBook";
+      color: #575757; }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileId {
+      position: absolute;
+      top: 0.625rem;
+      right: 0.625rem; }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileName {
+      text-decoration: underline; }
+    .quotesDetailsView .files .filesList .file .fileInfoWrapper .fileNameWrapper {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .quotesDetailsView .files .filesList .file .listOptionButton {
+    background: #8cb31a; }
+    .quotesDetailsView .files .filesList .file .listOptionButton .listOptionButtonIcon {
+      font-size: 2.5rem; }
+
+.quotesDetailsView .quotes .quotesList .quote {
+  position: relative;
+  padding: 0.625rem;
+  color: #2a2e34;
+  font-size: 0.875rem; }
+  .quotesDetailsView .quotes .quotesList .quote .quoteBasicData {
+    min-height: 66px; }
+  .quotesDetailsView .quotes .quotesList .quote .hidden {
+    display: none; }
+  .quotesDetailsView .quotes .quotesList .quote .labelName {
+    font-family: "ClanMedium";
+    display: inline-block; }
+  .quotesDetailsView .quotes .quotesList .quote .value {
+    font-family: "ClanNews";
+    display: inline-block;
+    /*min-height:22px;*/ }
+  .quotesDetailsView .quotes .quotesList .quote .dateWrapper {
+    position: absolute;
+    right: 0.625rem;
+    top: 0.625rem;
+    text-align: right; }
+    .quotesDetailsView .quotes .quotesList .quote .dateWrapper .revDateLabel {
+      font-family: "ClanMedium"; }
+    .quotesDetailsView .quotes .quotesList .quote .dateWrapper .revDate {
+      font-family: "ClanBook";
+      font-size: 0.8125rem; }
+    .quotesDetailsView .quotes .quotesList .quote .dateWrapper .more {
+      color: #FFF;
+      text-align: center;
+      background: #0593bc;
+      font-family: "ClanBook";
+      font-size: 0.6875rem;
+      text-shadow: rgba(0, 0, 2, 0.2);
+      border-radius: 2px;
+      padding: 4.5px; }
+      .quotesDetailsView .quotes .quotesList .quote .dateWrapper .more .rightIcon {
+        margin-left: 4px; }
+        .quotesDetailsView .quotes .quotesList .quote .dateWrapper .more .rightIcon .icon-chevron-right:before {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg); }
+  .quotesDetailsView .quotes .quotesList .quote .seeDetails {
+    color: #FFF;
+    position: absolute;
+    bottom: 0.625rem;
+    right: 0.625rem;
+    background: #8cb31a;
+    font-family: "ClanBook";
+    font-size: 0.875rem;
+    text-shadow: rgba(0, 0, 2, 0.2);
+    padding: 5px;
+    border-radius: 4px; }
+
+.quotesDetailsView .quotesDescription {
+  background: -moz-linear-gradient(-11.76% 8% -45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -webkit-gradient(linear, -11.76% 8%, 111.76% 92%, color-stop(0, #e6e6e6), color-stop(0.5785, white), color-stop(1, #e6e6e6));
+  background: -o-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  background: -ms-linear-gradient(-45deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6', endColorstr='#E6E6E6' ,GradientType=0)";
+  background: linear-gradient(135deg, #e6e6e6 0%, white 57.85%, #e6e6e6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E6E6E6',endColorstr='#E6E6E6' , GradientType=1); }
+  .quotesDetailsView .quotesDescription .labelName {
+    font-size: 0.875rem;
+    color: #2a2e34;
+    font-family: "ClanMedium";
+    display: inline-block; }
+  .quotesDetailsView .quotesDescription .value {
+    font-size: 0.875rem;
+    color: #2a2e34;
+    font-family: "ClanNews";
+    display: inline-block; }
+  .quotesDetailsView .quotesDescription .row {
+    padding: 0.625rem;
+    border-bottom: none;
+    background: #fafafa; }
+    .quotesDetailsView .quotesDescription .row:nth-child(2n) {
+      background: #e8e8e8; }
+
+.quotesDetailsView .quoteDetailsHelpModal .line.vertical {
+  height: 2.6875rem !important; }
+
+.quotesDetailsView .quoteDetailsHelpModal .headerOverlay {
+  left: 0;
+  top: 0;
+  height: 3.125rem;
+  right: 35px; }
+  .quotesDetailsView .quoteDetailsHelpModal .headerOverlay .pointingHeaderButton {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-pack: end; }
+    .quotesDetailsView .quoteDetailsHelpModal .headerOverlay .pointingHeaderButton .helpText {
+      text-align: center; }
+
+.quotesDetailsView .quoteDetailsHelpModal .requestActionsHelp {
+  top: 3.125rem;
+  right: 150px;
+  left: 0px;
+  height: 5.125rem; }
+  .quotesDetailsView .quoteDetailsHelpModal .requestActionsHelp .helpText {
+    padding: 10px 30px;
+    text-align: center; }
+
+.quotesDetailsView .quoteDetailsHelpModal .topOverlay {
+  left: 0;
+  right: 0;
+  top: 8.25rem;
+  height: 7.25rem; }
+  .quotesDetailsView .quoteDetailsHelpModal .topOverlay .pointerWrapper.pointingCollapsable {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+    .quotesDetailsView .quoteDetailsHelpModal .topOverlay .pointerWrapper.pointingCollapsable .line, .quotesDetailsView .quoteDetailsHelpModal .topOverlay .pointerWrapper.pointingCollapsable .circle, .quotesDetailsView .quoteDetailsHelpModal .topOverlay .pointerWrapper.pointingCollapsable .helpText {
+      margin: 0 auto; }
+    .quotesDetailsView .quoteDetailsHelpModal .topOverlay .pointerWrapper.pointingCollapsable .helpText {
+      width: 11rem;
+      text-align: center; }
+
+.quotesDetailsView .quoteDetailsHelpModal .editButtonHelp {
+  left: 0;
+  right: 3.125rem;
+  top: 17.63rem;
+  height: 3.1875rem; }
+
+.quotesDetailsView .quoteDetailsHelpModal .bottomOverlay {
+  bottom: 2.75rem;
+  left: 0;
+  right: 0;
+  top: 20.8125rem; }
+  .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper {
+    position: absolute;
+    right: 0; }
+    .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper .helpText {
+      width: 4.5rem;
+      text-align: right;
+      padding-right: 0.625rem;
+      padding-bottom: 0.625rem; }
+    .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper .pointer {
+      width: 2.75rem;
+      float: right; }
+      .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper .pointer .line, .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper .pointer .circle {
+        margin: 0 auto; }
+    .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper.pointingEditIcon {
+      top: 0; }
+    .quotesDetailsView .quoteDetailsHelpModal .bottomOverlay .pointerWrapper.pointingBackButton {
+      bottom: 0; }
+
+.quotesDetailsView .quoteDetailsHelpModal .footerOverlay {
+  bottom: 0;
+  height: 2.75rem;
+  left: 0;
+  right: 2.75rem; }
+
+.quotesDetailsView .quoteFilesHelpModal .topOverlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.125rem; }
+
+.quotesDetailsView .quoteFilesHelpModal .bottomOverlay {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 8.375rem; }
+
+.quotesDetailsView .quoteNotesDescriptionHelpModal .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .quotesDetailsView .quoteNotesDescriptionHelpModal .overlay .swipeThumbWrapper {
+    margin-top: 7rem; }
+
+.quotesDetailsView .requestActionButtons {
+  position: absolute;
+  top: 3.125rem;
+  right: 0;
+  width: 150px;
+  background: #cd1d1f;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px); }
+  .quotesDetailsView .requestActionButtons a {
+    display: inline-block;
+    background: transparent;
+    margin: 0;
+    width: 100%;
+    padding: 0px;
+    line-height: 2.5rem;
+    font-size: 1rem;
+    font-family: ClanMedium;
+    border-bottom: 1px solid #FFF;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.45);
+    color: white;
+    padding-left: 10px;
+    /*&:last-child{
+				border-bottom:none;
+			}*/ }
+  .quotesDetailsView .requestActionButtons.ng-hide {
+    right: -66%; }
+
+.quotesDetailsView .editModal .r2oModalContent {
+  padding-top: 60px; }
+  .quotesDetailsView .editModal .r2oModalContent .selectionButtons {
+    padding-right: 20px;
+    padding-top: 20px; }
+  .quotesDetailsView .editModal .r2oModalContent .inputForEdit {
+    padding-top: 20px; }
+
+.quotesDetailsView .searchBoxWrapper {
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px); }
+  .quotesDetailsView .searchBoxWrapper .searchBox input {
+    padding-left: 0.5rem; }
+
+.quotesDetailsView .successMessage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #FFF;
+  padding: 0.625rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-shadow: 0px 1px 3px #555;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px); }
+  .quotesDetailsView .successMessage .checkboxIcon {
+    color: #8cb31a;
+    font-size: 1.5rem; }
+  .quotesDetailsView .successMessage .successText {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-left: 10px; }
+
+.quotesDetailsView .instructions {
+  padding: 0.625rem; }
+  .quotesDetailsView .instructions.error textarea {
+    color: #cd1d1f;
+    border: 1px solid #cd1d1f;
+    box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+    -ms-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75); }
+  .quotesDetailsView .instructions textarea {
+    height: 75px;
+    font-size: 0.75rem;
+    margin: 0;
+    resize: none;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1); }
+
+/* New Request View Styles */
+.newRequest {
+  position: relative; }
+  .newRequest .quoteNameLabel {
+    padding: 0.625rem;
+    font-family: "ClanNews";
+    font-size: 0.825rem;
+    color: #2a2e34;
+    position: relative;
+    padding-right: 100px; }
+    .newRequest .quoteNameLabel .reviseDateWrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.625rem; }
+  .newRequest .newRequestWrapper {
+    overflow: hidden;
+    overflow-y: auto; }
+  .newRequest .requestName {
+    padding: 0.625rem;
+    /*&.error{
+			input{
+				color: $primaryRed;
+				border: 1px solid $primaryRed;
+				box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				&::-webkit-input-placeholder{
+					color:$primaryRed;
+				}
+				&:-ms-input-placeholder{
+					color: $primaryRed;
+				}
+			}
+		}
+		input{
+			margin: 0;
+			line-height: normal;
+			box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-ms-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-appearance: none;
+			&:focus{
+				outline: none;
+				box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+			}
+		}*/ }
+  .newRequest .actionName {
+    padding: 0.625rem; }
+    .newRequest .actionName .selectionList {
+      margin-bottom: 0.625rem;
+      font-family: "ClanNews";
+      font-size: 0.825rem;
+      color: #2a2e34;
+      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+      -ms-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+      -webkit-appearance: none; }
+      .newRequest .actionName .selectionList:focus {
+        outline: none;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+        -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+        -ms-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35); }
+      .newRequest .actionName .selectionList.error {
+        color: #cd1d1f;
+        border: 1px solid #cd1d1f;
+        box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+        -webkit-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+        -ms-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75); }
+        .newRequest .actionName .selectionList.error::-webkit-input-placeholder {
+          color: #cd1d1f; }
+        .newRequest .actionName .selectionList.error:-ms-input-placeholder {
+          color: #cd1d1f; }
+  .newRequest .instructions {
+    padding: 0.625rem; }
+    .newRequest .instructions.error textarea {
+      color: #cd1d1f;
+      border: 1px solid #cd1d1f;
+      box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+      -webkit-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+      -ms-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75); }
+      .newRequest .instructions.error textarea::-webkit-input-placeholder {
+        color: #cd1d1f; }
+    .newRequest .instructions textarea {
+      height: 75px;
+      font-size: 0.75rem;
+      margin: 0;
+      resize: none;
+      box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1); }
+  .newRequest .editableDiv {
+    height: 100px;
+    overflow-y: auto;
+    margin: 10px;
+    border: 1px solid black; }
+  .newRequest .selectionButtons {
+    margin-right: 0.625rem; }
+    .newRequest .selectionButtons .applyButton {
+      margin-bottom: 40px; }
+
+.requestNotifications .notificationList {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%; }
+  .requestNotifications .notificationList .notificationContentWrapper {
+    padding: 1.25rem 0.625rem; }
+  .requestNotifications .notificationList .notificationListText {
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem; }
+  .requestNotifications .notificationList .enteredEmails {
+    position: relative;
+    margin-bottom: 0.625rem; }
+    .requestNotifications .notificationList .enteredEmails .enteredEmailsInputWrapper {
+      margin-right: 3.1875rem; }
+      .requestNotifications .notificationList .enteredEmails .enteredEmailsInputWrapper input {
+        margin: 0;
+        width: 100%;
+        padding: 0.625rem;
+        background-color: #FFF;
+        border: none;
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+        line-height: normal;
+        -webkit-appearance: none;
+        text-transform: lowercase; }
+        .requestNotifications .notificationList .enteredEmails .enteredEmailsInputWrapper input:focus {
+          outline: none;
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35);
+          -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.35); }
+        .requestNotifications .notificationList .enteredEmails .enteredEmailsInputWrapper input.error {
+          border: 1px solid #cd1d1f;
+          box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75);
+          -webkit-box-shadow: 0px 1px 3px 0px rgba(226, 36, 34, 0.75); }
+    .requestNotifications .notificationList .enteredEmails .addButton {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0.625rem;
+      background: #0593bc;
+      line-height: normal;
+      color: #FFF;
+      margin: 0; }
+      .requestNotifications .notificationList .enteredEmails .addButton:disabled {
+        background: #b2b2b2; }
+      .requestNotifications .notificationList .enteredEmails .addButton .allLabel {
+        margin-left: -5px; }
+    .requestNotifications .notificationList .enteredEmails .options {
+      position: absolute;
+      left: 0;
+      right: 3.1875rem;
+      z-index: 10;
+      background: #FFF;
+      max-height: 129px;
+      overflow-y: scroll; }
+      .requestNotifications .notificationList .enteredEmails .options .option {
+        padding: 0.625rem; }
+  .requestNotifications .notificationList .addContactsFromDevice {
+    font-size: 0.875rem;
+    background: #0593bc;
+    padding: 0.625rem;
+    color: #FFF;
+    position: relative;
+    vertical-align: middle;
+    line-height: normal; }
+    .requestNotifications .notificationList .addContactsFromDevice .rightIcon {
+      position: absolute;
+      right: 0.625rem;
+      top: 0.625rem;
+      bottom: 0.625rem;
+      font-size: 1.25rem; }
+  .requestNotifications .notificationList .subHeading {
+    position: relative;
+    padding: 15px; }
+    .requestNotifications .notificationList .subHeading .selectAll {
+      position: absolute;
+      right: 0.3125rem;
+      top: 0.3125rem;
+      bottom: 0.3125rem;
+      border-radius: 0.3125rem;
+      padding: 0.3125rem;
+      background: #0593bc; }
+      .requestNotifications .notificationList .subHeading .selectAll .selectCheckBox {
+        font-size: 1.5rem;
+        vertical-align: middle; }
+      .requestNotifications .notificationList .subHeading .selectAll .allLabel {
+        vertical-align: middle; }
+
+.requestNotifications .peopleList {
+  border-top: 196px solid transparent;
+  /*border-bottom: 54px solid transparent;*/
+  overflow: hidden;
+  overflow-y: auto;
+  /*min-height: 100%;
+		max-height: 100%;*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*.subHeading r2o-check-box .checkBoxWrapper{
+			padding-top:0;
+			background: $secondaryBlue;
+			.checkBoxContent{
+			}
+			&.selected{
+				.checkBox{
+					background: $secondaryGreen !important;
+				}	
+				.checkBoxContent{
+					color: $white !important; 
+				}
+			}
+		}
+
+		.subHeading span{
+			@include align-self(center);
+			min-width:132px;
+		}*/ }
+  .requestNotifications .peopleList .people {
+    position: relative; }
+    .requestNotifications .peopleList .people .peopleInfo {
+      padding: 0.625rem;
+      /*background: #fafafa;
+				z-index: 1;
+				position: relative;
+				@include transition(all 0.2s ease-in-out);
+				&.transformLeft{
+					@include transform(translateX(-80px));
+				}*/ }
+    .requestNotifications .peopleList .people .listOptionButton {
+      background: #cd1d1f;
+      width: 80px; }
+      .requestNotifications .peopleList .people .listOptionButton .listOptionButtonIcon {
+        font-size: 1.5rem; }
+
+.deviceContacts .contacts {
+  /*height: 100%;*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  border-top: 59px solid transparent;
+  padding-right: 25px; }
+  .deviceContacts .contacts .contact {
+    padding: 0.625rem; }
+
+.deviceContacts .alphabetsList {
+  padding: 10px 0px;
+  top: 59px; }
+
+.userEmails .emails .email {
+  padding: 0.625rem; }
+
+.selectEndUser r2o-slide {
+  position: relative; }
+  .selectEndUser r2o-slide .slide {
+    height: 100%; }
+
+.selectEndUser .search .searchIcon {
+  left: auto;
+  right: 20px; }
+
+.selectEndUser .search input {
+  padding-left: 8px;
+  padding-right: 40px; }
+
+.selectEndUser .search r2o-alphabet-scrolling.removeTop {
+  top: 100px; }
+
+.selectEndUser .endUserRequiredWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .selectEndUser .endUserRequiredWrapper .endUserRequired {
+    min-height: 58px;
+    padding: 15px;
+    padding-right: 100px; }
+    .selectEndUser .endUserRequiredWrapper .endUserRequired .endUserRequiredText {
+      text-align: right; }
+    .selectEndUser .endUserRequiredWrapper .endUserRequired .styledCheckBox {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-right: 10px;
+      padding-top: 9px; }
+  .selectEndUser .endUserRequiredWrapper .businessSectorHeading {
+    padding: 0.625rem;
+    background: #575757;
+    color: #FFF; }
+
+.selectEndUser r2o-alphabet-scrolling {
+  top: 100px;
+  /*bottom: 50px;*/ }
+  .selectEndUser r2o-alphabet-scrolling.removeTop {
+    top: 10px; }
+
+.selectEndUser .contactsScrolling {
+  border-top: 96px solid transparent;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 25px;
+  /*border-bottom: 54px solid transparent;*/ }
+  .selectEndUser .contactsScrolling .contactsList .contact {
+    padding: 0.625rem;
+    position: relative;
+    padding-left: 37px; }
+    .selectEndUser .contactsScrolling .contactsList .contact .listIcon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0.625rem; }
+    .selectEndUser .contactsScrolling .contactsList .contact .icon-star-filled {
+      color: #0593bc; }
+  .selectEndUser .contactsScrolling.noBorderTop {
+    border-top-width: 0; }
+
+.selectEndUser .businessSector {
+  border-top: 96px solid transparent;
+  overflow: hidden;
+  overflow-y: auto;
+  /*border-bottom: 54px solid transparent;*/ }
+  .selectEndUser .businessSector .businessSectorList .businessSectorListItem {
+    padding: 0.625rem; }
+
+.selectEndUserHelpModal .topOverlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 17.25rem; }
+  .selectEndUserHelpModal .topOverlay.reduceHeight {
+    height: 11.25rem; }
+  .selectEndUserHelpModal .topOverlay .starIcon {
+    position: absolute;
+    top: 9.75rem;
+    left: 0.625rem; }
+    .selectEndUserHelpModal .topOverlay .starIcon.reduceTop {
+      top: 3.75rem; }
+    .selectEndUserHelpModal .topOverlay .starIcon .icon-star-filled {
+      font-size: 1.5rem;
+      color: #0593bc;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #FFF; }
+  .selectEndUserHelpModal .topOverlay .pointerWrapper {
+    position: absolute;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    left: 2rem;
+    top: 9.1875rem; }
+    .selectEndUserHelpModal .topOverlay .pointerWrapper.reduceTop {
+      top: 3.1875rem; }
+    .selectEndUserHelpModal .topOverlay .pointerWrapper .helpText {
+      width: 9.375rem;
+      margin-left: 1.25rem; }
+
+.selectEndUserHelpModal .bottomOverlay {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 21.25rem; }
+  .selectEndUserHelpModal .bottomOverlay.reduceTop {
+    top: 15.25rem; }
+  .selectEndUserHelpModal .bottomOverlay .pointerWrapper .line, .selectEndUserHelpModal .bottomOverlay .pointerWrapper .circle, .selectEndUserHelpModal .bottomOverlay .pointerWrapper .helpText {
+    margin: 0 auto; }
+  .selectEndUserHelpModal .bottomOverlay .pointerWrapper .helpText {
+    width: 11rem;
+    text-align: center; }
+
+.selectProducts r2o-slide {
+  position: relative; }
+  .selectProducts r2o-slide .slide {
+    height: 100%; }
+
+.selectProducts .searchTab .contactsScrolling {
+  border-bottom: 59px solid transparent; }
+
+.selectProducts r2o-alphabet-scrolling {
+  top: 80px; }
+  .selectProducts r2o-alphabet-scrolling.searchAlphaSCroll {
+    bottom: 60px; }
+
+.selectProducts .contactsScrolling {
+  height: 100%;
+  border-top: 75px solid transparent;
+  padding-right: 25px;
+  overflow: hidden;
+  overflow-y: auto; }
+  .selectProducts .contactsScrolling .contactsList .contact {
+    padding: 0.625rem;
+    position: relative;
+    padding-left: 37px; }
+    .selectProducts .contactsScrolling .contactsList .contact .listIcon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 8px; }
+    .selectProducts .contactsScrolling .contactsList .contact .icon-star-filled {
+      color: #0593bc; }
+    .selectProducts .contactsScrolling .contactsList .contact.gray {
+      opacity: 0.3; }
+
+.selectProducts .selectedProducts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  padding: 0.625rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-bottom: 1px solid #b2b2b2; }
+  .selectProducts .selectedProducts .product {
+    color: #0593bc;
+    text-decoration: underline;
+    margin-right: 5px; }
+
+.removeAllProductsModal .r2oModalContent {
+  padding-top: 50px; }
+
+.removeAllProductsModal .subHeading {
+  position: relative;
+  padding: 15px; }
+  .removeAllProductsModal .subHeading .selectAll {
+    position: absolute;
+    right: 0.3125rem;
+    top: 0.3125rem;
+    bottom: 0.3125rem;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem;
+    background: #0593bc; }
+    .removeAllProductsModal .subHeading .selectAll .selectCheckBox {
+      font-size: 1.5rem;
+      vertical-align: middle; }
+    .removeAllProductsModal .subHeading .selectAll .allLabel {
+      vertical-align: middle; }
+
+.removeAllProductsModal .removeProductsList .product {
+  padding: 0.625rem; }
+
+.removeAllProductsModal .selectionButtons {
+  padding: 10px; }
+
+.selectProducts .contactsScrolling .contactsList .contact .listIcon {
+  padding: 10px; }
+
+.productRemoveConfirmationModal .r2oModal {
+  background: rgba(0, 0, 0, 0.4); }
+  .productRemoveConfirmationModal .r2oModal .r2oModalContent {
+    position: relative; }
+    .productRemoveConfirmationModal .r2oModal .r2oModalContent .confirmationContent {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 0 5px; }
+      .productRemoveConfirmationModal .r2oModal .r2oModalContent .confirmationContent button {
+        display: block;
+        width: 100%;
+        background: #FFF;
+        border-radius: 5px;
+        margin: 5px 0; }
+        .productRemoveConfirmationModal .r2oModal .r2oModalContent .confirmationContent button.removeProduct {
+          color: #cd1d1f; }
+        .productRemoveConfirmationModal .r2oModal .r2oModalContent .confirmationContent button.cancel {
+          color: #0593bc; }
+
+.selectRequiredResponse .singleLineListItem {
+  padding: 0.675rem; }
+
+.selectRequiredResponse .requiredResponseListItem {
+  position: relative;
+  padding-left: 44px;
+  white-space: normal; }
+  .selectRequiredResponse .requiredResponseListItem .listIcon {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem; }
+  .selectRequiredResponse .requiredResponseListItem .listText {
+    display: inline-block; }
+
+.selectRequiredResponse .file {
+  position: relative;
+  padding-right: 44px; }
+  .selectRequiredResponse .file .rightChevronIcon {
+    position: absolute;
+    right: 0.625rem;
+    top: 20px;
+    font-size: 1.5rem; }
+
+.uploadFiles .uploadFile {
+  margin: 0.625rem;
+  padding: 20px;
+  background: #FFF;
+  border: 1px dotted;
+  text-align: center; }
+  .uploadFiles .uploadFile .uploadIcon {
+    font-size: 4rem; }
+
+.uploadFiles .singleLineListItem {
+  padding: 0.625rem;
+  position: relative; }
+  .uploadFiles .singleLineListItem .closeIcon {
+    position: absolute;
+    right: 0.625rem;
+    top: 0.625rem;
+    font-size: 1.25rem;
+    color: #cd1d1f; }
+  .uploadFiles .singleLineListItem:first-child {
+    border-top: 1px solid #b2b2b2; }
+
+.productQuestions .productQuestionsWrapper {
+  overflow: hidden;
+  overflow-y: auto;
+  /*border-bottom: 54px solid transparent;*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.productQuestions .productQuestion {
+  padding: 0.625rem;
+  position: relative; }
+  .productQuestions .productQuestion .leftListIcon {
+    font-size: 1.25rem;
+    color: #cd1d1f; }
+
+.productQuestionOptions .optionsList .option {
+  position: relative;
+  padding: 0.625rem;
+  padding-left: 44px;
+  white-space: normal; }
+  .productQuestionOptions .optionsList .option .listIcon {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem; }
+  .productQuestionOptions .optionsList .option .listText {
+    display: inline-block; }
+
+.disclaimer .disclaimerContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 0.625rem;
+  border-bottom: 152px solid transparent;
+  font-size: 0.875rem;
+  color: #575757; }
+  .disclaimer .disclaimerContent p, .disclaimer .disclaimerContent span, .disclaimer .disclaimerContent strong {
+    font-family: "ClanNews" !important;
+    font-size: 0.875rem !important; }
+  .disclaimer .disclaimerContent .disclaimerHeading, .disclaimer .disclaimerContent .checkBoxContent {
+    font-family: "ClanMedium"; }
+  .disclaimer .disclaimerContent .marginBottom {
+    margin-bottom: 10px; }
+  .disclaimer .disclaimerContent li {
+    border-bottom: none;
+    padding-bottom: 1.6rem; }
+
+.disclaimer .disclaimerButtons {
+  position: absolute;
+  padding: 0.625rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -1px 3px #555; }
+  .disclaimer .disclaimerButtons .checkBoxWrapper {
+    min-height: 58px; }
+  .disclaimer .disclaimerButtons .selectionButtons {
+    padding: 1.25rem 0; }
+
+.copyNotesAndFiles .subHeading {
+  position: relative;
+  padding: 15px; }
+  .copyNotesAndFiles .subHeading .selectAll {
+    position: absolute;
+    right: 0.3125rem;
+    top: 0.3125rem;
+    bottom: 0.3125rem;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem;
+    background: #0593bc; }
+    .copyNotesAndFiles .subHeading .selectAll .selectCheckBox {
+      font-size: 1.5rem;
+      vertical-align: middle; }
+    .copyNotesAndFiles .subHeading .selectAll .allLabel {
+      vertical-align: middle; }
+
+.copyNotesAndFiles .requiredResponseListItem {
+  position: relative;
+  padding: 10px;
+  padding-left: 44px;
+  white-space: normal; }
+  .copyNotesAndFiles .requiredResponseListItem .listIcon {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem; }
+  .copyNotesAndFiles .requiredResponseListItem .listText {
+    display: inline-block; }
+
+/* Submission Successful View Styles */
+.submissionSuccessful {
+  position: relative; }
+  .submissionSuccessful .successIcon {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 10px;
+    color: #8cb31a; }
+  .submissionSuccessful .successText {
+    text-align: center; }
+  .submissionSuccessful .selectionButtons {
+    position: absolute;
+    bottom: 20px;
+    width: 100%; }
+    .submissionSuccessful .selectionButtons .selectionButton {
+      padding-left: 20px;
+      padding-right: 20px; }

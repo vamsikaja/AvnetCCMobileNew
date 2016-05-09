@@ -1,0 +1,11 @@
+{
+  "name": "AvnetCCMobile",
+  "private": "true",
+  "dependencies": {
+    "device.js": "devicejs#^0.2.7"
+  },
+  "resolutions": {
+    "angular": "^1.5.5",
+    "moment": "^2.13.0"
+  }
+}

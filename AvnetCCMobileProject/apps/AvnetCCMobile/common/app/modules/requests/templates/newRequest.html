@@ -1,0 +1,108 @@
+<r2o-view title ="'New Request'" class='grid-block vertical'>
+	<r2o-content class='grid-block vertical has-header has-footer newRequest'>
+		<div class="newRequestWrapper">
+			<div class="requestName" ng-class="requestNameError?'error':''">
+				<form ng-submit="blurElementWithId('requestNameInputField')">
+					<input type="text" ng-model="request.RequestName" placeholder="Enter Request Name* " id="requestNameInputField" ng-blur="addRequestName()"/>
+				</form>
+			</div>
+			<ul class="requiredList">
+				<li ui-sref="selectEndUser" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<i class="icon-{{correctlyFilledEndUsers ? 'checkmark' : 'warning'}}"></i>
+					</div>
+					<div class="requiredItemName" ng-class="endUsersError ? 'error': '' ">
+						End User
+					</div>
+					<div class="requiredItemStatus" ng-class="endUsersError ? 'error': '' ">
+						{{endUsersListString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="selectProduct" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<i class="icon-{{correctlyFilledProducts ? 'checkmark' : 'warning'}}"></i>
+					</div>
+					<div class="requiredItemName" ng-class=" productsError ? 'error' : '' ">
+						Products
+					</div>
+					<div class="requiredItemStatus" ng-class="productsError ? 'error' : '' ">
+						{{productsListString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="productsWithQuestions" class="hasLeftIcon hasRightIcon requiredItem" ng-show="productSpecificQuestions !=undefined && productSpecificQuestions.length!=0">
+					<div class="leftListIcon">
+						<i class="icon-{{correctlyFilledProductOptions ? 'checkmark' : 'warning'}}"></i>
+					</div>
+					<div class="requiredItemName" ng-class=" productOptionsError ? 'error' : '' ">
+						Product Options
+					</div>
+					<div class="requiredItemStatus" ng-class="productOptionsError ? 'error' : '' ">
+						{{productOptionsString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="selectRequiredResponse" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<i class="icon-{{correctlyFilledRequiredResponse ? 'checkmark' : 'warning'}}"></i>
+					</div>
+					<div class="requiredItemName" ng-class="requiredResponseError ? 'error' : '' ">
+						Required Response
+					</div>
+					<div class="requiredItemStatus" ng-class="requiredResponseError ? 'error' :'' ">
+						{{requiredResponseString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ng-if="request.isCopy" ui-sref="copyNotesAndFiles" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<i class="icon-checkmark"></i>
+					</div>
+					<div class="requiredItemName">
+						Notes & Files
+					</div>
+					<div class="requiredItemStatus" ng-class="requiredResponseError ? 'error' :'' ">
+						Copy <span ng-if="!request.isRemoveAllNotes">All</span> <span ng-if="request.isRemoveAllNotes">No</span> Notes and <span ng-if="!request.isRemoveAllFiles">All</span> <span ng-if="request.isRemoveAllFiles">No</span> Files
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="requestNotification" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<span class="count" ng-class="correctlyFilledNotificationsList?'filledNotificationsList':''">
+							<span class="countNumber">{{notificationListCount}}</span>
+						</span>
+					</div>
+					<div class="requiredItemName" ng-class="notificationError ? 'error' :'' ">
+						Notifications
+					</div>
+					<div class="requiredItemStatus" ng-class="notificationError ? 'error' : '' ">
+						{{notificationListString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+			</ul>
+			<div class="instructions {{requestInstructionsError?'error':''}}">
+				<textarea placeholder="Add Notes..." ng-model="request.requestInstructions" ng-focus="showInstructionsInView()" ng-blur="addRequestInstructions()"></textarea>
+			</div>
+			<div class="selectionButtons">
+				<button class="selectionButton applyButton" ng-class="disableSubmitButton? 'disable' : '' " ng-click="submitRequest()">SUBMIT REQUEST</button>
+			</div>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<div ng-include="'app/shared/templates/menu.html'"></div>
+	</r2o-footer>
+</r2o-view>

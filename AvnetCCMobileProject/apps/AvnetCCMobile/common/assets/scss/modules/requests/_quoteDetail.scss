@@ -1,0 +1,512 @@
+/* Quote Details View Styles */
+.quotesDetailsView{
+	.quotes,.notes,.files,.details{
+		overflow-x:hidden; 
+	}
+	.refreshStatusWrapper{
+		padding: 0.625rem;
+		@include display(flex);
+		@include justify-content(space-between);
+		@include align-items(center);
+		border-bottom:1px solid #AAA;
+		min-height:44px;
+		.refreshIcon{
+			font-size: 1.5rem;
+			margin-left: -4px;
+		}
+		.lastRefreshed{
+			font-size: 0.75rem;
+			color: $neutralLightGray;
+		}
+		.status{
+			@include requestStatus();
+			min-width: 4.375rem;
+		}
+	}
+	.categoryContent{
+		.row{
+			font-size: 0.875rem;
+			color: $primaryBlack;
+			padding: 0.625rem;
+			position: relative;
+			min-height: 51px;
+			.requestNameWrapper{
+				&.hasEditIcon{
+					padding-right: 50px;
+					position: relative;
+				}
+				.editIcon{
+					padding: 0;
+				}
+			}
+
+			.labelName{
+				font-family: "ClanMedium";			
+			}
+			
+			.value{
+				padding-top: 3px;
+				font-family: "ClanNews";
+				/*white-space: pre-line;*/
+				&.addEllipses{
+					@include addOverflowEllipsis();
+				}
+			}
+			
+			&:nth-child(2n){
+			  background: #e5e5e5;
+			}
+			&.hasEditIcon{
+				padding-right: 50px;
+			}
+			.editIcon{
+				position: absolute;
+				font-size: 2rem;
+				right: 0;
+				top: 0;
+				width: 50px;
+				text-align: center;
+				padding: 10px;
+			}
+		}
+	}
+
+	.notes{
+		.notesListWrapper{
+				border-bottom: 69px solid transparent;
+			.notesList{
+				.note{
+					position: relative;
+					padding-left: 2.25rem;
+					padding-top: 0.625rem;
+					padding-bottom: 0.625rem;
+					padding-right: 4.8125rem;
+					height: 3.9375rem;
+					.subject{
+						color: $primaryBlack;
+						font-size: 0.875rem;
+						left: 0.625rem;
+	  					top: 0.625rem;
+	  					@include addOverflowEllipsis();
+					}
+					.endUser{
+						color: $primaryBlack;
+						font-family: "ClanBook";
+						font-size: 0.8125rem;
+						@include addOverflowEllipsis();
+					}
+					.notesIcon{
+						position: absolute;
+						color: $primaryBlack;
+						left: 0.625rem;
+	  					top: 0.625rem;
+	  					font-size: 1.25rem;
+					}
+					.dateWrapper{
+						position: absolute;
+						right: 0.625rem;
+	  					top: 0.625rem;
+						.date{
+							font-family: "ClanBook";
+							font-size:0.75rem;
+							color: $neutralDarkGray;
+							padding-right:2px;
+						}
+						.rightChevron{
+							text-align: right;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+
+	.notesDescription{
+		@include getGlobalBackground();
+		.notesCounter {
+			position: absolute;
+			top: 0.325rem;
+			right: 0.625rem;
+			/*@include display(flex);
+			@include align-items(center);*/
+			span{
+				color: $primaryBlack;
+			}
+			.notesIcon {
+				display: inline-block;
+				font-size: 1.5rem;
+			}
+			.currentNote,.totalNotes{
+				font-family: "ClanMedium";
+				font-size: 0.75rem;
+			}
+			.of{
+				font-family: "ClanNews";
+				font-size: 0.75rem;
+			}
+
+			.notesStatus{
+				display: inline-block;
+				position: relative;
+				bottom: 5px;
+			}
+
+		}
+	}
+
+	.details{
+		.subHeading{
+			background: $primaryRed;
+			position: relative;
+			.accordionIcons{
+				position: absolute;
+				top: 0.4375rem;
+				right:0.625rem;
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	.files{
+		.filesList{
+			.file{
+				position: relative;
+				.fileInfoWrapper{
+					background: #fafafa;
+					position: relative;
+					padding: 0.625rem;
+					min-height: 5.25rem;
+					padding-right: 5.25rem;
+					z-index: 1;
+					@include transition(all 0.2s ease-in-out);
+					&.transformLeft{
+						@include transform(translateX(-100px));
+					}
+
+					.fileInfo, .fileNameLabel, .fileId{
+						font-size: 0.875rem;
+						color: $primaryBlack;
+						font-family: "ClanNews";
+					}
+					.fileDateTime,.fileName{
+						font-size: 0.8125rem;
+						font-family: "ClanBook";
+						color: $neutralDarkGray;
+					}
+					.fileId{
+						position: absolute;
+						top: 0.625rem;
+						right: 0.625rem;
+					}
+					.fileName {
+						text-decoration: underline;
+					}
+					.fileNameWrapper{
+						@include addOverflowEllipsis();
+					}
+				}
+				.listOptionButton{
+					background: $secondaryGreen;
+					.listOptionButtonIcon{
+						font-size: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	.quotes{
+		.quotesList{
+			.quote{
+				position: relative;
+				padding: 0.625rem;
+				color: $primaryBlack;
+				font-size: 0.875rem;
+				.quoteBasicData{
+					min-height: 66px;
+				}
+				.hidden{
+					display: none;
+				}
+				.labelName{
+					font-family: "ClanMedium";
+					display: inline-block;
+				}
+				.value{
+					font-family: "ClanNews";
+					display: inline-block;
+					/*min-height:22px;*/
+				}
+				.dateWrapper{
+					position: absolute;
+					right: 0.625rem;
+					top: 0.625rem;
+					text-align: right;
+					.revDateLabel{
+						font-family: "ClanMedium";
+					}
+					.revDate{
+						font-family: "ClanBook";
+						font-size: 0.8125rem;
+					}
+					.more{
+						color: $white;
+						text-align: center;
+						background: $secondaryBlue;
+						font-family: "ClanBook";
+						font-size: 0.6875rem;
+						text-shadow:rgba(0,0,2,0.2);
+						border-radius: 2px;
+						padding: 4.5px;
+						.rightIcon{
+							margin-left: 4px;
+							.icon-chevron-right:before{
+								@include transform(rotate(90deg));
+							}
+						}
+					}
+				}
+				.seeDetails{
+					color: $white;
+					position: absolute;
+					bottom: 0.625rem;
+					right: 0.625rem;
+					background: $secondaryGreen;
+					font-family: "ClanBook";
+					font-size: 0.875rem;
+					text-shadow: rgba(0, 0, 2, 0.2);
+					padding: 5px;
+					border-radius: 4px;
+				}
+			}
+		}
+		
+	}
+
+	.quotesDescription{
+		@include getGlobalBackground();
+		.labelName{
+			font-size: 0.875rem;
+			color: $primaryBlack;
+			font-family: "ClanMedium";
+			display: inline-block;
+		}
+		.value{
+			font-size: 0.875rem;
+			color: $primaryBlack;
+			font-family: "ClanNews";
+			display: inline-block;
+		}
+		.row{
+			padding: 0.625rem;
+			border-bottom: none;
+			background: #fafafa;
+			&:nth-child(2n) {
+				background: #e8e8e8;
+			}
+		}
+	}
+	.quoteDetailsHelpModal{
+		.line.vertical{
+			height: 2.6875rem !important;
+		}
+		.headerOverlay{
+			left: 0;
+			top: 0;
+			height: 3.125rem;
+			right:35px;
+			.pointingHeaderButton{
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(flex-end);
+				.helpText{
+					text-align: center;
+				}
+			}
+		}
+		.requestActionsHelp{
+			top: 3.125rem;
+			right: 150px;
+			left: 0px;
+			height: 5.125rem;
+			.helpText{
+				padding: 10px 30px;
+				text-align: center;
+			}
+		}
+		.topOverlay{
+			left: 0;
+			right: 0;
+			top: 8.25rem;
+			height: 7.25rem;
+			.pointerWrapper.pointingCollapsable{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				.line,.circle,.helpText{
+					margin:  0 auto;
+				}
+				.helpText{
+					width: 11rem;
+					text-align: center;
+				}
+			}
+		}
+		.editButtonHelp{
+			left: 0;
+			right: 3.125rem;
+			top: 17.63rem;
+			height: 3.1875rem;
+
+		}
+		.bottomOverlay{
+			bottom: 2.75rem;
+			left: 0;
+			right: 0;
+			top: 20.8125rem; 
+			.pointerWrapper{
+				position: absolute;
+				right: 0;
+				.helpText{
+					width: 4.5rem;
+					text-align: right;
+					padding-right: 0.625rem;
+					padding-bottom: 0.625rem;
+				}
+				.pointer{
+					width: 2.75rem;
+					float: right;
+					.line,.circle{
+						margin: 0 auto;
+					}
+				}
+				&.pointingEditIcon{
+					top: 0;
+				}	
+				&.pointingBackButton{
+					bottom: 0;
+				}
+			}
+		}
+		.footerOverlay{
+			bottom: 0;
+			height: 2.75rem;
+			left: 0;
+			right: 2.75rem;
+		}
+	}
+
+	.quoteFilesHelpModal{
+		.topOverlay{
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 3.125rem;
+		}
+		.bottomOverlay{
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 8.375rem;
+		}
+	}
+
+	.quoteNotesDescriptionHelpModal{
+		.overlay{
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			.swipeThumbWrapper{
+				margin-top: 7rem;
+			}
+		}
+	}
+	.requestActionButtons{
+		position: absolute;
+		top: 3.125rem;
+		right : 0;
+		width : 150px;
+		background:$primaryRed;
+		@include transition(all 0.5s);
+		@include transform(translateZ(1px));
+	    a{
+	    	display: inline-block;
+	    	background: transparent;
+			margin: 0;
+			width: 100%;
+			padding: 0px;
+			line-height: 2.5rem;
+			font-size: 1rem;
+			font-family: ClanMedium;
+			border-bottom: 1px solid #FFF;
+			text-shadow: 0px 0px 3px rgba(0,0,0,0.45);
+			color:white;
+			padding-left: 10px;
+			/*&:last-child{
+				border-bottom:none;
+			}*/
+	    }
+	    &.ng-hide{	
+			right: -66%;
+		}
+	}
+	.editModal{
+		.r2oModalContent{
+			padding-top: 60px;
+			.selectionButtons{
+				padding-right: 20px;
+				padding-top: 20px;
+			}
+			.inputForEdit{
+				padding-top: 20px;
+			}
+		}
+	}
+	.searchBoxWrapper{
+		@include transform(translateZ(1px));
+		.searchBox{
+			input{
+				padding-left: 0.5rem;
+			}
+		}
+	}
+	.successMessage{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		background: $white;
+		padding: 0.625rem;
+		@include display(flex);
+		@include align-items(center);
+		box-shadow: 0px 1px 3px #555;
+		@include transform(translateZ(1px));
+		.checkboxIcon{
+			color: $secondaryGreen;
+			font-size: 1.5rem;
+		}
+		.successText{
+			@include flex(1);
+			padding-left: 10px;
+		}
+	}
+	.instructions{
+		padding: 0.625rem;
+		&.error{
+			textarea{
+				color: $primaryRed;
+				border: 1px solid $primaryRed;
+				box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+			}
+		}
+		textarea{
+			@include getTextAreaStyles();
+		}
+	}
+}

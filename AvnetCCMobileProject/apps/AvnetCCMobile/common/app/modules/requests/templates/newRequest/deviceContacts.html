@@ -1,0 +1,31 @@
+<r2o-view title ="'All Contacts'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer deviceContacts">
+		<div id="deviceContacts" class="contacts">
+			<div class="noDataMessage" ng-show="(contacts | filter:searchedTerm).length==0">
+					No results meet the search criteria entered. Please try again.
+			</div>
+			<ul>
+				<li ng-repeat="contact in contacts | filter:searchedTerm | orderBy:orderContacts" class="contact" ui-sref="userEmails({id:contact.id})" ng-class="contact.displayName | r2oAddAlphabetClass">
+					{{contact.displayName}}
+				</li>
+			</ul>
+		</div>
+		<r2o-alphabet-scrolling class="alphabetsList" draggable="true" scroll-in="deviceContacts" ng-show="showAlphabetScrolling">
+		</r2o-alphabet-scrolling>
+		<div class="searchBoxWrapper">
+	    	<div class="searchBox">
+				<div class="searchIcon">
+					<span class="icon-search"></span>
+				</div>
+				<form ng-submit="blurElement('contactsSearch')">
+					<input type="search" id="contactsSearch" placeholder="Search Address Book" ng-model="searchedTerm.displayName" ng-focus="showAlphabetScrolling=false" ng-blur="showAlphabetScrolling=true" />
+				</form>
+			</div>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

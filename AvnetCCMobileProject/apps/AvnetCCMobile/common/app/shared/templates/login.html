@@ -1,0 +1,110 @@
+<r2o-view title ="'Sign In'" class='grid-block vertical'>
+	<r2o-modal modal='passwordResetModal' useParentFooter="false"  class="loginModal">
+		<div class="modalHeader">
+			<div class="modalHeaderText"></div>
+		</div> 
+		<r2o-footer>
+            <button class="footerButton webviewForwardButton" r2o-webview-forward>
+                <i class="icon-chevron-right"></i>
+            </button>
+			<button class="footerButton webviewBackwardButton" r2o-webview-backward>
+				<i class="icon-chevron-left"></i>
+			</button>
+			<button class="footerButton webviewCloseButton" ng-click="toggleWebViewShown(false)" r2o-webview-close r2o-modal-toggle='passwordResetModal'>
+				<div class="closeBar"></div>
+			</button>
+		</r2o-footer>
+    </r2o-modal>
+    <r2o-content class="grid-block vertical has-header loginView ">
+        <div class="grid-block vertical noNetwork" ng-hide="networkConnected">
+            <div class="avnetLogo">
+                
+            </div>
+            <div class="noNetworkIcon">
+                <div class="icon-no-connection"></div>
+            </div>
+            <div class="noNetworkInfo">
+                <div>No internet connectivity.</div>
+                <div>Please check back again when</div>
+                <div>you have a connection.</div>
+            </div>
+            <div class="avnetTagline">
+                
+            </div>
+        </div>
+        <div ng-show="networkConnected">
+            <div class="loginLabel">
+                <div ng-hide="user.errorOccured.accountLocked || user.errorOccured.wrongCredentials">
+                    <div>Enter your Avnet</div>
+                    <div class="divider"></div>
+                    <div>Channel Connection Credentials.</div>
+                </div>
+                <div ng-show="user.errorOccured.accountLocked" class="error">
+                    <div>Your account is locked.</div>
+                    <div class="divider"></div>
+                    <div>In order to continue you must</div>
+                    <div class="divider"></div>
+                    <div>contact your administrator.</div>
+                </div>
+                <div ng-show="user.errorOccured.wrongCredentials" class="error">
+                    <div>Invalid username or password.</div>
+                    <div class="divider"></div>
+                    <div>Please try again.</div>
+                </div>
+            </div>
+            <form name="loginForm" class="loginForm">
+                <label class="inputWrapper {{(user.userNameError.missingInput)?'inputError':'removeMargin '}} {{ (user.userNameError.wrongCredentials || user.userNameError.accountLocked)? 'inputError removeMargin' : ''}}" >
+                        <input type="text" class="username " ng-model="user.userName" 
+                        ng-focus="hideForgotCredentials=true; usernameHeadingClass='transitionClass';user.userNameError={}" name="username" ng-blur="hideForgotCredentials=false;validateInput('userName')"/>
+                        
+                        <span class="inputIcon {{usernameHeadingClass}}" ng-click="setFocus('username', $event)">
+                            <i class="icon-user"></i>
+                        </span>
+                        
+                        <div class="heading {{usernameHeadingClass}}" ng-click="setFocus('username', $event)">
+                            Username
+                        </div> 
+                        <div class="errorMessage" ng-click="setFocus('username', $event)">
+                            <div ng-show="user.userNameError.missingInput">
+                                Please enter a username
+                            </div>
+                            <!-- <div ng-show="user.userNameError.accountLocked">
+                                Account Locked
+                            </div> -->
+                        </div> 
+                </label>
+                <div class="divider"></div>
+                <label class="inputWrapper {{(user.passwordError.missingInput )?'inputError':'removeMargin'}} {{(user.passwordError.wrongCredentials|| user.passwordError.accountLocked) ? 'inputError removeMargin':'' }}">
+                        
+                    <input type="password" class="password" ng-model="user.password" 
+                    ng-focus="hideForgotCredentials=true;passwordHeadingClass='transitionClass';user.passwordError={}" ng-blur="hideForgotCredentials=false;
+                    validateInput('password')"  name="password"/> 
+
+                    <span class="inputIcon {{passwordHeadingClass}}" ng-click="setFocus('password', $event)">
+                        <i class="icon-unlock"></i>
+                    </span>
+                    
+                    <div class="heading {{passwordHeadingClass}}" ng-click="setFocus('password', $event)">
+                        Password
+                    </div> 
+                    <div class="errorMessage" ng-click="setFocus('password', $event)">
+                        <div ng-show="user.passwordError.missingInput">
+                            Please enter a password
+                        </div>
+                        <!-- <div ng-show="user.passwordError.accountLocked">
+                            Account Locked
+                        </div> -->
+                    </div>
+                </label>
+                
+                <button type="submit" class="loginButton" ng-click="login(loginForm)">
+                    LOG IN 
+                    <span class="loginButtonIcon"><i class="icon-chevron-right"></i></span>
+                </button>
+            </form>
+            <div class="forgotCredentials" ng-click="toggleWebViewShown(true)" r2o-webview-open r2o-modal-toggle='passwordResetModal' url="https://selfcare.avnet.com/itim/self/Login/Logon.do" ng-hide="hideForgotCredentials">
+                Forgot your password?
+            </div>
+        </div>
+    </r2o-content>
+</r2o-view>

@@ -1,0 +1,21 @@
+.deviceContacts{
+	.contacts{
+		/*height: 100%;*/
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+		overflow-y:auto; 
+		border-top:59px solid transparent; 
+		padding-right: 25px;
+		.contact{
+			padding: 0.625rem;
+		}
+	}
+	.alphabetsList{
+		padding: 10px 0px;
+		top:59px;
+	}
+}

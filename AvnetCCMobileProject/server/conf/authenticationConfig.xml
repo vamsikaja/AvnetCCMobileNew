@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	 <staticResources>
+	 <!--  
+	   		<resource id="logUploadServlet" securityTest="LogUploadServlet">
+			<urlPatterns>/apps/services/loguploader*</urlPatterns>
+		</resource>
+		-->
+		<resource id="subscribeServlet" securityTest="SubscribeServlet">
+			<urlPatterns>/subscribeSMS*;/receiveSMS*;/ussd*</urlPatterns>
+		</resource>
+		
+	</staticResources> 
+         
+	 <securityTests>
+       
+       <customSecurityTest name="loginAdapter-securityTest">
+		    <test isInternalUserID="true" realm="SingleStepAuthRealm"/>
+		</customSecurityTest>
+
+       	<customSecurityTest name="SubscribeServlet">
+       		<test isInternalUserID="true" realm="SubscribeServlet"/>
+       	</customSecurityTest> 
+       	
+        <!-- ISAM HTTP Header Authentication -->
+        <customSecurityTest name="ISAMforWorklight-mobilesecurityTest">
+            <test realm="wl_directUpdateRealm" step="1"/>
+            <test isInternalDeviceID="true" realm="wl_deviceNoProvisioningRealm" step="1"/>
+            <test isInternalUserID="true" realm="HeaderAuthRealm" step="2"/>                       
+        </customSecurityTest>
+
+	</securityTests> 
+	
+	<realms>
+		<realm loginModule="StrongDummy" name="SampleAppRealm">
+			<className>com.worklight.core.auth.ext.FormBasedAuthenticator</className>
+		</realm>
+		
+		<realm loginModule="rejectAll" name="SubscribeServlet">
+			<className>com.worklight.core.auth.ext.HeaderAuthenticator</className>			
+		</realm>
+		
+		<realm loginModule="AuthLoginModule" name="SingleStepAuthRealm">
+		  <className>com.worklight.integration.auth.AdapterAuthenticator</className>
+		  <parameter name="login-function" value="loginAdapter.onAuthRequired"/>
+		  <parameter name="logout-function" value="loginAdapter.onLogout"/>
+		</realm>
+		
+		<!-- ISAM HTTP Header Authentication -->		
+        <realm loginModule="HeaderAuthModule" name="HeaderAuthRealm">
+            <className>com.worklight.core.auth.ext.HeaderAuthenticator</className>
+        </realm>
+    	
+	</realms>
+
+	<loginModules>
+		<loginModule expirationInSeconds="-1" name="StrongDummy">
+			<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		<loginModule expirationInSeconds="-1" name="requireLogin">
+			<className>com.worklight.core.auth.ext.SingleIdentityLoginModule</className>
+		</loginModule>
+		
+		<loginModule expirationInSeconds="-1" name="rejectAll">
+			<className>com.worklight.core.auth.ext.RejectingLoginModule</className>
+		</loginModule>
+		
+		<loginModule expirationInSeconds="-1" name="AuthLoginModule">
+		    <className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		<!-- ISAM HTTP Header Authentication -->
+        <loginModule expirationInSeconds="-1" name="HeaderAuthModule">
+            <className>com.worklight.core.auth.ext.HeaderLoginModule</className>
+            <parameter name="user-name-header" value="iv-user"/>
+            <parameter name="display-name-header" value="iv-user"/>
+        </loginModule>	
+        
+	</loginModules>
+
+</tns:loginConfiguration>

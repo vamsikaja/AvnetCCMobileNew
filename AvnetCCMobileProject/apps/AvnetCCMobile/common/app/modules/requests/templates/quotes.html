@@ -1,0 +1,103 @@
+<r2o-view title ="'Your Requests'" class='grid-block vertical'>
+	<r2o-modal modal='filterModal' class="filterModal">
+		<div class="modalHeader">
+			<div class="modalHeaderText">Filter Lists</div>
+		</div>
+		<div class="filterList">
+			<r2o-filter-item ng-class="isSelected('-json.ApplUpdateDT')" ng-click="addFilter(true, 'json.ApplUpdateDT',false)" title="Sort By Most Recent"></r2o-filter-item>
+			<r2o-filter-item ng-class="isSelected('json.ApplUpdateDT')" ng-click="addFilter(true, 'json.ApplUpdateDT',true)" title="Sort By Oldest"></r2o-filter-item>
+	        <r2o-filter-item ng-class="isSelected('json.EndUserNM')" ng-click="addFilter(true, 'json.EndUserNM', true)" title="Sort By End User A-Z"></r2o-filter-item>
+	        <r2o-filter-item ng-class="isSelected('-json.EndUserNM')" ng-click="addFilter(true, 'json.EndUserNM', false)" title="Sort By End User Z-A"></r2o-filter-item>
+	        <r2o-filter-item ng-class="isSelected('json.RequestRevisionNM')" ng-click="addFilter(true, 'json.RequestRevisionNM', true)" title="Sort By Product Name A-Z"></r2o-filter-item>
+	        <r2o-filter-item ng-class="isSelected('-json.RequestRevisionNM')" ng-click="addFilter(true, 'json.RequestRevisionNM', false)" title="Sort By Product Name Z-A"></r2o-filter-item>
+	        <r2o-filter-item ng-class="isSelected('json.WorkflowStatusTX')" ng-click="addFilter(false, 'json.WorkflowStatusTX')" title="Sort By Status"></r2o-filter-item>
+	        <div class="selectionButtons">
+	        	<button r2o-modal-toggle='filterModal' ng-disabled="filters.length == 0" ng-click = "applyFilters()" class="selectionButton applyButton">APPLY</button>
+	        	<button r2o-modal-toggle='filterModal' ng-click = "cancelFilters()" class="selectionButton cancelButton">CANCEL</button>
+	        </div>
+		</div> 
+    </r2o-modal>
+    <r2o-modal modal="quotesHelpModal" class="helpModal quotesHelpModal"  showViewHeader="true" useParentFooter="false" enableTouchClose="true" touch-call-back-method="closeHelpModal()">
+    	<div class="overlay topOverlay {{$root.networkStatus=='offline'?'increaseHeight':''}}"></div>
+		<div class="overlay bottomOverlay  {{$root.networkStatus=='offline'?'increaseTop':''}}">
+			<div class="swipeThumbWrapper">
+				<div class="swipeThumb">
+					
+				</div>
+				<div class="helpText">
+					Swipe Left/Right to hide/show more options
+				</div>
+			</div>
+			<div class="pointerWrapper">
+				<div class="helpText">
+					Tap to explore the app
+				</div>
+				<div class="pointer">
+					<div class="line vertical"></div>
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay footerOverlay">
+			<div class="pointerWrapper">
+				<div class="helpText">
+					Filter your list by different options
+				</div>
+				<div class="line horizontal"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+    </r2o-modal>
+	<r2o-content class='grid-block vertical has-header has-footer quotesView'>
+		<div class="noNetworkStatus" ng-show="$root.networkStatus=='offline'">
+			<span class="icon-no-connection noNetworkIcon"></span>
+			<span class="noNetworkInfo">No internet connectivity. New data not available.</span>
+		</div>
+		<ul class="requestsList {{($root.networkStatus=='offline') ? 'noNetworkMargin' : '' }}">
+			<div class="noDataMessage" ng-show="quotes==undefined || quotes.length==0">
+				{{requestsErrorMessage}}
+			</div>
+			<li ng-repeat="quote in quotes | orderBy:appliedFilters | limitTo: limitTo" class="request">
+				<div class="requestInfoWrapper {{(revealedrequestIdIndex == $index) ? 'transformLeft' : ''}}" ng-swipe-left="showModifyQuote($index,$event)" ng-swipe-right="removeModifyQuote($index,$event)" ng-click="redirectToQuotesDetailPage(quote.json.RequestRevisionSK)"> 
+					<!-- <div class="refreshIcon">
+						<i class="icon-refresh" ng-show="quote.json.CopyFromRequestRevisionSK != null"></i>
+					</div> -->
+					<div class="requestInfo">
+						<div class="requestRevisionName">
+							{{quote.json.RequestRevisionNM}} 
+						</div>
+						<div class="resellerName">
+							 {{quote.json.EndUserNM}} 
+						</div>
+					</div>
+					<div class="requestOtherInfo">
+						<div class="applUpdateDate">
+							{{quote.json.ApplUpdateDT | date : 'MM/dd/yy'}}
+						</div>
+						<div class="statusChevronWrapper">
+							<div class="label requestStatus quote-{{quote.json.WorkflowStatusTX}}" ng-show="quote.json.WorkflowStatusTX">
+								<div class="requestStatusValue">{{quote.json.WorkflowStatusTX}}</div>
+							</div>
+							<div class="chevronIcon">
+								<i class="icon-chevron-right"></i>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="listOptionButton listOptionButton1 copyQuote" ng-click="$root.goToState('newRequest',{type:'copy', requestNo :quote.json.RequestRevisionSK})">
+					<div class="listOptionButtonIcon">
+						<i class="icon-copy"></i>
+					</div>
+					<div>Copy</div>
+				</div>
+			</li>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<div ng-include="'app/shared/templates/menu.html'"></div>
+		<button class="footerButton filterButton {{filterActive}}" r2o-menu-close r2o-modal-toggle='filterModal' ng-click="cancelFilters()">
+			<i class="icon-filters"></i>
+			<div class="footerButtonText">Filters</div>
+		</button>
+	</r2o-footer>
+</r2o-view>

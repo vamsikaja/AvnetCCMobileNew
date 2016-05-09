@@ -1,0 +1,186 @@
+/* Login View Styles */
+.loginView{
+	background-image: url('../images/loginBackgroundImage.jpg');
+	background-size:cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+	.noNetwork{
+		background: rgba(255,255,255,0.7);
+		.noNetworkIcon{
+			margin-top: 150px;
+		}
+		.avnetLogo{
+			background: #FFF;
+			background-image: url("../images/avnetLogo.png");
+			width: 200px;
+			position: absolute;
+			height: 72px;
+			right: 0;
+			top: 0;
+			background-size: 100% 100%;
+		}
+		.avnetTagline{
+			background-image: url("../images/avnetTagline.jpg");
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 200px;
+			height: 50px;
+			background-size: 100% 100%;
+		}
+	}
+	.loginLabel{
+		font-size: 1.063rem;
+		color: #333;
+		padding-top: 40px;
+		padding-bottom: 25px;
+		text-align: center;
+		.error{
+			color: $primaryRed;
+		}
+	}
+
+	.loginForm{
+		.inputWrapper{
+			display: block;
+			position: relative;
+			color: $white;
+			font-size: 1rem;
+			background-color:rgba(51,51,51,0.7);
+			height: 4.063rem;
+			padding: 30px 150px 10px 30px;
+			margin: 0;
+			&.removeMargin{
+				padding-right: 30px;
+			}
+			&.inputError{
+				background-color: rgba(196,47,43,0.85);
+			}
+			input{
+				background: transparent;
+				border: none;
+				height: 100%;
+				margin: 0;
+				/*padding: 38px 150px 11px 30px;*/
+				padding: 0;
+				color: $white;
+				box-shadow: none;
+				&.username{
+					text-transform: lowercase;
+				}
+				&:focus{
+					box-shadow: none;
+				}
+			}
+
+			input::-webkit-input-placeholder{
+				color: $white;
+			}
+
+			input::-ms-input-placeholder{
+				color: $white;
+			}
+
+			input:focus::-webkit-input-placeholder{ 
+				color:transparent; 
+			}
+
+			input:focus::-ms-input-placeholder{ 
+				color:transparent; 
+			}
+
+			.inputIcon{
+				position: absolute;
+				left: 7px;
+				bottom: 10px;
+				font-size: 1.25rem;
+			}
+
+			.heading{
+				position: absolute;
+				left: 30px;
+				bottom: 11px;
+			}
+			.transitionClass{
+				@include transform(translate(0px,-27px));
+				@include transition(1s ease all);
+			}
+			.hidePlaceholder::-webkit-input-placeholder{
+				color: transparent;
+			}
+			.hidePlaceholder::-ms-input-placeholder{
+				color: transparent;
+			}
+			.errorMessage{
+				position: absolute;
+				right: 7px;
+				top: 16px;
+				width: 150px;
+				text-align: right;
+				font-size: 0.875rem;	
+			}	
+		}
+		.divider{
+			height: 3px;
+		}
+		.loginButton{
+			display: block;
+			background-color: $primaryRed;
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 25px;
+			border: 1px solid $white;
+			font-family: "ClanMedium";
+			font-size: 1.063rem;
+			color: $white;
+			text-align: center;
+			.loginButtonIcon{
+				padding-left: 5px;
+			}
+			&:focus, &:hover{
+				background-color: #BC2222;
+			}
+		}
+	}
+	.forgotCredentials{
+		text-align: center;
+		font-size: 0.875rem;
+		text-decoration: underline;
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		padding-top: 25px;
+		padding-bottom: 20px;
+		background-color: rgba(255,255,255,0.7);
+		color: #333;
+	}
+}
+
+.loginModal{
+	.footerButton.webviewForwardButton,.footerButton.webviewBackwardButton,.footerButton.webviewCloseButton{
+		background: transparent;
+	}
+	.footerButton.webviewCloseButton{
+		float: left;
+		margin-left: 5px;
+		.closeBar{
+			position: relative;
+			&:before,&:after{
+				content:"";
+				height: 2px;
+				width: 20px;
+				background: $primaryBlack;
+				display:block;
+				position: absolute;
+			}
+			&:before{
+				@include transform(rotate(45deg));
+			}
+			&:after{
+				@include transform(rotate(-45deg));
+			}
+		}
+	}
+}
+

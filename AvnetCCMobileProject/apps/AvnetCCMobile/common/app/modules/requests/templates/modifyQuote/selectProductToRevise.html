@@ -1,0 +1,25 @@
+<r2o-view title ="'Select Product to Revise'" class='grid-block vertical'>
+	<r2o-content class='grid-block vertical has-header has-footer selectItemtoRevise'>
+
+		<div class="noDataMessage" ng-if="products.length==0"><p>There are no products to revise.</p></div>
+		<ul class="requiredList">
+			<li class="hasRightIcon requiredItem" ng-repeat="product in products" ng-click="goToReviseQuoteItems(product)">
+				<div class="requiredItemName">
+					{{product.EntityTemplateName}}
+				</div>
+				<div class="requiredItemStatus">
+					{{getCustomProductName(product)}}
+				</div>
+				<div class="rightListIcon">
+					<i class="icon-chevron-right"></i>
+				</div>			
+			</li>
+		</ul>
+
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

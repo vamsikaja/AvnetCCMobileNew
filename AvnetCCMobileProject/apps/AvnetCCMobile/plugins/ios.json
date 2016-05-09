@@ -1,0 +1,19 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "config.xml": {
+            "/*": {
+                "<feature name=\"R2OShare\"><param name=\"ios-package\" value=\"R2OCDVShare\" /></feature>": 1
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.avnet.r2o.share": {
+            "PACKAGE_NAME": "com.AvnetR20ZurbMobileApp"
+        }
+    },
+    "dependent_plugins": {}
+}
