@@ -26,14 +26,8 @@
 			console.log('ordersService: fetchOrders');
 
 			var options = {
-				customerId: searchObject.customerId
-//				customerPo: searchObject.customerPo,
-//				searchType: searchObject.searchType
+				customerId: searchObject.customerId,
 			};
-
-//			var options = {
-//					customerId: userService.userData.customerId
-//			}
 			
 			var invocationData = {
 				adapter: 'OrdersAdapter',
@@ -56,9 +50,10 @@
 	            if (typeof response != 'undefined') {
 	            	salesOrders = response;	
 	            }
-	            // convert bookdate to moment
+	            // convert BookDate to moment and truncate EndUserName to 25 characters
 	            for (var i = 0; i < salesOrders.length; i++) {
 	            	salesOrders[i].BookDate = moment(salesOrders[i].BookDate, 'YYYY-MM-DD');
+	            	salesOrders[i].EndUserName = salesOrders[i].EndUserName.substring(0,25);
 	            }
 	            // sort descending
 	            salesOrders.sort(function(a, b) {
@@ -74,7 +69,7 @@
 	        	    	salesOrders[a].StatusDescription = 'Partial';
 	        	    }
 	        	    else if (salesOrders[a].StatusCode == 'C') {
-	        	    	salesOrders[a].StatusDescription = 'Complete';
+	        	    	salesOrders[a].StatusDescription = 'Closed';
 	        	    }
 	        	}	            
 				deferred.resolve(salesOrders);

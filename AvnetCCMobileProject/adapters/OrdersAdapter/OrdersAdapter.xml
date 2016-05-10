@@ -23,4 +23,6 @@
 	</connectivity>
 
 	<procedure name="getOrders" audit="true" />
+	<procedure name="getOrderDetail" audit="true" />
+	
 </wl:adapter>

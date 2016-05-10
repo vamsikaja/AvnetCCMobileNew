@@ -1,6 +1,34 @@
-<r2o-view title="'Order Details'" class='grid-block vertical view-order-detail'>
+<r2o-view title="'Order Detail'" class='grid-block vertical view-order-detail'>
     <r2o-content class='grid-block vertical has-header has-footer'>
 
+		<div class="grid-content" >
+			 <section class="block-list padding top-padding">
+                  <ul class="av-list {{($root.networkStatus=='offline') ? 'noNetworkMargin' : '' }}">
+                  	<li class="av-list-item">
+                  		<div class="av-list-item-heading">
+                  			<span class="av-text-subtle left">PO: {{::orderDetail.CustomerPo}}</span> 
+                  			<span class="av-text-subtle right">{{::orderDetail.OrderAmount | currency}}</span>
+                  		</div>
+                        <p class="av-list-item-subheading">SO # {{::orderDetail.OrderNo}}
+                        	<span class="av-list-item-status" ng-class="orderDetail.OverallStatusDescription">
+							<span class="av-list-item-status-value">{{::orderDetail.OverallStatusDescription}}</span>
+						</span>
+                        </p>
+             </section>
+             <section class="block-list no-border padding">                 
+
+							<h4>Detail</h4>
+							<!-- Fix the data names when we have them -->
+							<section class="av-list-item">Ordered: {{orderDetail.OrderDate.format('MMMM DD, YYYY')}}</section>
+							<section class="av-list-item">Requested: {{orderDetail.ReqDate.format('MMMM DD, YYYY')}}</section>
+							<section class="av-list-item">Ship to: {{::orderDetail.ShipTo}}</section>
+							<section class="av-list-item">End User: {{::orderDetail.EndUser}}</section>
+
+					</li>
+				</ul>
+            </section>
+		</div>
+		
         <div class="av-collapsible" ng-click="showContactUs=!showContactUs">
             Contact Us
             <span class="av-collapsible-icon"><i

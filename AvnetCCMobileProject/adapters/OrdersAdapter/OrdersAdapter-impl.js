@@ -27,7 +27,6 @@ function getOrders(options) {
 					+ '<FromDate>' + fromDateFormatted + '</FromDate>'
 					+ '<SearchType>' + searchType + '</SearchType>'
 					+ '<ToDate>' + toDateFormatted + '</ToDate>' 
-					+ '<Sonumberout>100</Sonumberout>'
 				+ '</urn:ZqtcSalesorderSearch>'
 			+ '</soap:Body>'
 		+ '</soap:Envelope>';
@@ -54,11 +53,11 @@ function getOrders(options) {
  * 
  * @param salesOrderNumber sales order number of desired order
  */
-function getOrderDetails(salesOrderNumber) {
+function getOrderDetail(salesOrderNumber) {
 	var path = 'mediator-test2/ws/getMobOrderStatusDetailVS';
 	WL.Logger.warn(salesOrderNumber);	
 	// build request string
-	var soapRequestString = getOrderDetailsRequest(salesOrderNumber);
+	var soapRequestString = getOrderDetailRequest(salesOrderNumber);
 	WL.Logger.warn(soapRequestString);
 	
 	// build input
@@ -76,25 +75,25 @@ function getOrderDetails(salesOrderNumber) {
 	};
 
 	WL.Logger.warn(input);
-	orderDetails =  WL.Server.invokeHttp(input);
-	WL.Logger.warn(orderDetails);
-	if (typeof orderDetails.Envelope.Body.ZqtcSalesorderGetdetailResponse != 'undefined') {
-		return orderDetails.Envelope.Body.ZqtcSalesorderGetdetailResponse;
-	} else {
-		return {
-			isSuccessful: false 
-		}
-	}
+	orderDetail =  WL.Server.invokeHttp(input);
+	WL.Logger.warn(orderDetail);
+//	if (typeof orderDetail.Envelope.Body.ZqtcSalesorderGetdetailResponse != 'undefined') {
+		return orderDetail;
+//	} else {
+//		return {
+//			isSuccessful: false 
+//		}
+//	}
 	
 		
 }
 
 /**
- * getOrderDetailsRequest build request string
+ * getOrderDetailRequest build request string
  * 
  * @param salesOrderNumber
  */
-function getOrderDetailsRequest(salesOrderNumber) {
+function getOrderDetailRequest(salesOrderNumber) {
 	var request = '<soapenv:Envelope ' + 
 			' xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"' + 
 			' xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">' + 

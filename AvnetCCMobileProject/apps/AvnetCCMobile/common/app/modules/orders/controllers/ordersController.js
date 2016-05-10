@@ -45,7 +45,6 @@
         }
 
         function loadMore() {
-            console.log('ordersController: loadMore');
             if (!isAtEnd) {
                 for (var i = counter; i < pageSize + counter; i++) {
                     if (i < allOrders.length) {
@@ -63,7 +62,7 @@
 
         function getOrders() {
 
-            console.log('ordersController: getOrders: ', searchObject);
+            console.log('ordersController: getOrders ', searchObject);
 
             ordersFactory.fetchOrders(searchObject).then(function (orders) {
                 allOrders = orders;

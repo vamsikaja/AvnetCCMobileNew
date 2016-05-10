@@ -1,10 +1,10 @@
 //
 //  MyAppDelegate.m
-//  AvnetChannelConnection
+//  AvnetChannelConnectionMobile
 //
 //
 
-#import "AvnetChannelConnection.h"
+#import "AvnetChannelConnectionMobile.h"
 #import <IBMMobileFirstPlatformFoundationHybrid/IBMMobileFirstPlatformFoundationHybrid.h>
 #import "Cordova/CDVViewController.h"
 

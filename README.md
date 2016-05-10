@@ -54,21 +54,48 @@ SHORTCUT. Run `gulp env --test` to change everything to test (well basically jus
     </dict>
 </code>
 
-## iOS Build for QA
+...more coming...
+
+
+## iOS Build for QA/TestFlight
 
 1. Open project in XCode
-2. Ensure the following '$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include' is added to HEADER SEARCH PATHS
+2. Ensure the following '$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include' is added to HEADER SEARCH PATHS within the SEARCH PATHS section of Build Settings in XCode
 3. Ensure enable bitcode is set to no
 4. Ensure iPad fullscreen required is checked 
+5. Ensure app target is selected (not Cordova)
 5. Increment either build number or version
 6. Product > Clean
 7. Product > Archive (make sure device is generic)
 8. Sign for Distribution
 
+...more coming...
+
+
+## Android Build for QA/Google BETA
+
+1. Open project in Android Studio
+2. Do a build
+3. Generate signed APK
+
+...more coming...
+
+
+## Troubleshooting
+
+You see: errors about the JSONStore
+
+Probably an issue with dependencies.  Call Jonah at home!
 
 
 
-## Test Credentials
 
+## Test Accounts
+
+conner.austin@siriuscom.com
+mike.alley@us.logicalis.com
+kevin.bailey@us.logicalis.com
+tim.bake@us.logicalis.com
+lizl@mobiuspartners.com
 dmorton@qcmtech.com
 Avnet100

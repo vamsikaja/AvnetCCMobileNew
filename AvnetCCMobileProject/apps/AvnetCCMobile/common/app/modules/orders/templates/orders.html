@@ -5,9 +5,9 @@
                 <section class="block-list">
                     <ul class="av-list {{($root.networkStatus=='offline') ? 'noNetworkMargin' : '' }}">
                         <li ng-repeat="order in orders track by $index" class="av-list-item"
-                            ng-click="goToOrderDetail(order.SalesOrder)">
+                            ng-click="goToOrderDetail({{order.SalesOrder}})">
                             <a class="av-list-item-link" href="" ng-class-even="'even'">
-                                <h6 class="av-list-item-heading">PO: {{::order.CustomerPo}}</h6>
+                                <h6 class="av-list-item-heading"><span class="av-text-subtle">PO:</span> {{::order.CustomerPo}}</h6>
                                 <p class="av-list-item-subheading">{{::order.EndUserName}}</p>
                                 <span class="av-list-item-date">{{moment(order.BookDate,'YYYY-MM-DD').format('MM/DD/YY')}}</span>
 								<span class="av-list-item-status" ng-class="order.StatusDescription">
