@@ -1,0 +1,28 @@
+.selectRequiredResponse{
+	.singleLineListItem{
+		padding: 0.675rem;
+	}	
+	.requiredResponseListItem{
+		position: relative;
+		padding-left: 44px;
+		white-space: normal;
+		.listIcon{
+			position: absolute;
+			left: 0.625rem;
+			top: 0.625rem;
+		}
+		.listText{
+			display: inline-block;
+		}
+	}
+	.file{
+		position: relative;
+		padding-right: 44px;
+		.rightChevronIcon{
+			position: absolute;
+			right: 0.625rem;
+			top:20px;
+			font-size: 1.5rem;
+		}
+	}
+}

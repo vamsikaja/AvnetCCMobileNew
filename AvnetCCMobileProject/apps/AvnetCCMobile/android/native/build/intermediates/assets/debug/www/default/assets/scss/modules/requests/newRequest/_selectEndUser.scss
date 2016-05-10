@@ -1,0 +1,153 @@
+.selectEndUser{
+	r2o-slide{
+		position: relative;
+		.slide{
+			height: 100%;
+		}
+	}
+	.search{
+		.searchIcon{
+			left: auto;
+			right: 20px;
+		}
+		input{
+			padding-left: 8px;
+			padding-right: 40px;
+		}
+		r2o-alphabet-scrolling{
+			&.removeTop{
+				top:100px;
+			}
+		}
+	}
+	.endUserRequiredWrapper{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		.endUserRequired{
+			min-height: 58px;
+			padding: 15px;
+			padding-right: 100px;
+			.endUserRequiredText{
+				text-align: right;
+			}
+			.styledCheckBox{
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding-right: 10px;
+				padding-top: 9px;
+			}
+		}
+		.businessSectorHeading{
+			padding: 0.625rem;
+			background: $neutralDarkGray;
+			color: $white;
+		}
+	}
+	r2o-alphabet-scrolling{
+		top: 100px;
+		&.removeTop{
+			top:10px;
+		}
+  		/*bottom: 50px;*/
+	}
+	.contactsScrolling{
+		border-top: 96px solid transparent;
+		overflow: hidden;
+		overflow-y:auto; 
+		height: 100%;
+		padding-right: 25px;
+		/*border-bottom: 54px solid transparent;*/
+		.contactsList{
+			.contact{
+				padding: 0.625rem;
+				position: relative;
+				padding-left: 37px;
+				.listIcon{
+					position: absolute;
+					left: 0;
+					top: 0;
+					padding: 0.625rem;
+				}
+				.icon-star-filled{ 
+					color: $secondaryBlue;
+				}
+			}
+		}
+		&.noBorderTop{
+			border-top-width: 0;
+		}
+	}	
+	.businessSector{
+		border-top: 96px solid transparent;
+		overflow: hidden;
+		overflow-y:auto;
+		/*border-bottom: 54px solid transparent;*/
+		.businessSectorList{
+			.businessSectorListItem{
+				padding: 0.625rem;
+			}
+		}
+	}
+}
+
+.selectEndUserHelpModal{
+	.topOverlay{
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 17.25rem;
+		&.reduceHeight{
+			height: 11.25rem;
+		}
+		.starIcon{
+			position: absolute;
+			top:9.75rem;
+			left:0.625rem;
+			&.reduceTop{
+				top: 3.75rem;
+			}
+			.icon-star-filled{
+				font-size: 1.5rem;
+				color: $secondaryBlue;
+				-webkit-text-stroke-width: 2px;
+				-webkit-text-stroke-color: $white;
+			}
+		}
+		.pointerWrapper{
+			position: absolute;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(flex-start);
+			left: 2rem;
+			top: 9.1875rem;
+			&.reduceTop{
+				top: 3.1875rem;
+			}
+			.helpText{
+				width: 9.375rem;
+				margin-left: 1.25rem;
+			}
+		}
+	}
+	.bottomOverlay{
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 21.25rem;
+		&.reduceTop{
+			top: 15.25rem;
+		}
+		.pointerWrapper{
+			.line,.circle,.helpText{
+				margin:  0 auto;
+			}
+			.helpText{
+				width: 11rem;
+				text-align: center;
+			}
+		}
+	}
+}

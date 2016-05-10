@@ -1,0 +1,12 @@
+<r2o-view title ="title" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer productQuestions">
+		<ul class="productQuestionsWrapper requiredList">
+			<r2o-product-question question="question" product-index="productIndex" question-index="$index" ng-repeat="question in product.questions" add-option="addOption(option,question)" is-option-added="isOptionAdded(option,question)" current-contract="question.answer"/>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

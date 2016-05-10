@@ -1,0 +1,48 @@
+.selectItemtoRevise{
+	.reviseItems{
+		.reviseItem{
+			position: relative;
+			padding: 0.625rem;
+			padding-right: 90px;
+			.labelName{
+				font-family: "ClanMedium";
+				display: inline-block;
+			}
+			.value{
+				font-family: "ClanNews";
+				display: inline-block;
+			}
+			.dateWrapper{
+				position: absolute;
+				right: 0;
+				top: 0;
+				text-align: right;
+				padding: 0.625rem;
+				height: 100%;
+				.revDateLabel{
+					font-family: "ClanMedium";
+				}
+				.revDate{
+					font-family: "ClanBook";
+					font-size: 0.8125rem;
+				}
+				.revise{
+					position: absolute;
+					right: 0.625rem;
+					bottom: 0.625rem;
+					color: $white;
+					text-align: center;
+					background: $secondaryBlue;
+					font-family: "ClanMedium";
+					font-size: 0.6875rem;
+					text-shadow:rgba(0,0,2,0.2);
+					border-radius: 3px;
+					padding: 4px 6px;
+					.rightIcon{
+						margin-left: 4px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+/* New Request View Styles */
+.newRequest{
+	position: relative;
+	.quoteNameLabel{
+		padding: 0.625rem;
+		font-family: "ClanNews";
+		font-size: 0.825rem;
+		color: $primaryBlack;
+		position: relative;
+		padding-right: 100px;
+		.reviseDateWrapper{
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0.625rem;
+		}
+	}
+
+	.newRequestWrapper{
+		overflow: hidden;
+		overflow-y:auto;
+	}
+
+	.requestName{
+		padding: 0.625rem;
+		/*&.error{
+			input{
+				color: $primaryRed;
+				border: 1px solid $primaryRed;
+				box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				&::-webkit-input-placeholder{
+					color:$primaryRed;
+				}
+				&:-ms-input-placeholder{
+					color: $primaryRed;
+				}
+			}
+		}
+		input{
+			margin: 0;
+			line-height: normal;
+			box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-ms-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-appearance: none;
+			&:focus{
+				outline: none;
+				box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+			}
+		}*/
+	}
+	.actionName{
+		padding: 0.625rem;
+
+		.selectionList{
+			margin-bottom: 0.625rem;
+			font-family: "ClanNews";
+			font-size: 0.825rem;
+			color: $primaryBlack;
+			box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-ms-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+			-webkit-appearance: none;
+			&:focus{
+				outline: none;
+				box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+			}
+			&.error{
+				color: $primaryRed;
+				border: 1px solid $primaryRed;
+				box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				&::-webkit-input-placeholder{
+					color:$primaryRed;
+				}
+				&:-ms-input-placeholder{
+					color: $primaryRed;
+				}
+			}
+		}
+	}
+	.instructions{
+		padding: 0.625rem;
+		&.error{
+			textarea{
+				color: $primaryRed;
+				border: 1px solid $primaryRed;
+				box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				-ms-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+				&::-webkit-input-placeholder {
+				    color:$primaryRed;
+				}
+			}
+		}
+		textarea{
+			@include getTextAreaStyles();
+		}
+	}
+
+	.editableDiv{
+		height: 100px;
+		overflow-y:auto;
+		margin: 10px;
+		border:1px solid black; 
+	}
+
+	.selectionButtons{
+		margin-right: 0.625rem;
+		.applyButton{
+			margin-bottom: 40px;
+		}
+	}
+}
+@import "newRequest/requestNotifications",
+		"newRequest/deviceContacts",
+		"newRequest/userEmails",
+		"newRequest/selectEndUser",
+		"newRequest/selectProducts",
+		"newRequest/selectRequiredResponse",
+		"newRequest/uploadFiles",
+		"newRequest/productQuestions",
+		"newRequest/productQuestionOptions",
+		"newRequest/disclaimer",
+		"newRequest/productsWithQuestions",
+		"newRequest/copyNotesAndFiles";

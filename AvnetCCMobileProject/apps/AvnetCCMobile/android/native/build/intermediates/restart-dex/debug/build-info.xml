@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="21"
+    density="xxhdpi"
+    format="7"
+    timestamp="105083730316808" >
+
+    <task
+        name="javac"
+        duration="1579" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="286" />
+    <task
+        name="verifier"
+        duration="12" />
+
+    <artifact
+        location="/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/outputs/apk/native-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="105083730316808" >
+        <artifact
+            location="/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/outputs/apk/native-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

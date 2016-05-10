@@ -1,0 +1,17 @@
+.av-collapsible{
+  @include display(flex);
+  @include justify-content(space-between);
+  color: $white;
+  font-family: "ClanMedium";
+  font-size: 0.875rem;
+  padding: 0.625rem;
+  background: $primaryRed;
+  position: relative;
+
+  .av-collapsible-icon{
+    position: absolute;
+    top: 0.4375rem;
+    right:0.625rem;
+    font-size: 1.25rem;
+  }
+}

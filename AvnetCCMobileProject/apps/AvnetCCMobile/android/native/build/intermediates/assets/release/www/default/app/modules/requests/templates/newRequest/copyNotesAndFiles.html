@@ -1,0 +1,31 @@
+<r2o-view title ="'Copy Notes & Files'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer copyNotesAndFiles">
+		<div class="subHeading">
+			<span>Select Items to Copy</span>
+
+			<div class="selectAll" ng-click="toggleCopyAll()">
+				<span class="selectCheckBox"><i class="icon-{{isCopyAll() ? 'checkbox' : 'checkbox-empty'}}"></i></span>
+				<span class="allLabel">All</span>
+			</div>
+		</div>
+		<ul class="requiredList removeProductsList">
+			<li class="singleLineListItem requiredResponseListItem {{request.isRemoveAllFiles ? '' : 'selected' }}" ng-click="toggleCopyAllFiles()">
+                <span class="listIcon selectedIcon">
+                    <i class="icon-checkmark"></i>
+                </span>
+                <span class="listText">Copy All Files</span>
+            </li>
+            <li class="singleLineListItem requiredResponseListItem {{request.isRemoveAllNotes ? '' : 'selected' }}" ng-click="toggleCopyAllNotes()">
+                <span class="listIcon selectedIcon">
+                    <i class="icon-checkmark"></i>
+                </span>
+                <span class="listText">Copy All Notes</span>
+            </li>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>		
+	</r2o-footer>
+</r2o-view>

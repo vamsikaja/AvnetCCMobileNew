@@ -1,0 +1,142 @@
+<r2o-view title ="'Products'" class='grid-block vertical'>
+	<r2o-modal modal="removeProductModal" showViewHeader="true" useParentFooter="false" class="productRemoveConfirmationModal" r2o-modal-close="removeProductModal">
+		<div class="confirmationContent"> 
+			<button r2o-modal-close="removeProductModal" class="removeProduct" ng-click="showRemoveAllProductsModal()">Remove Product</button>
+			<button class="cancel" ng-click="addProductAgain()">Add Product</button>
+			<button class="cancel">Cancel</button>
+		</div>
+    </r2o-modal>
+    <r2o-modal modal="removeAllProductsModal" class="removeAllProductsModal" useParentFooter="false">
+    	<div class="modalHeader">
+			<div class="modalHeaderText">Remove</div>
+		</div>
+		<div class="subHeading">
+			<span>Select Items to remove</span>
+
+			<div class="selectAll" ng-click="toggleAllProductSelection()">
+				<span class="selectCheckBox"><i class="icon-{{areAllProductsSelected() ? 'checkbox' : 'checkbox-empty'}}"></i></span>
+				<span class="allLabel">All</span>
+			</div>
+		</div>
+		<ul class="requiredList removeProductsList">
+			<li ng-repeat="product in filteredProducts" class="hasLeftIcon requiredItem" ng-click="addOrRemoveProductTemporarily(product)">
+				<div class="leftListIcon">
+					<i class="icon-{{(isProductToBeRemoved(product)) ? 'checkmark' : ''}}"></i>
+				</div>
+				<div class="requiredItemStatus">
+					{{product.EntityTemplateName}}
+				</div>
+				<div class="requiredItemName">
+					{{getCustomProductName(product)}}
+				</div>				
+			</li>
+		</ul>
+
+		<div class="selectionButtons">
+			<button ng-disabled="tempProductsToBeRemoved.length == 0" ng-click="removeSelectedProducts()" class="selectionButton applyButton">REMOVE PRODUCTS</button>
+			<button ng-click="cancelRemoveAllProductsModal()" class="selectionButton cancelButton">CANCEL</button>
+		</div>
+    </r2o-modal>
+	<r2o-content class="grid-block vertical has-header has-footer selectProducts">
+		<r2o-slide-box items='3' index="tabIndex" swipe="false" class="grid-block vertical">
+			<r2o-slide>
+				<div class="contactsScrolling" id="recentProducts">
+			    	<ul class="contactsList">
+			    		<li ng-repeat="recentProduct in recentProducts | orderBy:'EntityTemplateName'" class="singleLineListItem contact {{isProductAdded(recentProduct) ? 'selected' : ''}} {{recentProduct.EntityTemplateName | r2oAddAlphabetClass}}"  ng-click="addOrRemoveProduct(recentProduct)">
+			    			<span class="listIcon" ng-if="isProductAdded(recentProduct) <= 1" ng-click="addOrRemoveFavoriteProduct(recentProduct,$event); "><i class="icon-{{isProductAdded(recentProduct) ? 'checkmark' : (isProductFavorite(recentProduct) ? 'star-filled' : 'star-empty')}}"></i></span>
+			    			<span class="listIcon" ng-if="isProductAdded(recentProduct) > 1">
+								<span class="count correctlyFilled">
+									<span class="countNumber">{{isProductAdded(recentProduct)}}
+									</span>
+								</span>
+							</span>
+			    			<div class="listIconMainText">
+				    			<span class="listText">{{recentProduct.EntityTemplateName}}</span>
+				    		</div>
+			    		</li><!--{{hasQuestions(recentProduct) ? 'gray' : ''}} -->
+			    	</ul>
+				</div>
+		    	<r2o-alphabet-scrolling class="alphabetsList" draggable="true" scroll-in="recentProducts">
+		    	</r2o-alphabet-scrolling>
+			</r2o-slide>
+			<r2o-slide>
+				<div class="contactsScrolling" id="favoriteProducts">
+					<div class="noDataMessage" ng-show="favoriteProducts==undefined || favoriteProducts.length==0">
+						You have not specified any Favorites yet. When you do they will be displayed here.
+					</div>
+			    	<ul class="contactsList">
+			    		<li ng-repeat="favoriteProduct in favoriteProducts | orderBy:'EntityTemplateName'" class="singleLineListItem contact {{isProductAdded(favoriteProduct) ? 'selected' : ''}} {{favoriteProduct.EntityTemplateName | r2oAddAlphabetClass}}" ng-click="addOrRemoveProduct(favoriteProduct)">
+			    			
+			    			<span class="listIcon" ng-if="isProductAdded(favoriteProduct) <= 1" ng-click="addOrRemoveFavoriteProduct(favoriteProduct,$event); "><i class="icon-{{isProductAdded(favoriteProduct) ? 'checkmark' : (isProductFavorite(favoriteProduct) ? 'star-filled' : 'star-empty')}}"></i></span>
+
+			    			<span class="listIcon" ng-if="isProductAdded(favoriteProduct) > 1">
+								<span class="count correctlyFilled">
+									<span class="countNumber">{{isProductAdded(favoriteProduct)}}
+									</span>
+								</span>
+							</span>
+			    			<div class="listIconMainText">
+			    				<span class="listText">{{favoriteProduct.EntityTemplateName}}</span>
+				    		</div>
+			    		</li>
+			    	</ul>
+				</div>
+				<r2o-alphabet-scrolling class="alphabetsList" draggable="true" scroll-in="favoriteProducts" ng-hide="favoriteProducts==undefined || favoriteProducts.length==0">
+		    	</r2o-alphabet-scrolling>
+			</r2o-slide>
+			<r2o-slide class="searchTab">
+				<div class="contactsScrolling" id="searchProductsScroll">
+					<div class="noDataMessage" ng-show="(allProducts | orderBy:'EntityTemplateName' | filter:searchProductText).length==0">
+						No results meet the criteria entered. Please try again.
+					</div>
+			    	<ul class="contactsList">
+			    		<li ng-repeat="product in allProducts | orderBy:'EntityTemplateName' | filter:searchProductText" class="singleLineListItem contact {{isProductAdded(product) ? 'selected' : ''}}  {{product.EntityTemplateName | r2oAddAlphabetClass}}" ng-click="addOrRemoveProduct(product)">
+			    			<span class="listIcon" ng-if="isProductAdded(product) <= 1" ng-click="addOrRemoveFavoriteProduct(product,$event); "><i class="icon-{{isProductAdded(product) ? 'checkmark' : (isProductFavorite(product) ? 'star-filled' : 'star-empty')}}"></i></span>
+			    			<span class="listIcon" ng-if="isProductAdded(product) > 1">
+								<span class="count correctlyFilled">
+									<span class="countNumber">{{isProductAdded(product)}}
+									</span>
+								</span>
+							</span>
+			    			<div class="listIconMainText">
+				    			<span class="listText">{{product.EntityTemplateName}}</span>
+				    		</div>
+			    		</li>
+			    	</ul>
+				</div>
+				<div class="searchBoxWrapper bottom">
+			    	<div class="searchBox">
+						<div class="searchIcon">
+							<span class="icon-search"></span>
+						</div>
+						<form ng-submit="blurElementWithId('searchProductsInputField')">
+							<input type="search" placeholder="Search Products" ng-model="searchProductText.EntityTemplateName" ng-focus="hideSearchAlphaSCrolling=true" ng-blur="hideSearchAlphaSCrolling=false" id="searchProductsInputField" />
+						</form>
+					</div>
+				</div>
+				<r2o-alphabet-scrolling class="alphabetsList searchAlphaSCroll" draggable="true" scroll-in="searchProductsScroll" ng-hide="hideSearchAlphaSCrolling || (allProducts | orderBy:'EntityTemplateName' | filter:searchProductText).length==0">
+		    	</r2o-alphabet-scrolling>
+			</r2o-slide>
+		</r2o-slide-box>
+		<div class="selectedProducts">
+			Selected Products: <span ng-repeat="product in addedProducts" ng-click="addOrRemoveProduct(product)" class="product">{{getCustomProductName(product)}}{{$index==(addedProducts.length-1)?'':','}}</span>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 3) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(3)">
+			<i class="icon-search"></i>
+			<div class="footerButtonText">Search</div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 2) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(2)">
+			<i class="icon-star-empty"></i>
+			<div class="footerButtonText">Favs</div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 1) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(1)">
+			<i class="icon-calendar"></i>
+			<div class="footerButtonText">Recent</div>
+		</button>
+	</r2o-footer>
+</r2o-view>

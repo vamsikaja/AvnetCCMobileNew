@@ -1,0 +1,231 @@
+/* Quotes View Styles */
+.quotesView{
+	@include getGlobalBackground();
+	.block-list li > a{
+		padding:0;
+	}
+
+	.filterModal{
+		background-color: $neutralLightGray;
+		padding-bottom: 2.75rem;
+		background-clip: content-box;
+	}	
+	
+	.requestsList{
+		position: absolute;
+		width: 100%;
+		.request{
+			position: relative;
+			.requestInfoWrapper{
+				height: 4.125rem;
+				position: relative;
+				padding: 0.625rem;
+				/*padding-left: 1.8rem;*/
+				padding-right: 6.8125rem;
+				background: #fafafa;
+				z-index: 1;
+				@include transition(all 0.2s ease-in-out);
+				&.transformLeft{
+					@include transform(translateX(-65px));
+				}
+				.refreshIcon{
+					position: absolute;
+					left: 0.3125rem;
+					top: 0.625rem;
+					font-size: 1.25rem;
+				}
+
+				.requestInfo{
+					.requestRevisionName{
+						font-size: 0.875rem;
+						color: $primaryBlack;
+						max-height: 1.75rem;
+	  					overflow: hidden;
+	  					line-height: 0.9rem;
+	  					display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical;
+					}
+
+					.resellerName{
+						font-family: "ClanBook";
+						font-size: 0.8125rem;
+						color: $neutralDarkGray;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						/*padding-top: 0.3125rem;*/
+					}
+				}
+				.requestOtherInfo{
+					font-size: 0.75rem;
+					color:$neutralDarkGray; 
+	  				position: absolute;
+	  				right: 0.625rem;
+	  				width: 6.1875rem;
+					top: 0;
+					padding-top: 0.625rem;
+	  				.applUpdateDate{
+	  					font-size: 0.75rem;
+	  					color: $neutralDarkGray;
+	  					text-align: right;
+	  					padding-right:4px;
+	  				}
+	  				.statusChevronWrapper{
+	  					padding-top: 0.3rem;
+						@include display(flex);
+						@include align-items(center);
+						@include justify-content(flex-end);
+						.requestStatus{
+							@include requestStatus();
+						}
+						.chevronIcon {
+							margin-left: 0.25rem;
+							font-size: 1.125rem;
+						}
+	  				}
+				}
+			}
+			
+			.listOptionButton{
+				width: 65px;
+				.listOptionButtonIcon{
+					font-size: 1.5rem;
+				}
+				&.reviseQuote{
+					background: $neutralDarkGray;
+				}
+				&.copyQuote{
+					background: $secondaryBlue;
+				}
+			}
+		}
+	}
+}
+
+.filterModal{
+	/*.r2oModal{
+		position: fixed;
+	}*/
+	.modalHeader{
+		background: $primaryBlack !important;
+	}
+	.filterList{
+		padding-top: 80px;
+		width: 90%;
+		margin: 0 auto;
+		r2o-filter-item{
+			display:block;
+			padding: 3px 0;
+			background : $neutralDarkGray;
+			border:3px solid white;
+			position: relative;
+			margin-bottom: 5px;
+			h1.filterTitle{
+					font-size: 0.875rem;
+					color: white;
+					padding-left: 2.8125rem;
+					font-family: "ClanBook";
+				}
+			&.selected{
+				background : $primaryRed;
+				.filterCheck{
+					display: none;
+				}
+				h1.filterTitle{
+					font-size: 14px;
+					color: white;
+					text-align: center;
+					padding-left: 0;
+				}
+			}
+			.filterCheck{
+				display: block;
+				height: 36px;
+				width: 36px;
+				background: $primaryBlack;
+				position: absolute;
+				top:0;
+				left:0;
+			}
+		}
+		.filterButtons{
+			padding-top: 20px;
+			.filterButton{
+				float: right;
+				padding: 10px;
+				color: $white;
+				font-family: "ClanMedium";
+				margin: 0;
+				border-radius: 3px;
+				&.cancelButton{
+					background: $neutralDarkGray;
+				}
+				&.applyButton{
+					background: $secondaryBlue;
+					margin-left: 15px;
+					&:disabled{
+						background:#AAA;/* change */
+					}
+				}
+			}
+		}
+	}
+}
+
+.quotesHelpModal{
+	.topOverlay{
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3.125rem;
+		&.increaseHeight{
+			height: 4.8125rem;
+		}
+	} 
+	.bottomOverlay{
+		top: 7.25rem;
+		bottom: 2.75rem;
+		left: 0;
+		right: 0;
+		&.increaseTop{
+			top: 8.9375rem;
+		}
+		.pointerWrapper{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			.helpText{
+				width: 7.5rem;
+				text-align: right;
+				padding-right: 0.625rem;
+				padding-bottom: 0.625rem;
+			}
+			.pointer{
+				width: 2.75rem;
+				float: right;
+				.line,.circle{
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+	.footerOverlay{
+		bottom: 0;
+		height: 2.75rem;
+		left: 0;
+		right: 5.3125rem;
+		.pointerWrapper{
+			@include display(flex);
+			@include align-items(center);
+			height: 2.75rem;
+			.helpText{
+				@include flex(1);
+				padding-left:0.625rem;
+				width:9.375rem
+			}
+		}
+	}
+}
+
+@import "modifyQuote/selectItemtoRevise";

@@ -1,0 +1,72 @@
+<r2o-view title ="'Notifications'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer requestNotifications">
+			<ul class="peopleList">
+				<li ng-repeat="contact in addedContacts" class="singleLineListItem people {{ (isContactSelected(contact)[1] != -1) ? 'selected' : ''}} ">
+					<div class="peopleInfo" ng-click="toggleContactSelection(contact)">
+						<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+						<span class="listText">{{contact}}</span>
+					</div>
+					<!--div class="listOptionButton" ng-click="deleteAddedContact(contact,$index)">
+						<div class="listOptionButtonIcon">
+							<i class="icon-delete"></i>
+						</div>
+						<div>Delete</div>
+					</div-->
+				</li>
+				<li ng-repeat="contact in receivedContacts" class="singleLineListItem people {{(isContactSelected(contact)[1] != -1) ? 'selected' : ''}} ">
+					<div class="peopleInfo" ng-click="toggleContactSelection(contact)">
+						<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+						<span class="listText">{{contact.EmailAddress}}</span>
+					</div>
+					<!--div class="listOptionButton" ng-click="deleteReceivedContact(contact,$index)">
+						<div class="listOptionButtonIcon">
+							<i class="icon-delete"></i>
+						</div>
+						<div>Delete</div>
+					</div-->
+				</li>
+			</ul>
+			<div class="notificationList">
+				<div class="notificationContentWrapper">
+					<div class="notificationListText">
+						Send email notifications to the following:
+					</div>
+					<form class="enteredEmails" ng-submit="blurInput('notificationEmail')">
+						<div class="enteredEmailsInputWrapper">
+							<input ng-model="enteredEmail.email" placeholder="Enter email Address" ng-focus="emailInputFocus()" ng-blur="emailInputBlur()" id="notificationEmail"/>
+						</div>
+						<button class="addButton" ng-disabled="!validateEmail(enteredEmail.email)" ng-click="addEmail(enteredEmail.email)">
+								ADD
+						</button>
+						<ul class="options" ng-show="enteredEmail.email!=undefined   && enteredEmail.email!='' && showOptions">
+							<li ng-repeat="recentNotificationMail in                (recentNotificationMails | filter: enteredEmail) | filter : getUnselectedContactsOnly" class="option" ng-click="enteredEmail.email=recentNotificationMail.email">
+								{{recentNotificationMail.email}}
+							</li>
+						</ul>
+					</form>
+					<div class="addContactsFromDevice" ng-click="showDeviceContacts()">
+						ADD CONTACTS FROM THIS DEVICE
+						<div class="rightIcon">
+							<i class="icon-chevron-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="subHeading">
+					<span>Send Notifications to:</span>
+					<div class="selectAll" ng-click="toggleAllSelection()">
+						<span class="selectCheckBox"><i class="icon-{{areAllContactsSelected() ? 'checkbox' : 'checkbox-empty'}}"></i></span>
+						<span class="allLabel">All</span>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="selectionButtons rightBottom" ng-show="showSelectionButtons">
+	        	<!-- <button ng-click="addNotificationContacts(enteredEmails)" class="applyButton selectionButton">UPDATE NOTIFICATIONS</button> -->
+	        	<div style="clear:both"></div>
+	        </div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

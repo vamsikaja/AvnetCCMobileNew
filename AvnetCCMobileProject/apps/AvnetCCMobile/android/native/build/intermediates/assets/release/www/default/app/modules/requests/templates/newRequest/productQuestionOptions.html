@@ -1,0 +1,18 @@
+<r2o-view title ="question.title" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer productQuestionOptions">
+		<ul class="optionsList">
+			<div class="subHeading">
+	    		{{question.message}}
+	    	</div>
+			<li ng-repeat="option in question.options" class="singleLineListItem option {{isOptionAdded(option) ? 'selected' : ''}}" ng-click="addOrRemoveOption(option)">
+				<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+				<span class="listText">{{option.option}}</span>
+			</li>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

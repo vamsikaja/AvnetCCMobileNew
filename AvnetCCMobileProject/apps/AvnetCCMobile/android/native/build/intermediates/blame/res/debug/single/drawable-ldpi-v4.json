@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-ldpi-v4/settings.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-ldpi/settings.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-ldpi-v4/icon.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-ldpi/icon.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-ldpi-v4/splash.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-ldpi/splash.png"
+    }
+]

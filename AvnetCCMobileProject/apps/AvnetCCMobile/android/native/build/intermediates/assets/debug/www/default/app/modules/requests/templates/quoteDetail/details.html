@@ -1,0 +1,74 @@
+<div class="quoteRequestInfo">
+	<div class="categoryContent">
+		<div class="refreshStatusWrapper">
+			<div class="refreshIcon">
+				<i class="icon-refresh" ng-show="quoteDetail.isRevised"></i>
+			</div>
+			<div class="status quote-{{quoteDetail.status}}" ng-show="quoteDetail.status">
+				<div class="requestStatusValue">{{quoteDetail.status}}</div>
+			</div>
+		</div>
+		<div class="row hasEditIcon">
+			<div class="labelName">Request Name:</div>
+			<div class="value {{$root.quoteDetailsHelpScreenShown ? 'addEllipses' :''}}" ng-model="quoteDetail.requestName">{{quoteDetail.requestName}}</div>
+			<div class="editIcon" ng-click="showEditRequestName()"><i class="icon-edit"></i></div>
+		</div>
+		<div class="row">
+			<div class="labelName">Entered By:</div>
+			<div class="value">{{quoteDetail.enteredBy.firstName}} {{quoteDetail.enteredBy.lastName}}</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Request Number:</div>
+			<div class="value">{{quoteDetail.requestNumber}}</div>
+		</div>
+	</div>
+</div>
+<div style="padding-bottom:2px;">
+	<div class="subHeading" ng-click="showEndUserInfo=!showEndUserInfo" >
+		End User Information
+		<div class="accordionIcons">
+			<span><i class="{{showEndUserInfo?'icon-minus-box':'icon-plus-box'}}"></i></span>
+		</div>
+	</div>
+	<div class="categoryContent" ng-show="showEndUserInfo">
+		<div class="row hasEditIcon">
+			<div class="labelName">End User:</div>
+			<div ng-if="quoteDetail" class="value">{{quoteDetail.partnerDetails ? quoteDetail.partnerDetails.endUser : 'No End User specified'}}</div>
+			<div class="editIcon" ng-click="showEditEndUser()"><i class="icon-edit"></i></div>
+		</div>
+		<div class="row">
+			<div class="labelName">End User Account ID:</div>
+			<div class="value">{{quoteDetail.partnerDetails.endUserAccountId}}</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Contact:</div>
+			<div class="value">{{quoteDetail.contact.firstName}} {{quoteDetail.contact.lastName}} </div>
+		</div>
+		<div class="row">
+			<div class="labelName">VAR Account ID:</div>
+			<div class="value">{{quoteDetail.varAccountID}}</div>
+		</div>
+		<div class="row">
+			<div class="labelName">VAR:</div>
+			<div class="value">{{quoteDetail.varAccount}}</div>
+		</div>
+		<div class="row">
+			<div class="labelName">Requestor:</div>
+			<div class="value">{{quoteDetail.requestor.name}}</div>
+		</div>		
+	</div>
+</div>
+<div>
+	<div class="subHeading" ng-click="showProductInfo=!showProductInfo">
+		Product Information
+		<div class="accordionIcons">
+			<span><i class="{{showProductInfo?'icon-minus-box':'icon-plus-box'}}"></i></span>
+		</div>
+	</div>
+	<div class="categoryContent" ng-show="showProductInfo">
+		<div class="row" ng-repeat="product in quoteDetail.products">
+			<div class="labelName">{{product.EntityTemplateName}}</div>
+			<div class="value">{{getCustomProductName(product)}}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<li class="questionMultiSelectListItem requiredItem hasRightIcon hasLeftIcon" ui-sref="multiOptions({ productIndex : productIndex, questionIndex : questionIndex })">
+	<div class="leftListIcon">
+		<i class="icon-{{question.answer.length == 0 ? 'warning':'checkmark' }}"></i>
+	</div>
+	<div class="requiredItemName labelText">
+		<span>{{question.title}}</span><span ng-class="question.isMandatory ? 'mandatory' : '' ">*</span>
+	</div>
+	<div class="requiredItemStatus" ng-show="question.answer.length<1 || question.answer[0]==undefined">
+		{{question.message}}
+	</div>
+	<div class="requiredItemStatus" ng-hide="question.answer.length<1 || question.answer[0]==undefined">
+		<span ng-repeat="ans in question.answer">{{ans.option}}{{$last ?'':','}}</span>
+	</div>
+	<div class="rightListIcon"><i class="icon-chevron-right"></i></div>
+</li>

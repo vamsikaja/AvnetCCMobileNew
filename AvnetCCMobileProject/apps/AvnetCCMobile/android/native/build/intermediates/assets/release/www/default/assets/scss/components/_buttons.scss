@@ -1,0 +1,19 @@
+.button.av-tool-button {
+	background-color: $primaryRed;
+	font-family: "ClanBook";
+	text-transform:uppercase;
+  	color: white;
+  	font-size: 1.3rem;
+ 	border-width: 0.5px;
+  	border-style: solid;
+  	border-color: #DADADA;
+  	box-shadow: 1px 4px 20px -10px black;
+  	font-weight: 900;
+  	margin: 8px 12px;
+  	padding: 1.2rem 0.8rem;
+
+	&:focus, &:hover {
+		background-color: darken($primaryRed, 5%);
+	}
+}
+

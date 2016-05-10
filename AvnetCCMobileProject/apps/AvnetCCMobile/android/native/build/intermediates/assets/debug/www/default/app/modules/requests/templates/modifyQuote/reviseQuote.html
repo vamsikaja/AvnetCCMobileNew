@@ -1,0 +1,109 @@
+<r2o-view title ="title" class='grid-block vertical'>
+	<r2o-content class='grid-block vertical has-header has-footer newRequest'>
+		<div class="newRequestWrapper">
+			<div class="quoteNameLabel row" ng-if="(!isReviseConfig) && selectedReviseQuote">
+				<div class="labelName">Revising Quote:</div>
+				<div class="value">{{selectedReviseQuote.quoteNumber + '-' + selectedReviseQuote.quoteRevisionNumber}}</div>
+				<div class="reviseDateWrapper" ng-if="(!isReviseConfig) && selectedReviseQuote">
+					<div class="labelName">Rev Date:</div>
+					<div class="value">{{selectedReviseQuote.revisionDate}}</div>
+				</div>
+			</div>	
+			<div class="quoteNameLabel row" ng-if="isReviseConfig && selectedReviseConfig">
+				<div class="labelName">Revising Config:</div>
+				<div class="value">{{selectedReviseConfig.AttachmentName}}</div>
+				<div class="reviseDateWrapper" ng-if="isReviseConfig && selectedReviseConfig">
+					<div class="labelName">Date:</div>
+					<div class="value">{{selectedReviseConfig.LastUpdate | date : 'MM/dd/yyyy'}}</div>
+				</div>
+			</div>
+			<div class="noDataMessage" ng-if="(isReviseConfig && !selectedReviseConfig)" class="noDataMessage">
+				No associated configs.
+			</div>
+
+			<div class="noDataMessage" ng-if="(!isReviseConfig && !selectedReviseQuote)" class="noDataMessage">
+				No associated quotes.
+			</div>
+
+			<div class="requestName" ng-class="reviseQuoteNameError?'error':''">
+				<form ng-submit="blurElementWithId('reviseQuoteNameInputField')">
+					<input type="text" ng-model="request.reviseQuoteName" placeholder="Enter Action Name* " id="reviseQuoteNameInputField" ng-blur="refreshRequest()"/>
+				</form>
+			</div>
+			<div class="actionName">
+				<select class="selectionList" ng-class="reviseActionError?'error':''" ng-model="request.reviseAction" ng-blur="refreshRequest()">
+					<option value="" disabled selected>Revise Reason</option>
+					<option value="1">Avnet Error</option>
+					<option value="2">Contract</option>
+					<option value="3">Customer Change</option>
+					<option value="4">Customer Errror</option>
+					<option value="5">Refresh</option>
+					<option value="6">Special Pricing</option>
+					<option value="7">Supplier Error</option>
+				</select>
+			</div>
+			<ul class="requiredList">
+				<li ui-sref="selectProduct" class="hasLeftIcon hasRightIcon requiredItem">					
+					<div class="leftListIcon">
+						<span class="count" ng-class="correctlyFilledProducts?'filledNotificationsList':''">
+							<span class="countNumber">{{productListCount}}</span>
+						</span>
+					</div>
+					<div class="requiredItemName">
+						Add Products
+					</div>
+					<div class="requiredItemStatus">
+						{{productsListString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="productsWithQuestions" class="hasLeftIcon hasRightIcon requiredItem" ng-show="request.Products.length>0 && productSpecificQuestions.length > 0">
+					<div class="leftListIcon">
+						<i class="icon-{{correctlyFilledProductOptions ? 'checkmark' : 'warning'}}"></i>
+					</div>
+					<div class="requiredItemName" ng-class=" productOptionsError ? 'error' : '' ">
+						Product Options
+					</div>
+					<div class="requiredItemStatus" ng-class="productOptionsError ? 'error' : '' ">
+						{{productOptionsString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+				<li ui-sref="requestNotification" class="hasLeftIcon hasRightIcon requiredItem">
+					<div class="leftListIcon">
+						<span class="count" ng-class="correctlyFilledNotificationsList?'filledNotificationsList':''">
+							<span class="countNumber">{{notificationListCount}}</span>
+						</span>
+					</div>
+					<div class="requiredItemName">
+						Notifications
+					</div>
+					<div class="requiredItemStatus" >
+						{{notificationListString}}
+					</div>
+					<div class="rightListIcon">
+						<i class="icon-chevron-right"></i>
+					</div>
+				</li>
+			</ul>			
+
+			<div class="instructions {{requestInstructionsError?'error':''}}">
+				<textarea placeholder="Add Notes*" ng-model="request.requestInstructions" ng-focus="showInstructionsInView()" ng-blur="refreshRequest()" ng-change="refreshRequest()"></textarea>
+			</div>
+
+			<div class="selectionButtons">
+				<button ng-click="submitReviseRequest(request.reviseQuoteName,request.reviseAction,request.requestInstructions)" class="selectionButton applyButton" ng-class="disableSubmitButton? 'disable' : '' ">REVISE {{isReviseConfig? 'CONFIG' : 'QUOTE'}}</button>
+				<button ng-click="cancelRevise()" class="selectionButton cancelButton">CANCEL</button>
+			</div>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

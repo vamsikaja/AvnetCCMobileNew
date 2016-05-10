@@ -1,0 +1,44 @@
+<div class="noDataMessage" ng-if="reviseQuotes.length==0"><p>There are no quotes associated with this request at this time.</p></div>
+<ul class="reviseItems">
+	<li class="reviseItem" ng-repeat="quote in reviseQuotes" ng-click="goToReviseQuote(false, quote)">
+		
+		<div>
+			<span class="labelName">Quote No: </span>
+			<span class="value">{{quote.quoteNumber}}</span>
+		</div>
+		<div>
+			<span class="labelName">Action No: </span>
+			<span class="value">{{quote.actionSk}}</span>
+		</div>
+		<div>			
+			<span class="value">{{selectedReviseProduct.EntityTemplateName}}</span>
+		</div>
+		<div>
+			<span class="labelName">Revision: </span>
+			<span class="value">{{quote.quoteRevisionNumber}}</span>
+		</div>
+		<div>
+			<span class="labelName">Action: </span>
+			<span class="value">{{quote.action}}</span>
+		</div>
+		<div>
+			<span class="labelName">Exp. Date: </span>
+			<span class="value">{{quote.expireDate | date : 'MM/dd/yyyy'}}</span>
+		</div>				
+		<div>
+			<span class="labelName">Revenue: </span>
+			<span class="value">${{quote.revenue}}</span>
+		</div>	
+		<div class="dateWrapper">
+			<div class="revDateLabel">
+				Rev. Date
+			</div>
+			<div class="revDate">
+				{{quote.revisionDate}}
+			</div>
+			<div class="revise">
+				<span>Revise</span><span class="rightIcon"><i class="icon-chevron-right"></i></span>
+			</div>
+		</div>			
+	</li>
+</ul>

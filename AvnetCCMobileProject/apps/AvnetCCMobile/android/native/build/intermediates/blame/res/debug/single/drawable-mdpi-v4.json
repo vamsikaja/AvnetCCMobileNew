@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_action_next_item.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/ic_action_next_item.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/splash.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/splash.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/settings.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/settings.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_action_remove.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/ic_action_remove.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/icon.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/icon.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_action_previous_item.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable-mdpi/ic_action_previous_item.png"
+    }
+]

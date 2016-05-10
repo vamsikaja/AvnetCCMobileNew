@@ -40,7 +40,7 @@ gulp.task('buildAppJs', function () {
         .pipe(concat('app.min.js'))
         //.pipe(uglify())
         //.pipe(obfuscate())
-        .pipe(gulp.dest('./common/dist/js/'));
+        .pipe(gulp.dest('./common/dist/'));
 });
 
 gulp.task('buildSharedJs', function () {
@@ -53,7 +53,7 @@ gulp.task('buildSharedJs', function () {
         .pipe(concat('app.shared.min.js'))
         //.pipe(uglify())
         //.pipe(obfuscate())
-        .pipe(gulp.dest('./common/dist/js/'));
+        .pipe(gulp.dest('./common/dist/'));
 });
 
 gulp.task('buildModuleRequests', function () {
@@ -66,7 +66,7 @@ gulp.task('buildModuleRequests', function () {
         .pipe(concat('app.requests.min.js'))
         //.pipe(uglify())
         //.pipe(obfuscate())
-        .pipe(gulp.dest('./common/dist/js/'));
+        .pipe(gulp.dest('./common/dist/'));
 });
 
 gulp.task('buildModuleOrders', function () {
@@ -79,7 +79,7 @@ gulp.task('buildModuleOrders', function () {
         .pipe(concat('app.orders.min.js'))
         //.pipe(uglify())
         //.pipe(obfuscate())
-        .pipe(gulp.dest('./common/dist/js/'));
+        .pipe(gulp.dest('./common/dist/'));
 });
 
 

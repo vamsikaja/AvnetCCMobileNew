@@ -1,0 +1,18 @@
+<li class="questionListItem questionInputListItem">
+	<label ng-switch on="question.questionType">
+		<div class="labelText">
+			<!-- <span ng-show="question.isMandatory" >
+				<i class="icon-{{(question.answer == null || question.answer == undefined ||question.answer.length == 0)? 'warning':'checkmark' }}"></i>
+			</span> -->
+			<span>{{question.title}}</span><span ng-class="question.isMandatory ? 'mandatory' : '' ">*</span>
+		</div>
+		<div ng-switch-when="date" class="dateInputWrapper">
+			<input type="date" ng-model="question.answer" placeholder="MM/DD/YYYY"/>
+			<div class="calendarIcon"><i class="icon-calendar"></i></div>
+		</div>
+		<form ng-submit="blurElementWithId('productQuestion'+productIndex+questionIndex)">
+			<input ng-switch-when="number" type="number" pattern="\d*" ng-model="question.answer" id="{{'productQuestion'+productIndex+questionIndex}}" ng-focus="showInViewElementWithId('productQuestion'+productIndex+questionIndex)"/>
+			<input  ng-switch-default type="{{question.questionType}}" ng-model="question.answer" id="{{'productQuestion'+productIndex+questionIndex}}" ng-focus="showInViewElementWithId('productQuestion'+productIndex+questionIndex)"/>
+		</form>
+	</label>
+</li>

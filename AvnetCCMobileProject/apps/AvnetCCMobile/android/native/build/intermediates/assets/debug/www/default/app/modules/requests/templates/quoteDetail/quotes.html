@@ -1,0 +1,52 @@
+<div class="noDataMessage" ng-show="quoteDetail==undefined || quoteDetail.quotes.length==0">
+	There are no quotes associated with this request at this time.
+</div>
+<ul class="quotesList master ngAnimate" ng-hide="quotesDescriptionShown">
+	<li class="quote" ng-repeat="quote in quoteDetail.quotes" ng-click="toggleQuoteAccordion($index)">
+		<div class="quoteBasicData">
+			<div>
+				<div class="labelName">Quote No: </div>
+				<div class="value">{{quote.quoteNumber}}</div>
+			</div>
+			<div>
+				<div class="labelName">Action No: </div>
+				<div class="value">{{quote.actionSk}}</div>
+			</div>
+			<div class="value">
+				{{quote.productList}}
+			</div>
+			<div class="dateWrapper">
+				<div class="revDateLabel">
+					Rev. Date
+				</div>
+				<div class="revDate">
+					{{quote.revisionDate | date : 'MM/dd/yy'}}
+				</div>
+				<div class="more {{(revealedQuoteAccordionIndex == $index) ? 'hidden' : ''}}">
+					<span>More</span><span class="rightIcon"><i class="icon-chevron-right"></i></span>
+				</div>
+			</div>
+		</div>
+		<div class="{{(revealedQuoteAccordionIndex == $index) ? '' : 'hidden'}}">
+				<div class="labelName">Revision: </div>
+				<div class="value">{{quote.quoteRevisionNumber}}</div>
+			<div>
+				<div class="labelName">Action: </div>
+				<div class="value">{{quote.action}}</div>
+			</div>
+			<div>
+				<div class="labelName">Exp. Date: </div>
+				<div class="value">{{quote.expireDate | date : 'MM/dd/yy'}}</div>
+			</div>
+			<div>
+				<div class="labelName">Revenue: </div>
+				<div class="value">${{quote.revenue}}</div>
+			</div>
+			<div class="seeDetails" ng-click="showQuotesDescription(quote.quoteNumber, quote.quoteRevisionNumber); $event.stopPropagation();">
+				<span>See Details</span><span><i class="icon-chevron-right"></i></span>
+			</div>
+		</div>
+	</li>
+</ul>
+<div class="quotesDescription detail ngAnimate" ng-include="'app/modules/requests/templates/quoteDetail/quotesDescription.html'" ng-show="quotesDescriptionShown">
+</div>

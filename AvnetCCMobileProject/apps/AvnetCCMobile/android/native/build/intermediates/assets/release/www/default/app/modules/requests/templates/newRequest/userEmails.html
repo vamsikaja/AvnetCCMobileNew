@@ -1,0 +1,18 @@
+<r2o-view title ="'Select Emails'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer userEmails">
+		<div class="noDataMessage" ng-show="emails==undefined || emails.length==0">
+				No email associated with this contact.
+		</div>
+		<ul class="emails">
+			<li ng-repeat="email in emails" class="singleLineListItem  email {{isEmailAdded(email) ? 'selected' : ''}}" ng-click="addOrRemoveEmail(email)">
+				<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+				<span class="listText">{{email}}</span>
+			</li>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

@@ -1,0 +1,162 @@
+.requestNotifications{
+	.notificationList{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		.notificationContentWrapper{
+			padding: 1.25rem 0.625rem;
+		}
+		.notificationListText{
+			font-size: 0.875rem;
+			margin-bottom: 0.625rem;
+		}
+		.enteredEmails{
+			position: relative;
+			margin-bottom: 0.625rem;
+			.enteredEmailsInputWrapper{
+				margin-right: 3.1875rem;
+				input{
+					margin: 0;
+					width: 100%;
+					padding: 0.625rem;
+					background-color: $white;
+					border: none;
+					box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+					-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+					line-height: normal;
+					-webkit-appearance: none;
+					text-transform: lowercase;
+					&:focus{
+						outline: none;
+						box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+						-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
+					}
+					&.error{
+						border: 1px solid $primaryRed;
+						box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+						-webkit-box-shadow: 0px 1px 3px 0px rgba(226,36,34,0.75);
+					}
+				}
+			}
+			.addButton{
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				padding: 0.625rem;
+				background: $secondaryBlue;
+				line-height: normal;
+				color: $white;
+				margin: 0;
+				&:disabled{
+					background: $neutralLightGray;
+				}
+				.allLabel{
+					margin-left: -5px;
+				}
+			}
+			.options{
+				position: absolute;
+				left: 0;
+				right: 3.1875rem;
+				z-index: 10;
+				background:$white;
+				max-height: 129px;
+				overflow-y:scroll;
+				.option{
+					padding: 0.625rem;
+				} 
+			}
+		}
+		.addContactsFromDevice{
+			font-size: 0.875rem;
+			background: $secondaryBlue;
+			padding: 0.625rem;
+			color: $white;
+			position: relative;
+			vertical-align: middle;
+			line-height: normal;
+			.rightIcon{
+				position: absolute;
+				right: 0.625rem;
+				top:0.625rem;
+				bottom: 0.625rem;
+				font-size: 1.25rem;
+			}
+		}
+		.subHeading{
+			position: relative;
+			padding: 15px;
+			.selectAll{
+				position: absolute;
+				right: 0.3125rem;
+				top: 0.3125rem;
+				bottom: 0.3125rem;
+				border-radius: 0.3125rem;
+				padding: 0.3125rem;
+				background: $secondaryBlue;
+				.selectCheckBox{
+					font-size: 1.5rem;
+					vertical-align: middle;
+				}
+				.allLabel{
+					vertical-align: middle;
+				}
+			}
+		}	
+	}
+
+	.peopleList{
+		border-top: 196px solid transparent;
+		/*border-bottom: 54px solid transparent;*/
+		overflow: hidden;
+		overflow-y:auto;
+		/*min-height: 100%;
+		max-height: 100%;*/
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		.people{
+			position: relative;
+			.peopleInfo{
+				padding: 0.625rem;
+				/*background: #fafafa;
+				z-index: 1;
+				position: relative;
+				@include transition(all 0.2s ease-in-out);
+				&.transformLeft{
+					@include transform(translateX(-80px));
+				}*/
+			}
+			.listOptionButton{
+				background: $primaryRed;
+				width: 80px;
+				.listOptionButtonIcon{
+					font-size: 1.5rem;
+				}
+			}
+		}
+		/*.subHeading r2o-check-box .checkBoxWrapper{
+			padding-top:0;
+			background: $secondaryBlue;
+			.checkBoxContent{
+			}
+			&.selected{
+				.checkBox{
+					background: $secondaryGreen !important;
+				}	
+				.checkBoxContent{
+					color: $white !important; 
+				}
+			}
+		}
+
+		.subHeading span{
+			@include align-self(center);
+			min-width:132px;
+		}*/
+	}
+}

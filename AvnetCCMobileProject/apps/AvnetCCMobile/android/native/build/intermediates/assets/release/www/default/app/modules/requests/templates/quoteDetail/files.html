@@ -1,0 +1,22 @@
+<div class="noDataMessage" ng-show="quoteDetail==undefined || quoteDetail.entityFiles.length==0">
+	There are no files associated with this request at this time.
+</div>
+<ul class="filesList">
+	<li class="file" ng-repeat="file in quoteDetail.entityFiles">
+		<div class="fileInfoWrapper {{(revealedFileIdIndex == $index) ? 'transformLeft' : ''}}" ng-swipe-left="showFileShare($index)" ng-swipe-right="removeFileShare($index)">
+			<div class="fileInfo">{{file.AttachmentDescription}}</div>
+			<div class="fileDateTime">{{file.LastUpdate | date:'M/d/yyyy h:mm:ss a'}}</div>
+			<div class="fileNameWrapper">
+				<span class="fileNameLabel">Filename: </span>
+				<span class="fileName" ng-click="shareFile(file.AttachmentId, file.AttachmentExtension, file.AttachmentName,'open', quoteDetail.requestName)">{{file.AttachmentName}}</span>
+			</div>
+			<div class="fileId">#{{file.AttachmentId}}</div>
+		</div>
+		<div class="listOptionButton" ng-click="shareFile(file.AttachmentId, file.AttachmentExtension, file.AttachmentName,'shareItem', quoteDetail.requestName)">
+			<div class="listOptionButtonIcon">
+				<i class="icon-share"></i>
+			</div>
+			<div>Share File</div>
+		</div>
+	</li>
+</ul>

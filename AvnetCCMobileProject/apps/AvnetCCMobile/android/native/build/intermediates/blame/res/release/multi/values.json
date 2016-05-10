@@ -1,0 +1,425 @@
+[
+    {
+        "outputFile": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/release/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 49,
+                    "endOffset": 100
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 2,
+                        "startOffset": 726,
+                        "endColumn": 47,
+                        "endOffset": 771
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 61,
+                    "endOffset": 162
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 2,
+                        "startOffset": 78,
+                        "endColumn": 59,
+                        "endOffset": 135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 167,
+                    "endColumn": 41,
+                    "endOffset": 204
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 2,
+                        "startOffset": 329,
+                        "endColumn": 39,
+                        "endOffset": 366
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 209,
+                    "endColumn": 65,
+                    "endOffset": 270
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 2,
+                        "startOffset": 1035,
+                        "endColumn": 63,
+                        "endOffset": 1096
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 275,
+                    "endColumn": 39,
+                    "endOffset": 310
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 2,
+                        "startOffset": 291,
+                        "endColumn": 37,
+                        "endOffset": 326
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 315,
+                    "endColumn": 113,
+                    "endOffset": 424
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 2,
+                        "startOffset": 1462,
+                        "endColumn": 111,
+                        "endOffset": 1571
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 429,
+                    "endColumn": 116,
+                    "endOffset": 541
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 2,
+                        "startOffset": 1319,
+                        "endColumn": 114,
+                        "endOffset": 1431
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 546,
+                    "endColumn": 39,
+                    "endOffset": 581
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 2,
+                        "startOffset": 253,
+                        "endColumn": 37,
+                        "endOffset": 288
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 586,
+                    "endColumn": 145,
+                    "endOffset": 727
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 2,
+                        "startOffset": 836,
+                        "endColumn": 143,
+                        "endOffset": 977
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 732,
+                    "endColumn": 43,
+                    "endOffset": 771
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 2,
+                        "startOffset": 1574,
+                        "endColumn": 41,
+                        "endOffset": 1613
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 776,
+                    "endColumn": 76,
+                    "endOffset": 848
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 2,
+                        "startOffset": 651,
+                        "endColumn": 74,
+                        "endOffset": 723
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 853,
+                    "endColumn": 76,
+                    "endOffset": 925
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 2,
+                        "startOffset": 140,
+                        "endColumn": 74,
+                        "endOffset": 212
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 930,
+                    "endColumn": 56,
+                    "endOffset": 982
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 2,
+                        "startOffset": 980,
+                        "endColumn": 54,
+                        "endOffset": 1032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 987,
+                    "endColumn": 122,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 2,
+                        "startOffset": 476,
+                        "endColumn": 120,
+                        "endOffset": 594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 63,
+                    "endOffset": 1169
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 2,
+                        "startOffset": 774,
+                        "endColumn": 61,
+                        "endOffset": 833
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1174,
+                    "endColumn": 55,
+                    "endOffset": 1225
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 2,
+                        "startOffset": 597,
+                        "endColumn": 53,
+                        "endOffset": 648
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1230,
+                    "endColumn": 47,
+                    "endOffset": 1273
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 2,
+                        "startOffset": 1217,
+                        "endColumn": 45,
+                        "endOffset": 1260
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1278,
+                    "endColumn": 57,
+                    "endOffset": 1331
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 2,
+                        "startOffset": 1263,
+                        "endColumn": 55,
+                        "endOffset": 1316
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1336,
+                    "endColumn": 64,
+                    "endOffset": 1396
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 2,
+                        "startOffset": 1154,
+                        "endColumn": 62,
+                        "endOffset": 1214
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1401,
+                    "endColumn": 146,
+                    "endOffset": 1543
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 2,
+                        "startOffset": 1678,
+                        "endColumn": 144,
+                        "endOffset": 1820
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1548,
+                    "endColumn": 189,
+                    "endOffset": 1733
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 2,
+                        "startOffset": 1823,
+                        "endColumn": 187,
+                        "endOffset": 2008
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1738,
+                    "endColumn": 69,
+                    "endOffset": 1803
+                },
+                "from": {
+                    "file": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/values/strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 2,
+                        "startOffset": 408,
+                        "endColumn": 67,
+                        "endOffset": 473
+                    }
+                }
+            }
+        ]
+    }
+]

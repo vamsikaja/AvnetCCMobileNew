@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="no" name="msapplication-tap-highlight">
+        <title>Avnet Channel Connection Mobile</title>
+    <!-- Styles -->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="assets/css/fonts/r2o-icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/app.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    <!-- Libraries -->
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "Avnet Channel Connection",
+   "APP_ID": "AvnetCCMobile",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "2.2",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "2674313786",
+   "WORKLIGHT_PLATFORM_VERSION": "7.1.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/AvnetCCMobile\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script src="worklight/jsonstore.js"></script>
+		<script src="lib/foundation/foundation.min.js"></script>
+    <script src="lib/angular/angular-touch.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/device.js/lib/device.min.js"></script>
+    <!-- Angular/App -->
+    <script src="dist/app.min.js"></script>
+    <script src="dist/app.requests.min.js"></script>
+    <script src="dist/app.orders.min.js"></script>
+    <script src="dist/app.shared.min.js"></script>
+    <!-- MobileFirst -->
+    <script src="app/mobilefirst/app.wl.init.js"></script>
+    <script src="app/mobilefirst/app.wl.auth.js"></script>
+    <!-- Plugins -->
+    <script src="app/shared/plugins/ShopWebViewOverlayPlugin.js"></script>
+    </head>
+    <body id="content">
+        <div class="grid-frame">
+            <div class="grid-block">
+                <r2o-nav-view class="grid-block vertical {{slideReverse}}">
+                    <r2o-nav-bar ng-class="$root.showDetailsHeaderButton ? 'paddingRight' :''"></r2o-nav-bar>
+                    <div class="headerRequestDetailButton hideElement {{$root.showDetailsHeaderButton ? 'showElement':''}}" ng-click="$root.toggleRequestActionButtons()">
+                        <i class="icon-menu-dot"></i>
+                    </div>
+                    <div class="headerOverlay hideElement {{$root.quoteDetailsHelpScreenShown ?'changeRight':''}} {{$root.showHeaderOverlay ?'showElement':''}}">
+                        <div class="pointerWrapper pointingHeaderButton hideElement {{$root.quoteDetailsHelpScreenShown ? 'showElement' : ''}}">
+                            <div class="helpText">Tap to open Request Menu</div>
+                            <div class="line horizontal"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                    <ui-view class="grid-block vertical {{$root.modalShown}}"></ui-view>
+                </r2o-nav-view>
+            </div>
+        </div>
+    </body>
+</html>

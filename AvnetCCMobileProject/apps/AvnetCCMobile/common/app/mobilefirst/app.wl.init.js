@@ -81,11 +81,14 @@ function wlCommonInit() {
         localKeyGen: false
     };
 
+    console.log('main: wlCommonInit: WL.JSONStore.init', collections, options);
+
+
     //INIT JSON STORE
     WL.JSONStore.init(collections, options)
         .then(function () {
 
-            console.log('main: wlCommonInit: WL.JSONStore.init', collections, options);
+            console.log('main: wlCommonInit: WL.JSONStore.init.then');
 
             angular.element(document).ready(function () {
 

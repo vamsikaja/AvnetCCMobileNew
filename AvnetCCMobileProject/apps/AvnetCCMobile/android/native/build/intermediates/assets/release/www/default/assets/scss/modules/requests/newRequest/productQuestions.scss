@@ -1,0 +1,20 @@
+.productQuestions{
+	.productQuestionsWrapper{
+		overflow: hidden;
+		overflow-y:auto;
+		/*border-bottom: 54px solid transparent;*/ 
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	.productQuestion{
+		padding: 0.625rem;
+		position: relative;
+		.leftListIcon{
+			font-size: 1.25rem;
+			color: $primaryRed;
+		}
+	}
+}

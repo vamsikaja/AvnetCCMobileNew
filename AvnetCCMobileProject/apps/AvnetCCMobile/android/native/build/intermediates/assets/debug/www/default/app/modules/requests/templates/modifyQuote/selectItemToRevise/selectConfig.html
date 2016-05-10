@@ -1,0 +1,35 @@
+<div class="noDataMessage" ng-if="configFiles.length==0"><p>There are no configs associated with this request at this time.</p></div>
+<ul class="reviseItems">
+	<li class="reviseItem" ng-repeat="config in configFiles"  ng-click="goToReviseQuote(true, config)">
+		<div>
+			<span class="labelName">File: </span>
+			<span class="value">{{ config.AttachmentName }}</span>
+		</div>			
+		<div>
+			<span class="labelName">Action No: </span>
+			<span class="value">{{config.ActionSk}}</span>
+		</div>
+		<div>			
+			<span class="value">{{selectedReviseProduct.EntityTemplateName}}</span>
+		</div>
+		<div>
+			<span class="labelName">Action: </span>
+			<span class="value">{{config.ActionName}}</span>
+		</div>
+		<div>
+			<span class="labelName">Status: </span>
+			<span class="value">{{config.ActionStatus}}</span>
+		</div>
+		<div class="dateWrapper">
+			<div class="revDateLabel">
+				Date
+			</div>
+			<div class="revDate">
+				{{config.LastUpdate | date : 'MM/dd/yyyy'}}
+			</div>
+			<div class="revise">
+				<span>Revise</span><span class="rightIcon"><i class="icon-chevron-right"></i></span>
+			</div>
+		</div>
+	</li>
+</ul>

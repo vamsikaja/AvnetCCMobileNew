@@ -1,0 +1,184 @@
+<r2o-view title ="'End User'" class='grid-block vertical'>
+	<r2o-modal modal="selectEndUserHelpModal" showViewHeader="true" useParentFooter="false" class="helpModal selectEndUserHelpModal" enableTouchClose="true" touch-call-back-method="closeHelpScreen()">
+    	<div class="overlay topOverlay {{ quoteDetailEndUserClicked ? 'reduceHeight' : ''}}">
+    		<div class="starIcon {{ quoteDetailEndUserClicked ? 'reduceTop' : ''}}">
+    			<i class="icon-star-filled"></i>
+    		</div>
+    		<div class="pointerWrapper {{ quoteDetailEndUserClicked ? 'reduceTop' : ''}}">
+    			<div class="circle"></div>
+				<div class="line horizontal"></div>
+				<div class="helpText">
+					Tap star to add to your favorites list for faster access
+				</div>
+			</div>
+    	</div>
+		<div class="overlay bottomOverlay {{ quoteDetailEndUserClicked ? 'reduceTop' : ''}}">
+			<div class="pointerWrapper">
+				<div class="circle"></div>
+				<div class="line vertical"></div>
+				<div class="helpText">
+					Tap text to select/deselect items
+				</div>
+			</div>
+		</div>
+    </r2o-modal>
+	<r2o-content class="grid-block vertical has-header has-footer selectEndUser">
+		<r2o-slide-box items='3' index="tabIndex" swipe="false" class="grid-block vertical" ng-hide="endUserInfo.isEndUserNotRequired">
+			<r2o-slide>
+				<div class="contactsScrolling {{ quoteDetailEndUserClicked ? 'noBorderTop' : ''}}" id="recentEndUsers">
+			    	<ul class="contactsList">
+			    		<li ng-repeat="recentEndUser in recentEndUsers | orderBy:orderUsers" class="singleLineListItem contact {{isEndUserAdded(recentEndUser) ? 'selected' : ''}}" ng-class="recentEndUser.PartnerName | r2oAddAlphabetClass" ng-click="addOrRemoveEndUser(recentEndUser)">  
+			    			<span class="listIcon" ng-click="addOrRemoveFavoriteEndUser(recentEndUser,$event); "><i class="icon-{{isEndUserAdded(recentEndUser) ? 'checkmark' : (isEndUserFavorite(recentEndUser) ? 'star-filled' : 'star-empty')}}"></i></span>
+			    			<div class="listText">
+			 					<div class="listIconMainText">{{recentEndUser.PartnerName}}</div>
+			 					<div class="listSubText">
+			    				{{recentEndUser.AddressLine1}}, {{recentEndUser.CityName}}
+			    			</div>
+			 				</div>
+			    		</li>
+			    	</ul>
+				</div>
+				<div class="endUserRequiredWrapper" ng-hide="quoteDetailEndUserClicked">
+					<div class="endUserRequired">
+						<div class="endUserRequiredText">
+							An End User will not be used for this request
+						</div>
+						<r2o-toggle is-checked="endUserInfo.isEndUserNotRequired"></r2o-toggle>
+					</div>
+					<div class="subHeading">
+						Recently Viewed
+					</div>
+				</div>
+				<r2o-alphabet-scrolling class="alphabetsList {{ quoteDetailEndUserClicked ? 'removeTop' : ''}}" draggable="true" scroll-in="recentEndUsers">
+		    	</r2o-alphabet-scrolling>
+		    	<!-- <div class="selectionButtons rightBottom">
+		        	<button ng-click="addEndUsersToRequest()" class="applyButton selectionButton">ADD END USER INFO</button>
+		        	<button ng-click="handleBackButton()" class="cancelButton selectionButton">CANCEL</button>
+		        	<div style="clear:both"></div>
+		        </div> -->
+			</r2o-slide>
+			<r2o-slide>
+				<div class="contactsScrolling {{ quoteDetailEndUserClicked ? 'noBorderTop' : ''}} " id="favouriteEndUsers">
+					<div class="noDataMessage" ng-show="favoriteEndUsers==undefined || favoriteEndUsers.length==0">
+						You have not specified any Favorites yet. When you do they will be displayed here.
+					</div>
+			    	<ul class="contactsList">
+			    		<li ng-repeat="recentEndUser in favoriteEndUsers | orderBy:orderUsers " class="singleLineListItem contact {{isEndUserAdded(recentEndUser) ? 'selected' : ''}}" ng-class="recentEndUser.PartnerName | r2oAddAlphabetClass" ng-click="addOrRemoveEndUser(recentEndUser)">
+			    			<span class="listIcon" ng-click="addOrRemoveFavoriteEndUser(recentEndUser,$event); "><i class="icon-{{isEndUserAdded(recentEndUser) ? 'checkmark' : (isEndUserFavorite(recentEndUser) ? 'star-filled' : 'star-empty')}}"></i></span>
+			    			<div class="listText">
+			 					<div class="listIconMainText">{{recentEndUser.PartnerName}}</div>
+			 					<div class="listSubText">
+			    				{{recentEndUser.AddressLine1}}, {{recentEndUser.CityName}}
+			    				</div>
+			 				</div>
+			    		</li>
+			    	</ul>
+				</div>
+				<div class="endUserRequiredWrapper" ng-hide="quoteDetailEndUserClicked">
+					<div class="endUserRequired">
+						<div class="endUserRequiredText">
+							An End User will not be used for this request
+						</div>
+						<r2o-toggle is-checked="endUserInfo.isEndUserNotRequired"></r2o-toggle>
+					</div>
+					<div class="subHeading">
+						Favourites
+					</div>
+				</div>
+				<r2o-alphabet-scrolling class="alphabetsList {{ quoteDetailEndUserClicked ? 'removeTop' : ''}}" draggable="true" scroll-in="favouriteEndUsers" ng-hide="favoriteEndUsers==undefined || favoriteEndUsers.length==0">
+		    	</r2o-alphabet-scrolling>
+		    	<!-- <div class="selectionButtons rightBottom">
+		        	<button ng-click="addEndUsersToRequest()" class="applyButton selectionButton">ADD END USER INFO</button>
+		        	<button ng-click="handleBackButton()" class="cancelButton selectionButton">CANCEL</button>
+		        	<div style="clear:both"></div>
+		        </div> -->
+			</r2o-slide>
+			<r2o-slide class="search">
+				<div class="contactsScrolling" id="searchEndUsers">
+					<div class="noDataMessage" ng-hide="anyEndUsersSearched">
+						You haven’t searched for anything yet. Use the field above to find end users or select from your recent or favorites lists.
+					</div>
+					<div class="noDataMessage" ng-show="(matchedEndUsers==undefined || matchedEndUsers.length==0 ) && anyEndUsersSearched">
+						No results meet the search criteria entered. Please try again.
+					</div>
+			    	<ul class="contactsList">
+			    		<li ng-repeat="recentEndUser in matchedEndUsers | orderBy:orderUsers" class="singleLineListItem contact {{isEndUserAdded(recentEndUser) ? 'selected' : ''}}" ng-class="recentEndUser.PartnerName | r2oAddAlphabetClass" ng-class="recentEndUser.PartnerName" ng-click="addOrRemoveEndUser(recentEndUser)">
+			    			<span class="listIcon" ng-click="addOrRemoveFavoriteEndUser(recentEndUser,$event); "><i class="icon-{{isEndUserAdded(recentEndUser) ? 'checkmark' : (isEndUserFavorite(recentEndUser) ? 'star-filled' : 'star-empty')}}"></i></span>
+			    			<div class="listText">
+			 					<div class="listIconMainText">{{recentEndUser.PartnerName}}</div>
+			 					<div class="listSubText">
+				    				{{recentEndUser.AddressLine1}}, {{recentEndUser.CityName}}
+				    			</div>
+			 				</div>
+			    		</li>
+			    	</ul>
+				</div>
+				<div class="searchBoxWrapper">
+					<form class="searchBox" ng-submit="getMatchedEndUsers(searchText,'selectEndUserSearchTextField')">
+						<div class="searchIcon" ng-click="getMatchedEndUsers(searchText,'selectEndUserSearchTextField')">
+							<span class="icon-search"></span>
+						</div>
+						<input type="text" placeholder="Search End Users" id="selectEndUserSearchTextField" ng-model="searchText" ng-focus="hideSearchAlphaSCrolling=true" ng-blur="hideSearchAlphaSCrolling=false" ng-change="searchOnChangeMethod(searchText,'selectEndUserSearchTextField')"/>
+					</form>
+					<div class="subHeading">
+		    			Search Results
+		    		</div>
+				</div>
+				<r2o-alphabet-scrolling class="alphabetsList" draggable="true" scroll-in="searchEndUsers" ng-hide="hideSearchAlphaSCrolling || matchedEndUsers==undefined || matchedEndUsers.length==0">
+		    	</r2o-alphabet-scrolling>
+				<!-- <div class="selectionButtons rightBottom">
+		        	<button ng-click="addEndUsersToRequest()" class="applyButton selectionButton">ADD END USER INFO</button>
+		        	<button ng-click="handleBackButton()" class="cancelButton selectionButton">CANCEL</button>
+		        	<div style="clear:both"></div>
+		        </div> -->
+			</r2o-slide>
+		</r2o-slide-box>
+		<div ng-show="endUserInfo.isEndUserNotRequired">
+			<div class="businessSector">
+				<ul class="businessSectorList">
+					<li  class="singleLineListItem businessSectorListItem {{ businessSector=='Commercial' ? 'selected' : ''}}" ng-click="changeBusinessSector('Commercial')">
+		    			<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+		    			<span class="listText">Commercial</span>
+		    		</li>
+		    		<li  ng-if="!commercialAutoSelected" class="singleLineListItem businessSectorListItem {{ businessSector=='Fed/Sled' ? 'selected' : ''}}" ng-click="changeBusinessSector('Fed/Sled')">
+		    			<span class="listIcon selectedIcon"><i class="icon-checkmark"></i></span>
+		    			<span class="listText">Fed/Sled</span>
+		    		</li>
+				</ul>
+				<!-- <div class="selectionButtons rightBottom">
+		        	<button ng-click="addEndUsersToRequest()" class="applyButton selectionButton">ADD END USER INFO</button>
+		        	<button ng-click="handleBackButton()" class="cancelButton selectionButton">CANCEL</button>
+		        	<div style="clear:both"></div>
+		        </div> -->
+			</div>
+			<div class="endUserRequiredWrapper" ng-hide="quoteDetailEndUserClicked">
+				<div class="endUserRequired">
+					<div class="endUserRequiredText">
+						An End User will not be used for this request
+					</div>
+					<r2o-toggle is-checked="endUserInfo.isEndUserNotRequired"></r2o-toggle>
+				</div>
+				<div class="subHeading">
+					Business Sector
+				</div>
+			</div>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 3) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(3)" ng-hide="endUserInfo.isEndUserNotRequired">
+			<i class="icon-search"></i>
+			<div class="footerButtonText">Search</div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 2) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(2)" ng-hide="endUserInfo.isEndUserNotRequired">
+			<i class="icon-star-empty"></i>
+			<div class="footerButtonText">Favs</div>
+		</button>
+		<button class="footerButton {{(tabIndex.index == 1) ? 'activeButton' : ''}}"  ng-click="changeTabContentTo(1)" ng-hide="endUserInfo.isEndUserNotRequired">
+			<i class="icon-calendar"></i>
+			<div class="footerButtonText">Recent</div>
+		</button>
+	</r2o-footer>
+</r2o-view>

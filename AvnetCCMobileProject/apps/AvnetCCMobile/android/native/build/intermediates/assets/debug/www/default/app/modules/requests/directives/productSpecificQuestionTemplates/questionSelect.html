@@ -1,0 +1,8 @@
+<li class="questionListItem questionSelectListItem">
+	<label>
+		<div class="labelText">{{question.title}}</div>
+		<select ng-model="question.answer" ng-options="item.option as item.option for item in question.options">
+			<option value="">Select option</option>
+		</select>
+	</label>
+</li>

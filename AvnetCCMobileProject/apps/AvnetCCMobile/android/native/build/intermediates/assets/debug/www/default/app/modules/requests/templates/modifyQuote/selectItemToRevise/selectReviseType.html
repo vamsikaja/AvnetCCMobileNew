@@ -1,0 +1,28 @@
+<ul class="requiredList">
+	<li class="hasLeftIcon hasRightIcon requiredItem" ng-if="isReviseConfigurable" ng-click="onTypeSelected(true)">
+		<div class="leftListIcon">
+			<span class="count {{configFiles.length > 0 ? 'correctlyFilled' :''}}">
+				<span class="countNumber">{{configFiles.length}}</span>
+			</span>
+		</div>
+		<div>
+			<span class="value">Revise Config</span>
+		</div>	
+		<div class="rightListIcon">
+			<i class="icon-chevron-right"></i>
+		</div>			
+	</li>
+	<li class="hasLeftIcon hasRightIcon requiredItem" ng-click="onTypeSelected(false)">
+		<div class="leftListIcon">
+			<span class="count {{reviseQuotes.length>0 ? 'correctlyFilled' :''}}">
+				<span class="countNumber">{{reviseQuotes.length}}</span>
+			</span>
+		</div>
+		<div>
+			<span class="value">Revise Quote</span>
+		</div>	
+		<div class="rightListIcon">
+			<i class="icon-chevron-right"></i>
+		</div>			
+	</li>
+</ul>

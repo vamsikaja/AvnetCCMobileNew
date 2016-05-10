@@ -1,0 +1,7 @@
+<r2o-menu>
+	<a class="version">Version {{$root.version}}</a>
+	<a ng-click="$root.goToState('newRequest',{type:'new', requestNo :'null'})" ng-hide="$root.IsInternal=='true'">Create New Request</a>
+	<a ng-click="$root.goToState('quotes')">Your Requests</a>
+	<a ng-click="$root.goToState('orders')">Your Orders</a>
+	<a ng-click="logout()">Logout</a>
+</r2o-menu>

@@ -1,0 +1,85 @@
+//list components
+.av-list {
+
+  .av-list-item {
+
+    .av-list-item-link {
+      display: block;
+      height: 4.125rem;
+      position: relative;
+      padding: 0.625rem;
+      background: $lightGray;
+      z-index: 1;
+
+    }
+    &.even {
+      .av-list-item-link {
+        background-color: white;
+      }
+    }
+
+    .av-list-item-heading {
+      font-size: 0.875rem;
+      color: $primaryBlack;
+      font-family: "ClanMedium";
+      max-height: 1.75rem;
+      overflow: hidden;
+      line-height: 0.9rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      padding-right:6.5rem;
+    }
+
+    .av-list-item-subheading {
+      font-family: "ClanBook";
+      font-size: 0.8125rem;
+      color: $neutralDarkGray;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-right:6.5rem;
+    }
+
+    .av-list-item-date {
+      position: absolute;
+      font-size: 0.75rem;
+      color: $neutralDarkGray;
+      right: 0.625rem;
+      top: 0.625rem;
+      width: 6.1875rem;
+      text-align: right;
+    }
+
+    .av-list-item-status {
+      @include statusBadge();
+      position: absolute;
+      right: 2rem;
+      bottom: 0.625rem;
+
+      &.Open {
+        background-color: $secondaryBlue;
+      }
+      &.Complete {
+        background-color: $secondaryGreen;
+      }
+      &.Partial {
+        background-color: $tertiaryOrange;
+      }
+
+      .av-list-item-status-value {
+        padding: 7px 0;
+        @include addOverflowEllipsis();
+        display:inline-block;
+      }
+    }
+
+    .av-list-item-chevron {
+      position: absolute;
+      right: 0.625rem;
+      bottom: 0.65rem;
+    }
+
+  }
+
+}

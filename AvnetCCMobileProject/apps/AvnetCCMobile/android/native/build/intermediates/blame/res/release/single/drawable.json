@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/release/drawable/push.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable/push.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/release/drawable/splash.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable/splash.png"
+    },
+    {
+        "merged": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/build/intermediates/res/merged/release/drawable/icon.png",
+        "source": "/Users/ryanricigliano/Documents/Development/Avnet/CCMobile/AvnetCCMobileProject/apps/AvnetCCMobile/android/native/res/drawable/icon.png"
+    }
+]

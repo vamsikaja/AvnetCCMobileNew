@@ -1,0 +1,25 @@
+<r2o-view title ="'Product Options'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer productsWithQuestions">
+		<ul class="requiredList">
+			<li class="hasLeftIcon hasRightIcon requiredItem" ng-repeat="product in products" ng-click="redirectToQuestions($index);">
+				<div class="leftListIcon">
+					<i class="icon-{{ areRequiredQuestionsAnswered($index) ? 'checkmark' : 'warning'}}"></i>
+				</div>
+				<div class="requiredItemName" ng-class="endUsersError ? 'error': '' ">
+					{{getCustomProductName(product)}}
+				</div>
+				<div class="requiredItemStatus" ng-class="endUsersError ? 'error': '' ">
+					Select Options
+				</div>
+				<div class="rightListIcon">
+					<i class="icon-chevron-right"></i>
+				</div>
+			</li>
+		</ul>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

@@ -1,0 +1,25 @@
+<cc-view title="Channel Connection" class="grid-block vertical av-background">
+    <div class="grid-content">
+        <div ng-show="tools.length">
+            <section class="block-list no-border">
+                <ul class="top-padding">
+                    <li class="no-border padding" ng-repeat="tool in tools | filter: {enabled: true}" ng-if="permissions[tool.id]">
+                        <a class="button av-tool-button" ui-sref="{{tool.state}}">
+                            {{::tool.displayName}}
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div ng-show="!tools.length">
+            <section class="block-list">
+                <ul>
+                    <li class="cc-empty">
+                        <p>You don't have access to any of the awesome tools Avnet offers.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</cc-view>

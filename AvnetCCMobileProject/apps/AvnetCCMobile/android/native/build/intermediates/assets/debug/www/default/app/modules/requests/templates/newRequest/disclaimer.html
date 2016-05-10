@@ -1,0 +1,44 @@
+<r2o-view title ="'Disclaimer'" class='grid-block vertical'>
+	<r2o-content class="grid-block vertical has-header has-footer disclaimer">
+		<div class="disclaimerContent" ng-bind-html="disclaimer.content">
+			<!-- <div>
+				<div class="marginBottom">
+				    You are almost done. Please read disclaimers associated with your requested items and verify that all your information is correct. Click the Submit button and Requested Items will be submitted.
+				</div>
+				<div class="disclaimerHeading">
+					Disclaimers
+				</div>
+				<div class="marginBottom">
+					It is the partners responsibility to ensure the configuration(s) provided meets the customer requirements.
+				</div>
+				<div class="marginBottom">
+					Avnet accepts no liability, express or implied, with respect to configurations(s).
+				</div>
+				<div class="marginBottom">
+					In particular, Avnet make no warranty respecting merchantability or suitability or fitness for any particular purpose or use with respect to the configuration(s).
+				</div>
+				<div class="marginBottom">
+					Provider must confirm installed hardware and software.
+				</div>
+				<div class="marginBottom">
+					The solution provider is responsible for verifying the proposed configuration prior to quoting prices to end-user.
+				</div>
+			</div> -->
+		</div>
+		<div class="disclaimerButtons">
+			<r2o-check-box is-selected="disclaimer.isSelected" ng-class="disclaimerError ? 'error' : '' ">
+				Yes. I have read all disclaimers associated with my requested items.
+			</r2o-check-box>
+			<div class="selectionButtons center">
+				<button class="selectionButton applyButton" ng-class="!disclaimer.isSelected ? 'disable' : '' " ng-click = "submitRequestDisclaimerPage()">
+				    SUBMIT REQUEST
+			    </button>
+			</div>
+		</div>
+	</r2o-content>
+	<r2o-footer>
+		<button ng-click="handleBackButton()" class="footerButton backButton">
+			<div class="backButtonSpan"><i class="icon-chevron-left"></i></div>
+		</button>
+	</r2o-footer>
+</r2o-view>

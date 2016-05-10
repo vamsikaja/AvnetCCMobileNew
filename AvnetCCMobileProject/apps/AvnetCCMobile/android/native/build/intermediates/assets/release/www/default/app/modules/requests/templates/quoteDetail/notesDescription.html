@@ -1,0 +1,26 @@
+<r2o-slide-box items='quoteDetail.notes.length' index="notesIndex" swipe="true">
+	<r2o-slide ng-repeat="note in quoteDetail.notes">
+		<div class="categoryContent">
+			<div class="row">
+				<div class="notesCounter">
+					<div class="notesIcon"><i class="{{ note.NoteType =='Email Note' ? 'icon-email': 'icon-speech-dots'}}"></i></div>
+					<div class="notesStatus">
+						<span class="currentNote">{{notesIndex.index}}</span><span class="of"> of</span><span class="totalNotes"> {{quoteDetail.notes.length}}</span>
+					</div>
+				</div>
+				<div class="labelName">Author:</div>
+				<div class="value">{{note.CreateUserName}}</div>
+			</div>
+			<div class="row" ng-if="note.NoteType =='Product Note'">
+				<div class="labelName">Products:</div>
+				<div class="value">{{note.EntityName}}</div>
+			</div>
+			<div class="row">
+				<div class="labelName">Comments:</div>
+				<div class="value" >
+					{{getNotesComments(note)}}
+				</div>
+			</div>
+		</div>
+	</r2o-slide>
+</r2o-slide-box>

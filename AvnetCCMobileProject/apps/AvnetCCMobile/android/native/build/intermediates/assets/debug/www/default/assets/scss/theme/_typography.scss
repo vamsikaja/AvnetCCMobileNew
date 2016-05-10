@@ -1,0 +1,54 @@
+/* ClanBook Font */
+@font-face {
+  font-family: "ClanBook";
+  src: url("fonts/ClanOT-Book.eot") format("eot"), url("fonts/ClanOT-Book.otf") format("otf"), url("fonts/ClanOT-Book.svg") format("svg"), url("fonts/ClanOT-Book.woff") format("woff"), url("fonts/ClanOT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* ClanMedium Font */
+@font-face {
+  font-family: "ClanMedium";
+  src: url("fonts/ClanOT-Medium.eot") format("eot"), url("fonts/ClanOT-Medium.otf") format("otf"), url("fonts/ClanOT-Medium.svg") format("svg"), url("fonts/ClanOT-Medium.woff") format("woff"), url("fonts/ClanOT-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* ClanNews Font */
+@font-face {
+  font-family: "ClanNews";
+  src: url("fonts/ClanOT-News.eot") format("eot"), url("fonts/ClanOT-News.otf") format("otf"), url("fonts/ClanOT-News.svg") format("svg"), url("fonts/ClanOT-News.woff") format("woff"), url("fonts/ClanOT-News.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+  
+  /* Headers */
+ h1 { 
+  	font-family: "ClanMedium";
+  	font-weight: bold;
+  	font-size: 1.25rem;
+  	line-height: 1rem;
+  	}
+  	
+ h2 { 
+  	font-family: "ClanMedium";
+  	font-weight: bold;
+  	font-size: 1rem;
+  	line-height: 1rem;
+  	}
+  	
+ h3 { 
+  	font-family: "ClanMedium";
+  	font-weight: bold;
+  	font-size: 0.925rem;
+  	line-height: 1rem;
+  	}
+  	
+ h4 { 
+  	font-family: "ClanNews";
+  	font-weight: normal;
+  	font-size: 0.875rem;
+  	line-height: 1rem;
+  	}
+  	
+  p {
+  	font-family: "ClanNews";
+  	font-weight: normal;
+  	font-size: 0.875rem;
+  	line-height: 1rem;
+  }

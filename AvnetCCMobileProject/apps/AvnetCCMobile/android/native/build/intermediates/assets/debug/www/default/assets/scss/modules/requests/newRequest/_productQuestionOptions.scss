@@ -1,0 +1,18 @@
+.productQuestionOptions{
+	.optionsList{
+		.option{
+			position: relative;
+			padding:0.625rem;
+			padding-left: 44px;
+			white-space: normal;
+			.listIcon{
+				position: absolute;
+				left: 0.625rem;
+				top: 0.625rem;
+			}
+			.listText{
+				display: inline-block;
+			}
+		}
+	}
+}

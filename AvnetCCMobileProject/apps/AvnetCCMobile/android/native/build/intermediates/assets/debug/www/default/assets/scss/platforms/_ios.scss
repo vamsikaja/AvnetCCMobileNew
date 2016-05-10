@@ -1,0 +1,47 @@
+
+.ios {
+
+  #wl_ios7bar {
+    background-color: white;
+    height: 15pt;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  body.wl_ios7 {
+    padding-top: 0 !important;
+  }
+
+  r2o-nav-bar {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+
+  .pageTitle {
+    padding-bottom: 10px !important;
+  }
+
+  .headerRequestDetailButton {
+    padding-top: 18px;
+  }
+
+  .increaseZIndex {
+    z-index: 99;
+  }
+
+  .modalHeader {
+    -webkit-align-items: flex-end !important;
+    align-items: flex-end !important;
+  }
+
+  .modalHeaderText {
+    padding-bottom: 10px !important;
+  }
+
+  .pointingHeaderButton {
+    padding-top: 10px;
+  }
+
+}
